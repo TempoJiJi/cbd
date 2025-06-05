@@ -10,7 +10,8 @@
     "gsap": "^3.x",
     "jquery": "^3.x",
     "barba.js": "^2.x",
-    "swiper": "^10.x"
+    "swiper": "^10.x",
+    "serve": "^14.2.1"
   },
   "devDependencies": {
     "lenis": "https://raw.githubusercontent.com/studio-freight/lenis/main/dist/lenis.js",
@@ -18,15 +19,14 @@
     "imagesloaded": "https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/5.0.0/imagesloaded.pkgd.min.js",
     "plyr": "https://cdnjs.cloudflare.com/ajax/libs/plyr/3.7.8/plyr.min.js"
   },
+  "scripts": {
+    "start": "serve ."
+  },
   "browserslist": "> 0.5%, last 2 versions",
   "style": "style.css",
   "font": "'DM Sans', sans-serif",
   "fontUrl": "https://fonts.google.com/specimen/DM+Sans",
   "icons": "Material Icons: https://fonts.google.com/icons",
-  "homepage": "http://naylahtml.pethemes.com",
-  "documentation": "https://naylahtml.pethemes.com/documentation",
-  "main": "index.html",
-  "landingPage": "index.html",
   "colors": {
     "mainColor": "#FF5733",
     "mainBackground": "#333333",
@@ -53,7 +53,6 @@
     "h5": "25px",
     "h6": "21px"
   },
-  "scripts": "js/scripts.js",
   "published": "16 June 2023",
   "highResolution": "Yes",
   "compatibleBrowsers": "IE10, IE11, Firefox, Safari, Opera, Chrome, Edge",
