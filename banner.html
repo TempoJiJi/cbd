@@ -21,7 +21,7 @@
       <div class="menu-overlay"></div>
 
       <!-- Site Header -->
-      <div id="header" class="site-header fixed dark blend">
+      <div id="header" class="site-header fixed light blend">
         <div class="header-wrapper wrapper-full">
           <div class="c-col-4">
             <div class="nayla-button">
@@ -47,48 +47,66 @@
       <main id="primary" class="site-main" data-barba="container">
         <div id="content" class="page-content">
           <!-- Hero Banner -->
-          <div class="section fullscreen light" style="padding-top: 75px">
-            <div class="section-background">
-              <div class="single-image has-anim scaleIn" data-pin="true" data-start=".2" style="height: 100vh">
-                <img 
-                  alt="Hero Background" 
-                  style="height: 100vh; object-fit: cover; filter: brightness(0.9);" 
-                  src="https://images.pexels.com/photos/7135121/pexels-photo-7135121.jpeg"
-                />
-              </div>
+          <div class="section fullscreen" style="height: 100vh; padding: 0; margin: 0; position: relative;">
+            <!-- Full screen background image -->
+            <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;">
+              <img 
+                src="https://images.pexels.com/photos/3861969/pexels-photo-3861969.jpeg"
+                alt="Hero Background" 
+                style="width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7);"
+              />
             </div>
 
-            <div class="wrapper-full">
-              <div class="c-col-12">
-                <div class="text-wrapper mobile-align-center" style="margin-top: 15vh;">
-                  <p class="text-h6 has-anim-text wordsUp" style="margin-bottom: 20px; color: #4A90E2; font-weight: 500; letter-spacing: 2px;">
-                    FULL STACK DEVELOPER
-                  </p>
-                  <p class="md-title has-anim-text charsLeft" style="--mobileFontSize: 60px; margin-bottom: 30px; font-weight: 500;">
-                    Building Digital<br />Solutions
-                  </p>
-                  <p class="text-h6 has-anim-text wordsUp" style="color: rgba(0,0,0,0.7); max-width: 600px; line-height: 1.6;">
-                    Specialized in creating elegant, efficient, and scalable web applications using modern technologies and best practices.
-                  </p>
-                </div>
-              </div>
+            <!-- Content overlay -->
+            <div style="position: relative; z-index: 2; height: 100%; display: flex; align-items: center;">
+              <div class="wrapper-full" style="width: 100%;">
+                <div class="c-col-12">
+                  <div class="text-wrapper" style="color: white; max-width: 800px;">
+                    <p class="text-h6 has-anim-text wordsUp" 
+                       style="color: #4A90E2; font-weight: 500; letter-spacing: 3px; margin-bottom: 20px;">
+                      FULL STACK DEVELOPER
+                    </p>
+                    
+                    <h1 class="text-h1 has-anim-text charsLeft" 
+                        style="color: white; margin-bottom: 30px; font-size: 72px; line-height: 1.1;">
+                      Crafting Digital<br/>Experiences
+                    </h1>
+                    
+                    <p class="text-h6 has-anim-text linesUp" 
+                       style="color: rgba(255,255,255,0.9); max-width: 600px; line-height: 1.8; margin-bottom: 40px;">
+                      Transforming ideas into elegant, scalable solutions through clean code and modern architecture.
+                    </p>
 
-              <div class="c-col-12" style="margin-top: 40px;">
-                <div class="text-wrapper mobile-align-center">
-                  <div class="nayla-button" style="display: inline-block;">
-                    <a href="#works" class="text-h6" style="padding: 15px 30px; background: #4A90E2; color: white; border-radius: 4px; text-decoration: none;">
-                      View Projects
-                    </a>
+                    <div class="nayla-button has-anim fadeUp" style="margin-bottom: 60px;">
+                      <a href="#works" 
+                         style="display: inline-block; padding: 18px 40px; background: #4A90E2; 
+                                color: white; border-radius: 4px; text-decoration: none; 
+                                font-size: 18px; transition: all 0.3s ease;">
+                        View My Work
+                      </a>
+                    </div>
+
+                    <div class="has-anim fadeUp" style="opacity: 0.9;">
+                      <p class="text-h6" style="letter-spacing: 2px;">
+                        <span style="color: #4A90E2">●</span> JavaScript 
+                        <span style="color: #4A90E2">●</span> TypeScript 
+                        <span style="color: #4A90E2">●</span> React 
+                        <span style="color: #4A90E2">●</span> Node.js 
+                        <span style="color: #4A90E2">●</span> Python
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
+            </div>
 
-              <div class="c-col-12" style="margin-top: 60px;">
-                <div class="text-wrapper mobile-align-center">
-                  <p class="text-h6 has-anim-text wordsUp" style="color: rgba(0,0,0,0.6); letter-spacing: 1px;">
-                    JavaScript • TypeScript • React • Node.js • Python
-                  </p>
-                </div>
+            <!-- Scroll indicator -->
+            <div style="position: absolute; bottom: 40px; left: 50%; transform: translateX(-50%); z-index: 2;">
+              <div class="nayla-button scroll-button" data-scroll-to="#content"
+                   style="color: white; opacity: 0.7; cursor: pointer;">
+                <span class="material-icons" style="font-size: 40px; animation: bounce 2s infinite;">
+                  keyboard_arrow_down
+                </span>
               </div>
             </div>
           </div>
