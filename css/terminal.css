@@ -1,0 +1,211 @@
+.terminal-window {
+  width: 100%;
+  max-width: 700px;
+  background: #2d3748;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(45, 55, 72, 0.3), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  font-family: "Monaco", "Menlo", "Ubuntu Mono", monospace;
+}
+
+.terminal-header {
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.terminal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.control-btn:hover {
+  opacity: 0.8;
+}
+
+.control-btn.close {
+  background: #ff5f57;
+}
+
+.control-btn.minimize {
+  background: #ffbd2e;
+}
+
+.control-btn.maximize {
+  background: #28ca42;
+}
+
+.terminal-title {
+  color: #e2e8f0;
+  font-size: 13px;
+  font-weight: 500;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.terminal-body {
+  padding: 20px;
+  background: #1a202c;
+  min-height: 300px;
+  color: #e2e8f0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.terminal-line {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.prompt {
+  color: #68d391;
+  font-weight: 600;
+  margin-right: 8px;
+  user-select: none;
+}
+
+.command {
+  color: #90cdf4;
+  font-weight: 500;
+}
+
+.terminal-output {
+  margin: 12px 0 20px 0;
+  padding-left: 16px;
+}
+
+.output-line {
+  margin-bottom: 6px;
+  color: #cbd5e0;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.skill-item {
+  background: rgba(104, 211, 145, 0.2);
+  color: #68d391;
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid rgba(104, 211, 145, 0.3);
+}
+
+.typing-animation {
+  animation: typing 2s steps(10) infinite;
+}
+
+.cursor {
+  color: #68d391;
+  animation: blink 1s infinite;
+  font-weight: bold;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes blink {
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .terminal-container {
+    margin-top: 2rem;
+    padding: 0 1rem;
+  }
+
+  .terminal-window {
+    max-width: 100%;
+  }
+
+  .terminal-body {
+    padding: 16px;
+    font-size: 13px;
+    min-height: 250px;
+  }
+
+  .terminal-title {
+    font-size: 12px;
+  }
+
+  .skills-grid {
+    gap: 8px;
+  }
+
+  .skill-item {
+    font-size: 11px;
+    padding: 3px 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .terminal-body {
+    padding: 12px;
+    font-size: 12px;
+    min-height: 200px;
+  }
+
+  .terminal-line {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .prompt {
+    margin-right: 0;
+  }
+
+  .skills-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
