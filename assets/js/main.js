@@ -1194,6 +1194,20 @@
     });
   }
 
+  // Works Pin Active - Pin the "Selected Works" title
+  var works_pin_element = document.querySelector('.works-pin-element');
+  if (works_pin_element && device_width > 991) {
+    gsap.to(".works-pin-element", {
+      scrollTrigger: {
+        trigger: ".works-pin-area",
+        pin: ".works-pin-element",
+        start: "top top",
+        end: "bottom bottom",
+        pinSpacing: false,
+      }
+    });
+  }
+
   // pin on bottom
   var pin_on_bottom = document.querySelectorAll(".pin-on-bottom");
   pin_on_bottom.forEach((el) => {

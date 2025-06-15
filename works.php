@@ -76,6 +76,24 @@ $projects = [
         transition: transform 0.3s ease;
     }
 
+    /* Pin area styles */
+    .works-pin-area {
+        position: relative;
+    }
+
+    .works-pin-element {
+        background-color: var(--white);
+        z-index: 100;
+        padding: 40px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    }
+
+    @include dark {
+        .works-pin-element {
+            background-color: var(--black);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    }
 
     @media (max-width: 768px) {
         .service-box-inner.body {
@@ -105,16 +123,22 @@ $projects = [
         .project-image-wrapper {
             justify-content: center;
         }
+
+        .works-pin-element {
+            padding: 30px 0;
+        }
     }
 </style>
 
-<section class="service-area" style="margin-bottom: 50px;">
+<section class="service-area works-pin-area" style="margin-bottom: 50px;">
     <div class="service-area-inner section-spacing-top">
-        <div class="container">
-            <div class="section-header">
-                <div class="section-title-wrapper fade-anim">
-                    <div class="title-wrapper">
-                        <h1 class="section-title cbd-section-title">Selected Works</h1>
+        <div class="works-pin-element">
+            <div class="container">
+                <div class="section-header">
+                    <div class="section-title-wrapper fade-anim">
+                        <div class="title-wrapper">
+                            <h1 class="section-title cbd-section-title">Selected Works</h1>
+                        </div>
                     </div>
                 </div>
             </div>
