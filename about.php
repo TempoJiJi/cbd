@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div style="margin-top: 10px;" class="image-wrapper parallax-view fade-anim">
-                        <img class="w-100" src="assets/imgs/gallery/banner.png" alt="image" data-speed="0.5">
+                        <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
                     </div>
 
                 </div>
