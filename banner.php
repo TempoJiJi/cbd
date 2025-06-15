@@ -47,6 +47,6 @@
         </div>
     </div>
     <div class="image-wrapper parallax-view fade-anim">
-        <img class="w-100" src="assets/imgs/gallery/image-12.webp" alt="image" data-speed="0.5">
+        <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
     </div>
 </section>
