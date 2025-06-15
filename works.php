@@ -90,21 +90,22 @@ $projects = [
                     <div class='service-box-1 item'>
                         <div class='container'>
                             <div class='header'>
-                                <div class='number'>($p[number]) <h3 class='title'>$p[title]</h3>
-                                </div>
                             </div>
                             <div class='service-box-inner body'>
                                 <div class='project-content'>
-                                    <div class='btn-wrapper'>
-                                        <a href='contact.html' class='t-btn'><span>View Project</span>
-                                            <svg viewBox='0 0 123 115' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                                                <path fill-rule='evenodd' clip-rule='evenodd' d='M7.67648 102.817L94.6863 16.8148H0.999996V0.999997H122V108.409H106V27.9975L18.9902 114L7.67648 102.817Z' stroke='#AFF42B' />
-                                            </svg>
-                                        </a>
-                                    </div>
+                                    <div class='number'>($p[number]) <h3 class='title'>$p[title]</h3></div>
                                     <div class='content'>
                                         <p class='text'>$p[description].</p>
                                     </div>
+                                    <div class='t-btn-group'>
+                                    <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                    <i class='fa-solid fa-arrow-right'></i>
+                                    </a>
+                                    <a class='t-btn t-btn-primary' href='portfolio-details.html'>View Full Project</a>
+                                    <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                    <i class='fa-solid fa-arrow-right'></i>
+                                    </a>
+                                </div>
                                 </div>
                                 <div class='project-image-wrapper'>
                                     <a href='$p[link]'> <img src='$p[image]' alt='image'></a>
