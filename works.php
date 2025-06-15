@@ -39,7 +39,8 @@ $projects = [
     .service-box-inner.body {
         display: flex;
         gap: 30px;
-        align-items: flex-start;
+        align-items: center;
+        min-height: 400px;
     }
 
     .project-content {
@@ -47,6 +48,7 @@ $projects = [
         display: flex;
         flex-direction: column;
         gap: 20px;
+        justify-content: center;
     }
 
     .project-number-title {
@@ -64,6 +66,9 @@ $projects = [
     .project-image-wrapper {
         flex: 1;
         max-width: 800px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .project-image-wrapper img {
@@ -76,10 +81,13 @@ $projects = [
         .service-box-inner.body {
             flex-direction: column;
             gap: 20px;
+            align-items: stretch;
+            min-height: auto;
         }
 
         .project-content {
             gap: 15px;
+            justify-content: flex-start;
         }
 
         .project-number-title {
@@ -92,6 +100,10 @@ $projects = [
 
         .project-image {
             height: 200px;
+        }
+
+        .project-image-wrapper {
+            justify-content: center;
         }
     }
 </style>
