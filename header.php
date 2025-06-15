@@ -1,3 +1,11 @@
+<style>
+    .header-sticky {
+        padding-top: 24px;
+    }
+
+
+</style>
+
 <header class="header-area-4">
     <div class="header-main header-sticky">
         <div class="container">

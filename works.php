@@ -88,7 +88,7 @@ $projects = [
     [
         'number' => '01',
         'title' => 'Lavieflo',
-        'description' => 'Our experienced project manager is crucial in ensuring that our design and development teams work smoothly. With management tools, we monitor how our projects are progressing from time to time. The main goals are simple: to make sure everything gets done on time and to maintain the high quality of work.',
+        'description' => 'Lavieflo is a fully custom e-commerce website — hand-coded without WordPress or any CMS. It features a complete product catalog, category browsing, shopping cart, and integrated payment system — all built from the ground up for performance and flexibility.',
         'image' => 'assets/imgs/project/lavieflo_trans.png',
         'link' => '',
         'bg' => 'rgb(14, 15, 17)',
@@ -116,7 +116,7 @@ $projects = [
         'description' => 'Our experienced project manager is crucial in ensuring that our design and development teams work smoothly. With management tools, we monitor how our projects are progressing from time to time. The main goals are simple: to make sure everything gets done on time and to maintain the high quality of work.',
         'image' => 'assets/imgs/project/fatbear_trans.png',
         'link' => '',
-        'bg' => 'rgb(255, 194, 81)',
+        'bg' => 'rgb(250, 142, 41)',
         'techstack' => '
             <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
             <i style="margin-right:20px;" class="devicon-html5-plain colored techstack-icon"></i>
@@ -155,7 +155,7 @@ $projects = [
                                 <div class='project-content'>
                                     <div class='number project-number-title'>($p[number]) <h3 class='title'>$p[title]</h3></div>
                                     <div class='content project-description'>
-                                        <p class='text'>$p[description].</p>
+                                        <p class='text'>$p[description]</p>
                                     </div>
                                     <div class='content'>
                                         $p[techstack]
@@ -165,13 +165,13 @@ $projects = [
                                         <a class='t-btn t-btn-circle' href='portfolio-details.html'>
                                             <i class='fa-solid fa-arrow-right'></i>
                                         </a>
-                                        <a class='t-btn t-btn-primary' href='portfolio-details.html'>View Full Project</a>
+                                        <a class='t-btn t-btn-primary' href='portfolio-details.html'>Read More</a>
                                         <a class='t-btn t-btn-circle' href='portfolio-details.html'>
                                             <i class='fa-solid fa-arrow-right'></i>
                                         </a>
                                     </div>
                                 </div>
-                                <div class='project-image-wrapper'>
+                                <div class='fade-anim parallax-view project-image-wrapper' data-delay='0'>
                                     <a href='$p[link]'> <img src='$p[image]' alt='image'></a>
                                 </div>
                             </div>
