@@ -1,93 +1,112 @@
-<section class="work-area-3 pin-area">
-    <div class="container">
-        <div class="work-area-3-inner section-spacing-bottom">
+<section class="service-area">
+    <div class="service-area-inner section-spacing-top">
+        <div class="container">
             <div class="section-header">
                 <div class="section-title-wrapper fade-anim">
+                    <div class="subtitle-wrapper">
+                        <span class="section-subtitle">Our Services</span>
+                    </div>
                     <div class="title-wrapper">
-                        <h2 class="section-title pin-element">Featured Work</h2>
+                        <h2 class="section-title">What we offer to you</h2>
                     </div>
                 </div>
-            </div>
-            <div class="works-wrapper-box fade-anim">
-
-                <div class="container">
-                    <div class="works-wrapper">
-                        <div class="work-box-3 portfolio-panel">
-                            <div class="thumb">
-                                <a href='/portfolio-details'> <img src="assets/imgs/project/project-5.webp" alt="image"></a>
-                                <div class="content">
-                                    <span class="tag">Voyage Collective</span>
-                                    <h3 class="title"><a href='/portfolio-details'>Building Connections through Campaign</a>
-                                    </h3>
-                                </div>
-                                <div class="meta">
-                                    <span class="year">( 2020 )</span>
-                                    <span class="category">( BRANDING DESIGN // 3D MOTION )</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-box-3 portfolio-panel">
-                            <div class="thumb">
-                                <a href='/portfolio-details'><img src="assets/imgs/project/project-23.webp" alt="image"></a>
-                                <div class="content">
-                                    <span class="tag">LUMERA STUDIOS</span>
-                                    <h3 class="title"><a href='/portfolio-details'>Shaping the bold future</a></h3>
-                                </div>
-                                <div class="meta">
-                                    <span class="year">( 2022 )</span>
-                                    <span class="category">( BRANDING DESIGN // 3D MOTION )</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-box-3 portfolio-panel">
-                            <div class="thumb">
-                                <a href='/portfolio-details'><img src="assets/imgs/project/project-24.webp" alt="image"></a>
-                                <div class="content">
-                                    <span class="tag">VERVE DIGITAL</span>
-                                    <h3 class="title"><a href='/portfolio-details'>Crafting limitless ideas</a></h3>
-                                </div>
-                                <div class="meta">
-                                    <span class="year">( 2023 )</span>
-                                    <span class="category">( UI UX DESIGN // WEB DESIGN)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-box-3 portfolio-panel">
-                            <div class="thumb">
-                                <a href='/portfolio-details'><img src="assets/imgs/project/project-25.webp" alt="image"></a>
-                                <div class="content">
-                                    <span class="tag">LUMERA STUDIOS</span>
-                                    <h3 class="title"><a href='/portfolio-details'>Alma Brava Haven Rebrand</a></h3>
-                                </div>
-                                <div class="meta">
-                                    <span class="year">( 2024 )</span>
-                                    <span class="category">( PRODUCT DESIGN // BRANDING)</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="work-box-3 portfolio-panel">
-                            <div class="thumb">
-                                <a href='/portfolio-details'><img src="assets/imgs/project/project-6.webp" alt="image"></a>
-                                <div class="content">
-                                    <span class="tag">CLARITY VENTURES</span>
-                                    <h3 class="title"><a href='/portfolio-details'>Harmony Website Design</a></h3>
-                                </div>
-                                <div class="meta">
-                                    <span class="year">( 2025 )</span>
-                                    <span class="category">( WEB DESIGN // DEVELOPMENT)</span>
-                                </div>
-                            </div>
-                        </div>
+                <div class="btn-wrapper fade-anim">
+                    <div class="t-btn-group">
+                        <a class="t-btn t-btn-circle" href="services.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a class="t-btn t-btn-primary" href="services.html">See All Services</a>
+                        <a class="t-btn t-btn-circle" href="services.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </a>
                     </div>
                 </div>
-                <h2 class="wrapper-title d-none">
-                    <a href='/portfolio'>
-                        Our Portfolio<svg class="icon" viewBox="0 0 34 34" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M5.30804 25.0961L22.4172 8.00637L23.4428 6.98186L21.9931 6.98186L1.55157 6.98186L8.56918 0.599994L26.4094 0.599997L33.4 0.599998L33.4 7.58187L33.4 25.4392L27.0094 32.451L27.0094 13.1477L27.0094 11.7003L25.9854 12.7231L9.45292 29.2362L5.30804 25.0961Z" stroke="white" stroke-width="1.2" />
-                        </svg>
-                    </a>
-                </h2>
             </div>
         </div>
+        <div class="services-wrapper-box">
+            <div class="services-wrapper header-stacking-items">
+                <div class="service-box-1 item">
+                    <div class="container">
+                        <div class="header">
+                            <div class="number">(01)</div>
+                            <h3 class="title">Design <span><img src="assets/imgs/shape/shape-6.webp" alt="image"></span></h3>
+                        </div>
+                        <div class="service-box-inner body">
+                            <div class="btn-wrapper">
+                                <a href="contact.html" class="t-btn"><span>Show Details</span>
+                                    <svg viewBox="0 0 123 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.67648 102.817L94.6863 16.8148H0.999996V0.999997H122V108.409H106V27.9975L18.9902 114L7.67648 102.817Z" stroke="#AFF42B" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="text">We offer you a comprehensive range of digital marketing services designed to
+                                    help your business thrive in the digital landscape.</p>
+                                <ul class="service-list">
+                                    <li><a href="service-details.html">1. Graphic Design</a></li>
+                                    <li><a href="service-details.html">2. Branding and Identity</a></li>
+                                    <li><a href="service-details.html">3. Web and Digital Design</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-box-1 item">
+                    <div class="container">
+                        <div class="header">
+                            <div class="number">(02)</div>
+                            <h3 class="title">Development <span><img src="assets/imgs/shape/shape-7.webp" alt="image"></span>
+                            </h3>
+                        </div>
+                        <div class="service-box-inner body">
+                            <div class="btn-wrapper">
+                                <a href="contact.html" class="t-btn"><span>Show Details</span>
+                                    <svg viewBox="0 0 123 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.67648 102.817L94.6863 16.8148H0.999996V0.999997H122V108.409H106V27.9975L18.9902 114L7.67648 102.817Z" stroke="#AFF42B" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="text">We offer you a comprehensive range of digital marketing services designed to
+                                    help your business thrive in the digital landscape.</p>
+                                <ul class="service-list">
+                                    <li><a href="service-details.html">1. E-commerce Development</a></li>
+                                    <li><a href="service-details.html">2. Custom Website Development</a></li>
+                                    <li><a href="service-details.html">3. Responsive Web Development</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="service-box-1 item">
+                    <div class="container">
+                        <div class="header">
+                            <div class="number">(03)</div>
+                            <h3 class="title">Marketing <span><img src="assets/imgs/shape/shape-8.webp" alt="image"></span>
+                            </h3>
+                        </div>
+                        <div class="service-box-inner body">
+                            <div class="btn-wrapper">
+                                <a href="contact.html" class="t-btn"><span>Show Details</span>
+                                    <svg viewBox="0 0 123 115" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M7.67648 102.817L94.6863 16.8148H0.999996V0.999997H122V108.409H106V27.9975L18.9902 114L7.67648 102.817Z" stroke="#AFF42B" />
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="content">
+                                <p class="text">We offer you a comprehensive range of digital marketing services designed to
+                                    help your business thrive in the digital landscape.</p>
+                                <ul class="service-list">
+                                    <li><a href="service-details.html">1. Technical SEO</a></li>
+                                    <li><a href="service-details.html">2. On-page optimization</a></li>
+                                    <li><a href="service-details.html">3. SEO audits and analysis</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="final"></div>
     </div>
 </section>

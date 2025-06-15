@@ -138,16 +138,15 @@
         <?php include 'about.php'; ?>
 
         <?php include 'techstack.php'; ?>
+        <?php include 'works.php'; ?>
 
         <?php include 'services.php'; ?>
 
-        <?php include 'works.php'; ?>
+        <?php // include 'team.php'; ?>
 
-        <?php include 'team.php'; ?>
+        <?php // include 'brand.php'; ?>
 
-        <?php include 'brand.php'; ?>
-
-        <?php include 'testimonial.php'; ?>
+        <?php // include 'testimonial.php'; ?>
 
         <?php include 'blog.php'; ?>
 
