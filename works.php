@@ -3,14 +3,11 @@
         <div class="container">
             <div class="section-header">
                 <div class="section-title-wrapper fade-anim">
-                    <div class="subtitle-wrapper">
-                        <span class="section-subtitle">Our Services</span>
-                    </div>
                     <div class="title-wrapper">
-                        <h2 class="section-title">What we offer to you</h2>
+                        <h1 class="section-title cbd-section-title">Selected Works</h1>
                     </div>
                 </div>
-                <div class="btn-wrapper fade-anim">
+                <!-- <div class="btn-wrapper fade-anim">
                     <div class="t-btn-group">
                         <a class="t-btn t-btn-circle" href="services.html">
                             <i class="fa-solid fa-arrow-right"></i>
@@ -20,7 +17,7 @@
                             <i class="fa-solid fa-arrow-right"></i>
                         </a>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
         <div class="services-wrapper-box">
@@ -29,7 +26,7 @@
                     <div class="container">
                         <div class="header">
                             <div class="number">(01)</div>
-                            <h3 class="title">Design <span><img src="assets/imgs/shape/shape-6.webp" alt="image"></span></h3>
+                            <h3 class="title">Lavieflo</h3>
                         </div>
                         <div class="service-box-inner body">
                             <div class="btn-wrapper">
@@ -55,7 +52,7 @@
                     <div class="container">
                         <div class="header">
                             <div class="number">(02)</div>
-                            <h3 class="title">Development <span><img src="assets/imgs/shape/shape-7.webp" alt="image"></span>
+                            <h3 class="title">Design</h3>
                             </h3>
                         </div>
                         <div class="service-box-inner body">
@@ -82,7 +79,7 @@
                     <div class="container">
                         <div class="header">
                             <div class="number">(03)</div>
-                            <h3 class="title">Marketing <span><img src="assets/imgs/shape/shape-8.webp" alt="image"></span>
+                            <h3 class="title">Design</h3>
                             </h3>
                         </div>
                         <div class="service-box-inner body">
