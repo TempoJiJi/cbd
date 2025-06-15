@@ -529,7 +529,8 @@
           ease: "none",
           scrollTrigger: {
             trigger: item,
-            start: "top " + header.clientHeight * i,
+            // start: "top " + header.clientHeight * i, // ori
+            start: "top " + header.clientHeight - 1 * i, // add -1 to make stacking fullscreen
             endTrigger: ".final",
             end: "top " + header.clientHeight * items.length,
             pin: true,
