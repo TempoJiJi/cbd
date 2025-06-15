@@ -44,6 +44,21 @@ $projects = [
 
     .project-content {
         flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .project-number-title {
+        margin-bottom: 15px;
+    }
+
+    .project-description {
+        margin-bottom: 15px;
+    }
+
+    .project-buttons {
+        margin-top: 10px;
     }
 
     .project-image-wrapper {
@@ -61,6 +76,18 @@ $projects = [
         .service-box-inner.body {
             flex-direction: column;
             gap: 20px;
+        }
+
+        .project-content {
+            gap: 15px;
+        }
+
+        .project-number-title {
+            margin-bottom: 10px;
+        }
+
+        .project-description {
+            margin-bottom: 10px;
         }
 
         .project-image {
@@ -93,11 +120,11 @@ $projects = [
                             </div>
                             <div class='service-box-inner body'>
                                 <div class='project-content'>
-                                    <div class='number'>($p[number]) <h3 class='title'>$p[title]</h3></div>
-                                    <div class='content'>
+                                    <div class='number project-number-title'>($p[number]) <h3 class='title'>$p[title]</h3></div>
+                                    <div class='content project-description'>
                                         <p class='text'>$p[description].</p>
                                     </div>
-                                    <div class='t-btn-group'>
+                                    <div class='t-btn-group project-buttons'>
                                     <a class='t-btn t-btn-circle' href='portfolio-details.html'>
                                     <i class='fa-solid fa-arrow-right'></i>
                                     </a>
