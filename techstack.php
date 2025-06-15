@@ -1,17 +1,17 @@
 <style>
     .techstack-section {
-        padding: 80px 0;
+        padding: 40px 0; /* Reduced from 80px to 40px */
     }
 
     .techstack-title {
         text-align: center;
-        margin-bottom: 60px;
+        margin-bottom: 40px; /* Reduced from 60px to 40px */
     }
 
     .techstack-categories {
         display: flex;
         flex-direction: column;
-        gap: 60px;
+        gap: 40px; /* Reduced from 60px to 40px */
     }
 
     .techstack-category {
@@ -21,7 +21,7 @@
     .category-title {
         font-size: 24px;
         font-weight: 600;
-        margin-bottom: 30px;
+        margin-bottom: 20px; /* Reduced from 30px to 20px */
         color: #333;
         position: relative;
         display: inline-block;
@@ -40,12 +40,12 @@
     }
 
     .tech-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center; /* Center align items */
         gap: 30px;
         max-width: 800px;
         margin: 0 auto;
-        justify-items: center;
     }
 
     .tech-item {
@@ -59,6 +59,7 @@
         background: transparent;
         position: relative;
         overflow: hidden;
+        min-width: 120px; /* Ensure consistent width */
     }
 
     .tech-item::before {
@@ -118,12 +119,15 @@
 
     /* Responsive Design */
     @media (max-width: 768px) {
+        .techstack-section {
+            padding: 30px 0; /* Reduced for mobile */
+        }
+        
         .techstack-categories {
-            gap: 40px;
+            gap: 30px; /* Reduced for mobile */
         }
         
         .tech-grid {
-            grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
             gap: 20px;
         }
         
@@ -133,16 +137,17 @@
         
         .category-title {
             font-size: 20px;
+            margin-bottom: 15px; /* Reduced for mobile */
         }
         
         .tech-item {
             padding: 15px;
+            min-width: 100px;
         }
     }
 
     @media (max-width: 480px) {
         .tech-grid {
-            grid-template-columns: repeat(3, 1fr);
             gap: 15px;
         }
         
@@ -152,6 +157,10 @@
         
         .tech-name {
             font-size: 12px;
+        }
+        
+        .tech-item {
+            min-width: 80px;
         }
     }
 
