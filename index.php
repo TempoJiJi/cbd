@@ -140,7 +140,7 @@
         <?php include 'techstack.php'; ?>
         <?php include 'works.php'; ?>
 
-        <?php include 'services.php'; ?>
+        <?php // include 'services.php'; ?>
 
         <?php // include 'team.php'; ?>
 
