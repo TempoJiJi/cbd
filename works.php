@@ -1,31 +1,3 @@
-<?php
-$projects = [
-    [
-        'number' => '01',
-        'title' => 'Lavieflo',
-        'description' => 'website',
-        'image' => 'assets/imgs/project/lavieflo.png',
-        'link' => ''
-    ],
-    [
-        'number' => '02',
-        'title' => 'NZON',
-        'description' => 'mobile app',
-        'image' => 'assets/imgs/project/nzon.png',
-        'link' => ''
-    ],
-    [
-        'number' => '03',
-        'title' => 'Fatbear',
-        'description' => 'back off',
-        'image' => 'assets/imgs/project/fatbear.png',
-        'link' => ''
-    ],
-
-]
-
-?>
-
 <style>
     .project-image {
         border-radius: 8px;
@@ -69,6 +41,7 @@ $projects = [
         display: flex;
         align-items: center;
         justify-content: center;
+        padding-top: 100px;
     }
 
     .project-image-wrapper img {
@@ -104,9 +77,57 @@ $projects = [
 
         .project-image-wrapper {
             justify-content: center;
+            padding-top: 10px;
         }
     }
 </style>
+
+
+<?php
+$projects = [
+    [
+        'number' => '01',
+        'title' => 'Lavieflo',
+        'description' => 'Our experienced project manager is crucial in ensuring that our design and development teams work smoothly. With management tools, we monitor how our projects are progressing from time to time. The main goals are simple: to make sure everything gets done on time and to maintain the high quality of work.',
+        'image' => 'assets/imgs/project/lavieflo_trans.png',
+        'link' => '',
+        'bg' => 'rgb(14, 15, 17)',
+        'techstack' => '
+            <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
+            <i style="margin-right:20px;" class="devicon-html5-plain colored techstack-icon"></i>
+            <i style="margin-right:20px;" class="devicon-javascript-plain colored techstack-icon"></i>
+        ',
+    ],
+    [
+        'number' => '02',
+        'title' => 'NZON',
+        'description' => 'NZON is a hiking companion app that helps users create or join hiking trips with ease, featuring group coordination and a built-in payment system — fully developed by using React Native with PHP backend.',
+        'image' => 'assets/imgs/project/nzon_trans.png',
+        'link' => '',
+        'bg' => 'rgb(45, 113, 72)',
+        'techstack' => '
+            <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
+            <i style="margin-right:20px;" class="devicon-react-original colored techstack-icon"></i>
+        ',
+    ],
+    [
+        'number' => '03',
+        'title' => 'Fatbear',
+        'description' => 'Our experienced project manager is crucial in ensuring that our design and development teams work smoothly. With management tools, we monitor how our projects are progressing from time to time. The main goals are simple: to make sure everything gets done on time and to maintain the high quality of work.',
+        'image' => 'assets/imgs/project/fatbear_trans.png',
+        'link' => '',
+        'bg' => 'rgb(255, 194, 81)',
+        'techstack' => '
+            <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
+            <i style="margin-right:20px;" class="devicon-html5-plain colored techstack-icon"></i>
+            <i style="margin-right:20px;" class="devicon-javascript-plain colored techstack-icon"></i>
+        ',
+
+    ],
+
+]
+
+?>
 
 <section class="service-area" style="margin-bottom: 50px;">
     <div class="service-area-inner section-spacing-top">
@@ -126,7 +147,7 @@ $projects = [
 
                 foreach ($projects as $p) {
                     echo "
-                    <div class='service-box-1 item'>
+                    <div style='background-color: $p[bg];' class='service-box-1 item'>
                         <div class='container'>
                             <div class='header'>
                             </div>
@@ -136,15 +157,19 @@ $projects = [
                                     <div class='content project-description'>
                                         <p class='text'>$p[description].</p>
                                     </div>
+                                    <div class='content'>
+                                        $p[techstack]
+                                    </div>
+
                                     <div class='t-btn-group project-buttons'>
-                                    <a class='t-btn t-btn-circle' href='portfolio-details.html'>
-                                    <i class='fa-solid fa-arrow-right'></i>
-                                    </a>
-                                    <a class='t-btn t-btn-primary' href='portfolio-details.html'>View Full Project</a>
-                                    <a class='t-btn t-btn-circle' href='portfolio-details.html'>
-                                    <i class='fa-solid fa-arrow-right'></i>
-                                    </a>
-                                </div>
+                                        <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                            <i class='fa-solid fa-arrow-right'></i>
+                                        </a>
+                                        <a class='t-btn t-btn-primary' href='portfolio-details.html'>View Full Project</a>
+                                        <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                            <i class='fa-solid fa-arrow-right'></i>
+                                        </a>
+                                    </div>
                                 </div>
                                 <div class='project-image-wrapper'>
                                     <a href='$p[link]'> <img src='$p[image]' alt='image'></a>
