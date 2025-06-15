@@ -33,6 +33,9 @@
 
     .project-buttons {
         margin-top: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
     }
 
     .project-image-wrapper {
@@ -90,7 +93,7 @@ $projects = [
         'title' => 'Lavieflo',
         'description' => 'Lavieflo is a fully custom e-commerce website — hand-coded without WordPress or any CMS. It features a complete product catalog, category browsing, shopping cart, and integrated payment system — all built from the ground up for performance and flexibility.',
         'image' => 'assets/imgs/project/lavieflo_trans.png',
-        'link' => '',
+        'link' => 'https://lavieflo.com',
         'bg' => 'rgb(14, 15, 17)',
         'techstack' => '
             <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
@@ -103,7 +106,7 @@ $projects = [
         'title' => 'NZON',
         'description' => 'NZON is a hiking companion app that helps users create or join hiking trips with ease, featuring group coordination and a built-in payment system — fully developed by using React Native with PHP backend.',
         'image' => 'assets/imgs/project/nzon_trans.png',
-        'link' => '',
+        'link' => '#',
         'bg' => 'rgb(45, 113, 72)',
         'techstack' => '
             <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
@@ -115,7 +118,7 @@ $projects = [
         'title' => 'Fatbear',
         'description' => 'Our experienced project manager is crucial in ensuring that our design and development teams work smoothly. With management tools, we monitor how our projects are progressing from time to time. The main goals are simple: to make sure everything gets done on time and to maintain the high quality of work.',
         'image' => 'assets/imgs/project/fatbear_trans.png',
-        'link' => '',
+        'link' => '#',
         'bg' => 'rgb(250, 142, 41)',
         'techstack' => '
             <i style="margin-right:20px;" class="devicon-php-plain colored techstack-icon"></i>
@@ -161,14 +164,25 @@ $projects = [
                                         $p[techstack]
                                     </div>
 
-                                    <div class='t-btn-group project-buttons'>
-                                        <a class='t-btn t-btn-circle' href='portfolio-details.html'>
-                                            <i class='fa-solid fa-arrow-right'></i>
-                                        </a>
-                                        <a class='t-btn t-btn-primary' href='portfolio-details.html'>Read More</a>
-                                        <a class='t-btn t-btn-circle' href='portfolio-details.html'>
-                                            <i class='fa-solid fa-arrow-right'></i>
-                                        </a>
+                                    <div class='project-buttons'>
+                                        <div class='t-btn-group'>
+                                            <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                                <i class='fa-solid fa-arrow-right'></i>
+                                            </a>
+                                            <a class='t-btn t-btn-primary' href='portfolio-details.html'>Read More</a>
+                                            <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                                <i class='fa-solid fa-arrow-right'></i>
+                                            </a>
+                                        </div>
+                                        <div class='t-btn-group'>
+                                            <a class='t-btn t-btn-circle' href='$p[link]' target='_blank'>
+                                                <i class='fa-solid fa-external-link-alt'></i>
+                                            </a>
+                                            <a class='t-btn t-btn-primary bordered' href='$p[link]' target='_blank'>Visit Site</a>
+                                            <a class='t-btn t-btn-circle' href='$p[link]' target='_blank'>
+                                                <i class='fa-solid fa-external-link-alt'></i>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class='fade-anim parallax-view project-image-wrapper' data-delay='0'>
