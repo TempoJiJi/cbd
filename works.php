@@ -76,33 +76,6 @@ $projects = [
         transition: transform 0.3s ease;
     }
 
-    /* Sticky title styles */
-    .works-section-header {
-        position: sticky;
-        top: 0;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
-        z-index: 100;
-        padding: 20px 0;
-        margin-bottom: 0;
-        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        transition: all 0.3s ease;
-    }
-
-    .works-section-header.scrolled {
-        background: rgba(255, 255, 255, 0.98);
-        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
-    }
-
-    .works-section-header .section-title {
-        margin: 0;
-        font-size: 48px;
-        transition: font-size 0.3s ease;
-    }
-
-    .works-section-header.scrolled .section-title {
-        font-size: 36px;
-    }
 
     @media (max-width: 768px) {
         .service-box-inner.body {
@@ -132,26 +105,16 @@ $projects = [
         .project-image-wrapper {
             justify-content: center;
         }
-
-        .works-section-header .section-title {
-            font-size: 36px;
-        }
-
-        .works-section-header.scrolled .section-title {
-            font-size: 28px;
-        }
     }
 </style>
 
 <section class="service-area" style="margin-bottom: 50px;">
     <div class="service-area-inner section-spacing-top">
-        <div class="works-section-header" id="worksHeader">
-            <div class="container">
-                <div class="section-header">
-                    <div class="section-title-wrapper fade-anim">
-                        <div class="title-wrapper">
-                            <h1 class="section-title cbd-section-title">Selected Works</h1>
-                        </div>
+        <div class="container">
+            <div class="section-header">
+                <div class="section-title-wrapper fade-anim">
+                    <div class="title-wrapper">
+                        <h1 class="section-title cbd-section-title">Selected Works</h1>
                     </div>
                 </div>
             </div>
@@ -198,39 +161,3 @@ $projects = [
         <div class="final"></div>
     </div>
 </section>
-
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const worksHeader = document.getElementById('worksHeader');
-    const worksSection = document.querySelector('.service-area');
-    
-    if (worksHeader && worksSection) {
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    // When the section is in view, check scroll position
-                    const handleScroll = () => {
-                        const rect = worksSection.getBoundingClientRect();
-                        const isScrolled = rect.top <= 0 && rect.bottom > 100;
-                        
-                        if (isScrolled) {
-                            worksHeader.classList.add('scrolled');
-                        } else {
-                            worksHeader.classList.remove('scrolled');
-                        }
-                    };
-                    
-                    window.addEventListener('scroll', handleScroll);
-                    handleScroll(); // Check initial state
-                } else {
-                    worksHeader.classList.remove('scrolled');
-                }
-            });
-        }, {
-            threshold: 0.1
-        });
-        
-        observer.observe(worksSection);
-    }
-});
-</script>
