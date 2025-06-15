@@ -38,6 +38,19 @@
         gap: 15px;
     }
 
+    .project-visit-link {
+        color: #fff;
+        text-decoration: underline;
+        font-size: 16px;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    .project-visit-link:hover {
+        color: #AFF42B;
+        text-decoration: underline;
+    }
+
     .project-image-wrapper {
         flex: 1;
         max-width: 800px;
@@ -174,15 +187,7 @@ $projects = [
                                                 <i class='fa-solid fa-arrow-right'></i>
                                             </a>
                                         </div>
-                                        <div class='t-btn-group'>
-                                            <a class='t-btn t-btn-circle' href='$p[link]' target='_blank'>
-                                                <i class='fa-solid fa-external-link-alt'></i>
-                                            </a>
-                                            <a class='t-btn t-btn-primary bordered' href='$p[link]' target='_blank'>Visit Site</a>
-                                            <a class='t-btn t-btn-circle' href='$p[link]' target='_blank'>
-                                                <i class='fa-solid fa-external-link-alt'></i>
-                                            </a>
-                                        </div>
+                                        <a class='project-visit-link' href='$p[link]' target='_blank'>Visit Site</a>
                                     </div>
                                 </div>
                                 <div class='fade-anim parallax-view project-image-wrapper' data-delay='0'>
