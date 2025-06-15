@@ -59,13 +59,69 @@
         align-items: center;
         justify-content: center;
         padding-top: 100px;
+        position: relative;
+        cursor: none;
     }
 
     .project-image-wrapper img {
         border-radius: 8px;
-        transition: transform 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        filter: brightness(1) saturate(1);
     }
 
+    .project-image-wrapper:hover img {
+        transform: scale(1.05) rotate(1deg);
+        filter: brightness(1.1) saturate(1.2);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Custom Cursor */
+    .custom-cursor {
+        position: fixed;
+        width: 80px;
+        height: 80px;
+        background: rgba(175, 244, 43, 0.9);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+        color: #000;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .custom-cursor.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .project-image-wrapper:hover {
+        cursor: none;
+    }
+
+    /* Additional hover effects */
+    .project-image-wrapper::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, rgba(175, 244, 43, 0.1), rgba(175, 244, 43, 0.05));
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.4s ease;
+        pointer-events: none;
+    }
+
+    .project-image-wrapper:hover::before {
+        opacity: 1;
+    }
 
     @media (max-width: 768px) {
         .service-box-inner.body {
@@ -95,9 +151,44 @@
         .project-image-wrapper {
             justify-content: center;
             padding-top: 10px;
+            cursor: auto;
+        }
+
+        .custom-cursor {
+            display: none;
         }
     }
 </style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Create custom cursor
+    const cursor = document.createElement('div');
+    cursor.className = 'custom-cursor';
+    cursor.innerHTML = 'Read More';
+    document.body.appendChild(cursor);
+
+    // Get all project image wrappers
+    const imageWrappers = document.querySelectorAll('.project-image-wrapper');
+
+    // Mouse move event
+    document.addEventListener('mousemove', function(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+    });
+
+    // Add hover events to image wrappers
+    imageWrappers.forEach(wrapper => {
+        wrapper.addEventListener('mouseenter', function() {
+            cursor.classList.add('active');
+        });
+
+        wrapper.addEventListener('mouseleave', function() {
+            cursor.classList.remove('active');
+        });
+    });
+});
+</script>
 
 
 <?php
