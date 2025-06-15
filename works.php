@@ -26,13 +26,6 @@
         max-width: 400px;
     }
     
-    .project-title {
-        font-size: 24px;
-        font-weight: 600;
-        margin-bottom: 15px;
-        color: #333;
-    }
-    
     @media (max-width: 768px) {
         .service-box-inner.body {
             flex-direction: column;
@@ -41,11 +34,6 @@
         
         .project-image {
             height: 200px;
-        }
-        
-        .project-title {
-            font-size: 20px;
-            margin-bottom: 10px;
         }
     }
 </style>
@@ -88,7 +76,6 @@
                                 </div>
                             </div>
                             <div class="project-image-wrapper">
-                                <h4 class="project-title">Lavieflo E-commerce Platform</h4>
                                 <img src="assets/imgs/project/lavieflo.png" alt="Lavieflo Project" class="project-image">
                             </div>
                         </div>
@@ -119,7 +106,6 @@
                                 </div>
                             </div>
                             <div class="project-image-wrapper">
-                                <h4 class="project-title">NZON Social Network App</h4>
                                 <img src="assets/imgs/project/nzon.png" alt="NZON Project" class="project-image">
                             </div>
                         </div>
@@ -150,7 +136,6 @@
                                 </div>
                             </div>
                             <div class="project-image-wrapper">
-                                <h4 class="project-title">FatBear Gaming Platform</h4>
                                 <img src="assets/imgs/project/fatbear.png" alt="FatBear Project" class="project-image">
                             </div>
                         </div>
