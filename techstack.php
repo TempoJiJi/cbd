@@ -1,121 +1,50 @@
 <style>
     .techstack-section {
-        padding: 60px 0;
-        background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .techstack-section::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 20%, rgba(59, 130, 246, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-            radial-gradient(circle at 40% 60%, rgba(139, 92, 246, 0.03) 0%, transparent 50%);
-        pointer-events: none;
+        padding: 40px 0; /* Reduced from 80px to 40px */
     }
 
     .techstack-title {
         text-align: center;
-        margin-bottom: 50px;
-        position: relative;
-    }
-
-    .techstack-title .section-title {
-        background: linear-gradient(135deg, #1e293b, #475569);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        position: relative;
-        display: inline-block;
-    }
-
-    .techstack-title .section-title::after {
-        content: '';
-        position: absolute;
-        bottom: -15px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 4px;
-        background: linear-gradient(90deg, #3b82f6, #10b981, #8b5cf6);
-        border-radius: 2px;
-        animation: shimmer 2s ease-in-out infinite;
-    }
-
-    @keyframes shimmer {
-        0%, 100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
-        50% { opacity: 0.7; transform: translateX(-50%) scaleX(1.1); }
+        margin-bottom: 40px; /* Reduced from 60px to 40px */
     }
 
     .techstack-categories {
         display: flex;
         flex-direction: column;
-        gap: 60px;
-        position: relative;
-        z-index: 1;
+        gap: 40px; /* Reduced from 60px to 40px */
     }
 
     .techstack-category {
         text-align: center;
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.8s ease-out forwards;
-    }
-
-    @keyframes fadeInUp {
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
     }
 
     .category-title {
-        font-size: 28px;
-        font-weight: 700;
-        margin-bottom: 35px;
-        color: #1e293b;
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 20px; /* Reduced from 30px to 20px */
+        color: #333;
         position: relative;
         display: inline-block;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-
-    .category-title::before {
-        content: '';
-        position: absolute;
-        top: -10px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 30px;
-        height: 3px;
-        background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-        border-radius: 2px;
     }
 
     .category-title::after {
         content: '';
         position: absolute;
-        bottom: -10px;
+        bottom: -8px;
         left: 50%;
         transform: translateX(-50%);
-        width: 60px;
+        width: 50px;
         height: 2px;
-        background: linear-gradient(90deg, #10b981, #06b6d4);
+        background: linear-gradient(90deg, #007aff, #00d4ff);
         border-radius: 1px;
     }
 
     .tech-grid {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 25px;
-        max-width: 900px;
+        justify-content: center; /* Center align items */
+        gap: 30px;
+        max-width: 800px;
         margin: 0 auto;
     }
 
@@ -123,161 +52,79 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 25px 20px;
-        border-radius: 20px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        padding: 20px;
+        border-radius: 12px;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         cursor: pointer;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
+        background: transparent;
         position: relative;
         overflow: hidden;
-        min-width: 130px;
-        opacity: 0;
-        transform: translateY(20px) scale(0.9);
-        animation: techItemAppear 0.6s ease-out forwards;
-    }
-
-    @keyframes techItemAppear {
-        to {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
+        min-width: 120px; /* Ensure consistent width */
     }
 
     .tech-item::before {
         content: '';
         position: absolute;
         top: 0;
-        left: -100%;
-        width: 100%;
-        height: 100%;
-        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-        transition: left 0.6s ease;
-    }
-
-    .tech-item:hover::before {
-        left: 100%;
-    }
-
-    .tech-item::after {
-        content: '';
-        position: absolute;
-        top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(135deg, 
-            rgba(59, 130, 246, 0.1), 
-            rgba(16, 185, 129, 0.1), 
-            rgba(139, 92, 246, 0.1));
-        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(0, 122, 255, 0.05), rgba(0, 212, 255, 0.05));
+        border-radius: 12px;
         opacity: 0;
-        transition: opacity 0.4s ease;
+        transition: opacity 0.3s ease;
         z-index: 1;
     }
 
-    .tech-item:hover::after {
+    .tech-item:hover::before {
         opacity: 1;
     }
 
     .tech-item:hover {
-        transform: translateY(-12px) scale(1.05);
-        box-shadow: 
-            0 25px 50px rgba(0, 0, 0, 0.1),
-            0 0 0 1px rgba(255, 255, 255, 0.3),
-            inset 0 1px 0 rgba(255, 255, 255, 0.4);
-        background: rgba(255, 255, 255, 0.95);
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 122, 255, 0.15);
     }
 
     .tech-icon-wrapper {
         position: relative;
         z-index: 2;
-        margin-bottom: 15px;
-        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 80px;
-        height: 80px;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.5);
-        backdrop-filter: blur(5px);
+        margin-bottom: 12px;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
     .tech-item:hover .tech-icon-wrapper {
-        transform: scale(1.15) rotate(10deg);
-        background: rgba(255, 255, 255, 0.8);
-        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        transform: scale(1.1) rotate(5deg);
     }
 
     .techstack-icon {
-        font-size: 45px;
-        transition: all 0.4s ease;
-        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
-    }
-
-    .tech-item:hover .techstack-icon {
-        filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.15));
+        font-size: 60px;
+        transition: all 0.3s ease;
     }
 
     .tech-name {
         font-size: 14px;
-        font-weight: 600;
-        color: #475569;
-        transition: all 0.4s ease;
+        font-weight: 500;
+        color: #666;
+        transition: color 0.3s ease;
         position: relative;
         z-index: 2;
         text-align: center;
         line-height: 1.2;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
     }
 
     .tech-item:hover .tech-name {
-        color: #1e293b;
-        font-weight: 700;
-        transform: translateY(-2px);
+        color: #333;
+        font-weight: 600;
     }
-
-    /* Floating animation for icons */
-    @keyframes float {
-        0%, 100% { transform: translateY(0px); }
-        50% { transform: translateY(-5px); }
-    }
-
-    .tech-item:nth-child(odd) .tech-icon-wrapper {
-        animation: float 3s ease-in-out infinite;
-    }
-
-    .tech-item:nth-child(even) .tech-icon-wrapper {
-        animation: float 3s ease-in-out infinite reverse;
-    }
-
-    /* Staggered animation delays */
-    .tech-item:nth-child(1) { animation-delay: 0.1s; }
-    .tech-item:nth-child(2) { animation-delay: 0.2s; }
-    .tech-item:nth-child(3) { animation-delay: 0.3s; }
-    .tech-item:nth-child(4) { animation-delay: 0.4s; }
-    .tech-item:nth-child(5) { animation-delay: 0.5s; }
-    .tech-item:nth-child(6) { animation-delay: 0.6s; }
-    .tech-item:nth-child(7) { animation-delay: 0.7s; }
-    .tech-item:nth-child(8) { animation-delay: 0.8s; }
-
-    /* Category staggered delays */
-    .techstack-category:nth-child(1) { animation-delay: 0.2s; }
-    .techstack-category:nth-child(2) { animation-delay: 0.4s; }
-    .techstack-category:nth-child(3) { animation-delay: 0.6s; }
-    .techstack-category:nth-child(4) { animation-delay: 0.8s; }
 
     /* Responsive Design */
     @media (max-width: 768px) {
         .techstack-section {
-            padding: 40px 0;
+            padding: 30px 0; /* Reduced for mobile */
         }
         
         .techstack-categories {
-            gap: 40px;
+            gap: 30px; /* Reduced for mobile */
         }
         
         .tech-grid {
@@ -285,22 +132,17 @@
         }
         
         .techstack-icon {
-            font-size: 35px;
+            font-size: 50px;
         }
         
         .category-title {
-            font-size: 22px;
-            margin-bottom: 25px;
+            font-size: 20px;
+            margin-bottom: 15px; /* Reduced for mobile */
         }
         
         .tech-item {
-            padding: 20px 15px;
-            min-width: 110px;
-        }
-
-        .tech-icon-wrapper {
-            width: 65px;
-            height: 65px;
+            padding: 15px;
+            min-width: 100px;
         }
     }
 
@@ -310,7 +152,7 @@
         }
         
         .techstack-icon {
-            font-size: 30px;
+            font-size: 40px;
         }
         
         .tech-name {
@@ -318,39 +160,17 @@
         }
         
         .tech-item {
-            min-width: 90px;
-            padding: 15px 10px;
-        }
-
-        .tech-icon-wrapper {
-            width: 55px;
-            height: 55px;
-        }
-
-        .category-title {
-            font-size: 18px;
+            min-width: 80px;
         }
     }
 
-    /* Pulse effect for category titles */
-    @keyframes pulse {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.02); }
-    }
-
-    .category-title:hover {
-        animation: pulse 1s ease-in-out infinite;
-    }
-
-    /* Gradient text for special icons */
-    .tech-item:hover .devicon-nextjs-original,
-    .tech-item:hover .devicon-express-original,
-    .tech-item:hover .devicon-linux-plain {
-        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-    }
+    /* Animation delays for staggered effect */
+    .tech-item:nth-child(1) { animation-delay: 0.1s; }
+    .tech-item:nth-child(2) { animation-delay: 0.2s; }
+    .tech-item:nth-child(3) { animation-delay: 0.3s; }
+    .tech-item:nth-child(4) { animation-delay: 0.4s; }
+    .tech-item:nth-child(5) { animation-delay: 0.5s; }
+    .tech-item:nth-child(6) { animation-delay: 0.6s; }
 </style>
 
 <section class="techstack-section">
@@ -366,7 +186,7 @@
             
             <div class="techstack-categories">
                 <!-- Languages & Core Technologies -->
-                <div class="techstack-category">
+                <div class="techstack-category fade-anim" data-delay="0.2">
                     <h3 class="category-title">Languages & Core Technologies</h3>
                     <div class="tech-grid">
                         <div class="tech-item">
@@ -409,7 +229,7 @@
                 </div>
 
                 <!-- Frameworks & Libraries -->
-                <div class="techstack-category">
+                <div class="techstack-category fade-anim" data-delay="0.4">
                     <h3 class="category-title">Frameworks & Libraries</h3>
                     <div class="tech-grid">
                         <div class="tech-item">
@@ -452,7 +272,7 @@
                 </div>
 
                 <!-- Databases & Caching -->
-                <div class="techstack-category">
+                <div class="techstack-category fade-anim" data-delay="0.6">
                     <h3 class="category-title">Databases & Caching</h3>
                     <div class="tech-grid">
                         <div class="tech-item">
@@ -489,7 +309,7 @@
                 </div>
 
                 <!-- DevOps & Infrastructure -->
-                <div class="techstack-category">
+                <div class="techstack-category fade-anim" data-delay="0.8">
                     <h3 class="category-title">DevOps & Infrastructure</h3>
                     <div class="tech-grid">
                         <div class="tech-item">
