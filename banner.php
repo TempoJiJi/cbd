@@ -1,6 +1,6 @@
 <style>
     /* Modern Typography System */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap');
 
     .hero-area-3 {
         min-height: 100vh;
@@ -91,13 +91,13 @@
         width: 100%;
     }
 
-    /* Enhanced Typography */
+    /* Enhanced Typography with Fredoka */
     .hero-main-title {
-        font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+        font-family: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-size: clamp(4rem, 10vw, 8rem);
-        font-weight: 700;
+        font-weight: 600;
         line-height: 0.9;
-        letter-spacing: -0.03em;
+        letter-spacing: -0.02em;
         color: #0f172a;
         margin-bottom: 30px;
         text-align: center;
@@ -305,9 +305,9 @@
     }
 
     .stat-number {
-        font-family: 'Space Grotesk', sans-serif;
+        font-family: 'Fredoka', sans-serif;
         font-size: 3rem;
-        font-weight: 700;
+        font-weight: 600;
         background: linear-gradient(135deg, #8B93FF, #AFF42B);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
