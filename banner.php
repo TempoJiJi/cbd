@@ -1,13 +1,13 @@
 <style>
     /* Modern Typography System */
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
-    
+
     .hero-area-3 {
         min-height: 100vh;
         display: flex;
         align-items: center;
         position: relative;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        /* background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); */
         overflow: hidden;
     }
 
@@ -18,10 +18,10 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: 
-            radial-gradient(circle at 20% 80%, rgba(139, 147, 255, 0.1) 0%, transparent 50%),
+        /* background: */
+        /* radial-gradient(circle at 20% 80%, rgba(139, 147, 255, 0.1) 0%, transparent 50%),
             radial-gradient(circle at 80% 20%, rgba(175, 244, 43, 0.1) 0%, transparent 50%),
-            radial-gradient(circle at 40% 40%, rgba(255, 206, 92, 0.05) 0%, transparent 50%);
+            radial-gradient(circle at 40% 40%, rgba(255, 206, 92, 0.05) 0%, transparent 50%); */
         z-index: 1;
     }
 
@@ -75,7 +75,7 @@
     }
 
     .hero-name-highlight {
-        background: linear-gradient(135deg, #8B93FF 0%, #AFF42B 50%, #FFE870 100%);
+        background: linear-gradient(135deg, #FB923C);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
@@ -225,8 +225,15 @@
     }
 
     @keyframes float {
-        0%, 100% { transform: translateY(0px) rotate(0deg); }
-        50% { transform: translateY(-20px) rotate(5deg); }
+
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-20px) rotate(5deg);
+        }
     }
 
     .floating-shape {
@@ -312,9 +319,22 @@
     }
 
     @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-10px);
+        }
+
+        60% {
+            transform: translateY(-5px);
+        }
     }
 
     /* Responsive Design */
@@ -383,12 +403,9 @@
             <div class="section-header">
                 <div class="section-title-wrapper">
                     <div class="title-wrapper">
-                        <div class="hero-subtitle fade-anim" data-delay="0.2">
-                            Full-Stack Developer
-                        </div>
                         <h1 class="hero-main-title move-anim" data-delay="0.45">
                             Codes By
-                            <span class="hero-name-highlight">Dawson</span>
+                            <span class="">Dawson</span>
                         </h1>
                         <p class="hero-description fade-anim" data-delay="0.6">
                             Crafting high-performance web applications and mobile solutions that drive business growth and deliver exceptional user experiences.
@@ -398,6 +415,14 @@
             </div>
 
             <div class="section-content-wrapper">
+                <div class="content-shape-1 fade-anim btn-item" data-direction="top" data-offset="150" data-ease="bounce" data-delay="1.05">
+                    <div class="btn-move">
+                        <a href="#about"><img src="assets/imgs/shape/shape-17.webp" alt="image"></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="section-content-wrapper">
                 <div class="hero-cta-wrapper fade-anim" data-delay="0.75">
                     <a href="/contact" class="hero-primary-btn">
                         <span>Let's Build Something Amazing</span>
@@ -408,35 +433,16 @@
                         <i class="fa-solid fa-chevron-down"></i>
                     </a>
                 </div>
+            </div> -->
+            <span class="empty-space hide-mobile" style="height: 50px"></span>
 
-                <!-- Stats Section -->
-                <div class="hero-stats fade-anim" data-delay="0.9">
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">40+</span>
-                        <span class="stat-label">Happy Clients</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">24/7</span>
-                        <span class="stat-label">Support Available</span>
-                    </div>
-                </div>
+            <div class="image-wrapper parallax-view fade-anim">
+                <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
             </div>
 
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator fade-anim" data-delay="1.1">
-                <span>Scroll to explore</span>
-                <div class="scroll-arrow">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
         </div>
+
+        <!-- <span class="empty-space hide-mobile" style="height: 100px"></span> -->
+
     </div>
 </section>
