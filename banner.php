@@ -1,35 +1,13 @@
 <style>
-    /* Modern Typography System */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600;700&family=Fredoka:wght@300;400;500;600;700&display=swap');
-
-    .hero-area-3 {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        position: relative;
-        background-color: #f5f5f5;
-        overflow: hidden;
-    }
-
-    /* Animated Grid Background */
-    .hero-area-3::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-image: 
-            linear-gradient(rgba(139, 147, 255, 0.03) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(139, 147, 255, 0.03) 1px, transparent 1px);
-        background-size: 50px 50px;
-        animation: gridMove 20s linear infinite;
-        z-index: 1;
-    }
 
     @keyframes gridMove {
-        0% { transform: translate(0, 0); }
-        100% { transform: translate(50px, 50px); }
+        0% {
+            transform: translate(0, 0);
+        }
+
+        100% {
+            transform: translate(50px, 50px);
+        }
     }
 
     /* Floating Orbs */
@@ -78,10 +56,23 @@
     }
 
     @keyframes floatOrb {
-        0%, 100% { transform: translateY(0px) translateX(0px) rotate(0deg); }
-        25% { transform: translateY(-20px) translateX(10px) rotate(90deg); }
-        50% { transform: translateY(-40px) translateX(-10px) rotate(180deg); }
-        75% { transform: translateY(-20px) translateX(10px) rotate(270deg); }
+
+        0%,
+        100% {
+            transform: translateY(0px) translateX(0px) rotate(0deg);
+        }
+
+        25% {
+            transform: translateY(-20px) translateX(10px) rotate(90deg);
+        }
+
+        50% {
+            transform: translateY(-40px) translateX(-10px) rotate(180deg);
+        }
+
+        75% {
+            transform: translateY(-20px) translateX(10px) rotate(270deg);
+        }
     }
 
     .hero-area-3-inner {
@@ -92,8 +83,23 @@
     }
 
     /* Enhanced Typography with Fredoka */
+
+    .fredoka-font {
+        font-family: "Fredoka", sans-serif !important;
+        font-optical-sizing: auto;
+        font-weight: 500;
+        font-style: normal;
+        font-variation-settings: "wdth" 100;
+    }
+
+    .bebas-neue-regular {
+        font-family: "Bebas Neue", sans-serif !important;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+
     .hero-main-title {
-        font-family: 'Fredoka', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
         font-size: clamp(4rem, 10vw, 8rem);
         font-weight: 600;
         line-height: 0.9;
@@ -105,10 +111,7 @@
     }
 
     .hero-main-title .highlight {
-        background: linear-gradient(135deg, #8B93FF 0%, #AFF42B 50%, #FFE870 100%);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
+        color: #FB923C;
         position: relative;
         display: inline-block;
     }
@@ -127,8 +130,17 @@
     }
 
     @keyframes shimmer {
-        0%, 100% { opacity: 0.4; transform: scaleX(1); }
-        50% { opacity: 0.8; transform: scaleX(1.05); }
+
+        0%,
+        100% {
+            opacity: 0.4;
+            transform: scaleX(1);
+        }
+
+        50% {
+            opacity: 0.8;
+            transform: scaleX(1.05);
+        }
     }
 
     .hero-subtitle {
@@ -157,8 +169,15 @@
     }
 
     @keyframes pulse {
-        0%, 100% { opacity: 0.5; }
-        50% { opacity: 1; }
+
+        0%,
+        100% {
+            opacity: 0.5;
+        }
+
+        50% {
+            opacity: 1;
+        }
     }
 
     .hero-description {
@@ -169,7 +188,7 @@
         color: #475569;
         text-align: center;
         margin: 40px auto 60px;
-        max-width: 800px;
+        max-width: 1000px;
         position: relative;
     }
 
@@ -409,9 +428,22 @@
     }
 
     @keyframes bounce {
-        0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-        40% { transform: translateY(-10px); }
-        60% { transform: translateY(-5px); }
+
+        0%,
+        20%,
+        50%,
+        80%,
+        100% {
+            transform: translateY(0);
+        }
+
+        40% {
+            transform: translateY(-10px);
+        }
+
+        60% {
+            transform: translateY(-5px);
+        }
     }
 
     /* Responsive Design */
@@ -486,7 +518,7 @@
     }
 </style>
 
-<section class="hero-area-3">
+<section class="hero-area-2">
     <!-- Floating Orbs -->
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
@@ -498,78 +530,33 @@
             <div class="section-header">
                 <div class="section-title-wrapper">
                     <div class="title-wrapper">
-                        <div class="hero-subtitle fade-anim" data-delay="0.3">
-                            <span>Full-Stack Developer</span>
-                        </div>
-                        <h1 class="hero-main-title move-anim" data-delay="0.45">
+                        <h1 class="bebas-neue-regular hero-main-title move-anim" data-delay="0.45">
                             Codes By
-                            <span class="highlight">Dawson</span>
+                            <!-- <h1 class="section-title typewriter-text fade-anim" data-text='["STUDIO", "DESIGN"]'>STUDIO</h1> -->
+                            <span class="" style="color: #FC7C82;" data-text='["DAWSON"]'>DAWSON</span>
                         </h1>
-                        <p class="hero-description fade-anim" data-delay="0.6">
-                            Crafting high-performance web applications and mobile solutions that drive business growth and deliver exceptional user experiences.
-                        </p>
+                        <!-- <p class="hero-description fade-anim" data-delay="0.6">Freelance Developer | Web Development | Mobile Apps Development </p> -->
                     </div>
+                    <div class="subtitle-wrapper">
+                        <span class="section-subtitle fade-anim" data-direction="bottom" data-delay="0.75">
+                            <span class="marquee">
+                                <span>CREATIVE DESIGN AGENCY</span>
+                                <span>CREATIVE DESIGN AGENCY</span>
+                            </span>
+                        </span>
+                    </div>
+
                 </div>
             </div>
 
-            <div class="section-content-wrapper">
-                <div class="hero-cta-wrapper fade-anim" data-delay="0.75">
-                    <a href="/contact" class="hero-primary-btn">
-                        <span>Let's Build Something Amazing</span>
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
-                    <a href="#about" class="hero-secondary-btn">
-                        <span>Explore My Work</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </a>
-                </div>
+            <!-- <div class="section-content-wr -->
 
-                <!-- Tech Stack Preview -->
-                <div class="tech-preview fade-anim" data-delay="0.9">
-                    <span class="tech-preview-label">Built with</span>
-                    <div class="tech-icons">
-                        <div class="tech-icon">
-                            <i class="devicon-php-plain colored"></i>
-                        </div>
-                        <div class="tech-icon">
-                            <i class="devicon-nodejs-plain colored"></i>
-                        </div>
-                        <div class="tech-icon">
-                            <i class="devicon-react-original colored"></i>
-                        </div>
-                        <div class="tech-icon">
-                            <i class="devicon-laravel-plain colored"></i>
-                        </div>
-                        <div class="tech-icon">
-                            <i class="devicon-mysql-plain colored"></i>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Stats Section -->
-                <div class="hero-stats fade-anim" data-delay="1.05">
-                    <div class="stat-item">
-                        <span class="stat-number">5+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">50+</span>
-                        <span class="stat-label">Projects Delivered</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-number">40+</span>
-                        <span class="stat-label">Happy Clients</span>
-                    </div>
-                </div>
+            <!-- <span class="empty-space hide-mobile" style="height: 20px"></span> -->
+            <div class="image-wrapper parallax-view fade-anim">
+                <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
             </div>
 
-            <!-- Scroll Indicator -->
-            <div class="scroll-indicator fade-anim" data-delay="1.2">
-                <span>Scroll to explore</span>
-                <div class="scroll-arrow">
-                    <i class="fa-solid fa-chevron-down"></i>
-                </div>
-            </div>
+
         </div>
     </div>
 </section>

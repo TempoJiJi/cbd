@@ -12,7 +12,9 @@
   <!-- Fav Icon -->
   <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png">
   <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Fredoka:wght@500&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
 
 
 
@@ -140,11 +142,14 @@
         <?php include 'techstack.php'; ?>
         <?php include 'works.php'; ?>
 
-        <?php // include 'services.php'; ?>
+        <?php // include 'services.php'; 
+        ?>
 
-        <?php // include 'team.php'; ?>
+        <?php // include 'team.php'; 
+        ?>
 
-        <?php // include 'brand.php'; ?>
+        <?php // include 'brand.php'; 
+        ?>
 
 
         <?php include 'services.php'; ?>
@@ -178,7 +183,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <script src="assets/js/nayla.js"></script>
+  <!-- <script src="assets/js/nayla.js"></script> -->
 
 
 
