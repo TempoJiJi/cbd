@@ -1,4 +1,10 @@
 <style>
+    .t-btn-color {
+        color: #0E0F11 !important;
+        border-color: #AFF42B !important;
+        background-color: #AFF42B !important;
+    }
+
     .project-image {
         border-radius: 8px;
         transition: transform 0.3s ease;
@@ -6,6 +12,14 @@
 
     .project-image:hover {
         transform: scale(1.02);
+    }
+
+    .project-container {
+        height: 80%;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .service-box-inner.body {
@@ -16,6 +30,7 @@
     }
 
     .project-content {
+        padding-top: 100px;
         flex: 1;
         display: flex;
         flex-direction: column;
@@ -59,15 +74,60 @@
         align-items: center;
         justify-content: center;
         padding-top: 100px;
+        position: relative;
+        cursor: none;
     }
 
     .project-image-wrapper img {
         border-radius: 8px;
-        transition: transform 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        filter: brightness(1) saturate(1);
     }
 
+    /* Custom Cursor */
+    .custom-cursor {
+        position: fixed;
+        width: 120px;
+        height: 120px;
+        background: rgba(175, 244, 43, 0.9);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 600;
+        color: #000;
+        transform: translate(-50%, -50%) scale(0);
+        transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        backdrop-filter: blur(10px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .custom-cursor.active {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    .project-image-wrapper:hover {
+        cursor: none;
+    }
+
+    .project-image-wrapper:hover::before {
+        opacity: 1;
+    }
 
     @media (max-width: 768px) {
+
+        .project-container {
+            height: 100%;
+            flex-direction: column;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 30px;
+        }
+
         .service-box-inner.body {
             flex-direction: column;
             gap: 20px;
@@ -76,6 +136,7 @@
         }
 
         .project-content {
+            padding-top: 0px;
             gap: 15px;
             justify-content: flex-start;
         }
@@ -95,9 +156,44 @@
         .project-image-wrapper {
             justify-content: center;
             padding-top: 10px;
+            cursor: auto;
+        }
+
+        .custom-cursor {
+            display: none;
         }
     }
 </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Create custom cursor
+        const cursor = document.createElement('div');
+        cursor.className = 'custom-cursor';
+        cursor.innerHTML = 'Read More';
+        document.body.appendChild(cursor);
+
+        // Get all project image wrappers
+        const imageWrappers = document.querySelectorAll('.project-image-wrapper');
+
+        // Mouse move event
+        document.addEventListener('mousemove', function(e) {
+            cursor.style.left = e.clientX + 'px';
+            cursor.style.top = e.clientY + 'px';
+        });
+
+        // Add hover events to image wrappers
+        imageWrappers.forEach(wrapper => {
+            wrapper.addEventListener('mouseenter', function() {
+                cursor.classList.add('active');
+            });
+
+            wrapper.addEventListener('mouseleave', function() {
+                cursor.classList.remove('active');
+            });
+        });
+    });
+</script>
 
 
 <?php
@@ -165,10 +261,10 @@ $projects = [
                 foreach ($projects as $p) {
                     echo "
                     <div style='background-color: $p[bg];' class='service-box-1 item'>
-                        <div class='container'>
+                        <div class='project-container container'>
                             <div class='header'>
                             </div>
-                            <div class='service-box-inner body'>
+                            <div class='work-box-1 service-box-inner body'>
                                 <div class='project-content'>
                                     <div class='number project-number-title'>($p[number]) <h3 class='title'>$p[title]</h3></div>
                                     <div class='content project-description'>
@@ -177,14 +273,13 @@ $projects = [
                                     <div class='content'>
                                         $p[techstack]
                                     </div>
-
                                     <div class='project-buttons'>
                                         <div class='t-btn-group'>
-                                            <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                            <a class='t-btn t-btn-circle t-btn-color' href='portfolio-details.html'>
                                                 <i class='fa-solid fa-arrow-right'></i>
                                             </a>
-                                            <a class='t-btn t-btn-primary' href='portfolio-details.html'>Read More</a>
-                                            <a class='t-btn t-btn-circle' href='portfolio-details.html'>
+                                            <a class='t-btn t-btn-primary t-btn-color' href='portfolio-details.html'>Read More</a>
+                                            <a class='t-btn t-btn-circle t-btn-color' href='portfolio-details.html'>
                                                 <i class='fa-solid fa-arrow-right'></i>
                                             </a>
                                         </div>

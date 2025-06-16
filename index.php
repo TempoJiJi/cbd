@@ -146,9 +146,9 @@
 
         <?php // include 'brand.php'; ?>
 
-        <?php // include 'testimonial.php'; ?>
 
-        <?php include 'blog.php'; ?>
+        <?php include 'services.php'; ?>
+        <?php include 'testimonial.php'; ?>
 
 
 
