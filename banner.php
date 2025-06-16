@@ -1,109 +1,160 @@
 <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
     @keyframes gridMove {
         0% {
             transform: translate(0, 0);
         }
-
         100% {
             transform: translate(50px, 50px);
         }
     }
 
-    /* Floating Orbs */
+    /* Enhanced Floating Orbs */
     .floating-orb {
         position: absolute;
         border-radius: 50%;
-        background: linear-gradient(135deg, rgba(139, 147, 255, 0.1), rgba(175, 244, 43, 0.1));
-        backdrop-filter: blur(20px);
-        animation: floatOrb 8s ease-in-out infinite;
+        background: linear-gradient(135deg, rgba(139, 147, 255, 0.08), rgba(175, 244, 43, 0.08));
+        backdrop-filter: blur(30px);
+        animation: floatOrb 12s ease-in-out infinite;
         z-index: 1;
+        border: 1px solid rgba(139, 147, 255, 0.1);
     }
 
     .floating-orb:nth-child(1) {
-        width: 200px;
-        height: 200px;
-        top: 10%;
-        left: 5%;
+        width: 300px;
+        height: 300px;
+        top: 5%;
+        left: -5%;
         animation-delay: 0s;
     }
 
     .floating-orb:nth-child(2) {
-        width: 150px;
-        height: 150px;
-        top: 60%;
-        right: 10%;
-        animation-delay: 2s;
-        background: linear-gradient(135deg, rgba(255, 206, 92, 0.1), rgba(251, 146, 60, 0.1));
+        width: 200px;
+        height: 200px;
+        top: 40%;
+        right: -3%;
+        animation-delay: 3s;
+        background: linear-gradient(135deg, rgba(255, 206, 92, 0.08), rgba(251, 146, 60, 0.08));
     }
 
     .floating-orb:nth-child(3) {
-        width: 100px;
-        height: 100px;
-        bottom: 20%;
-        left: 15%;
-        animation-delay: 4s;
-        background: linear-gradient(135deg, rgba(175, 244, 43, 0.1), rgba(139, 147, 255, 0.1));
+        width: 150px;
+        height: 150px;
+        bottom: 30%;
+        left: 10%;
+        animation-delay: 6s;
+        background: linear-gradient(135deg, rgba(175, 244, 43, 0.08), rgba(139, 147, 255, 0.08));
     }
 
     .floating-orb:nth-child(4) {
+        width: 120px;
+        height: 120px;
+        top: 20%;
+        right: 30%;
+        animation-delay: 9s;
+        background: linear-gradient(135deg, rgba(251, 146, 60, 0.08), rgba(255, 206, 92, 0.08));
+    }
+
+    .floating-orb:nth-child(5) {
         width: 80px;
         height: 80px;
-        top: 30%;
-        right: 25%;
-        animation-delay: 6s;
-        background: linear-gradient(135deg, rgba(251, 146, 60, 0.1), rgba(255, 206, 92, 0.1));
+        bottom: 60%;
+        right: 15%;
+        animation-delay: 2s;
+        background: linear-gradient(135deg, rgba(139, 147, 255, 0.08), rgba(175, 244, 43, 0.08));
     }
 
     @keyframes floatOrb {
-
-        0%,
-        100% {
+        0%, 100% {
             transform: translateY(0px) translateX(0px) rotate(0deg);
         }
-
         25% {
-            transform: translateY(-20px) translateX(10px) rotate(90deg);
+            transform: translateY(-30px) translateX(20px) rotate(90deg);
         }
-
         50% {
-            transform: translateY(-40px) translateX(-10px) rotate(180deg);
+            transform: translateY(-60px) translateX(-20px) rotate(180deg);
         }
-
         75% {
-            transform: translateY(-20px) translateX(10px) rotate(270deg);
+            transform: translateY(-30px) translateX(20px) rotate(270deg);
         }
+    }
+
+    /* Enhanced Grid Pattern */
+    .grid-pattern {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.03;
+        background-image: 
+            linear-gradient(rgba(139, 147, 255, 0.1) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(139, 147, 255, 0.1) 1px, transparent 1px);
+        background-size: 50px 50px;
+        animation: gridMove 20s linear infinite;
+        z-index: 1;
     }
 
     .hero-area-3-inner {
         position: relative;
         z-index: 2;
-        padding: 120px 0 80px;
+        padding: 100px 0 60px;
         width: 100%;
     }
 
-    /* Enhanced Typography with Fredoka */
-
-    .fredoka-font {
-        font-family: "Fredoka", sans-serif !important;
-        font-optical-sizing: auto;
+    /* Enhanced Typography */
+    .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(139, 147, 255, 0.2);
+        border-radius: 50px;
+        padding: 12px 24px;
+        font-family: 'JetBrains Mono', monospace;
+        font-size: 14px;
         font-weight: 500;
-        font-style: normal;
-        font-variation-settings: "wdth" 100;
+        color: #8B93FF;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-bottom: 40px;
+        position: relative;
+        overflow: hidden;
     }
 
-    .bebas-neue-regular {
-        font-family: "Bebas Neue", sans-serif !important;
-        font-weight: 400;
-        font-style: normal;
+    .hero-badge::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(90deg, transparent, rgba(139, 147, 255, 0.1), transparent);
+        animation: shimmerBadge 3s ease-in-out infinite;
     }
 
+    @keyframes shimmerBadge {
+        0% { left: -100%; }
+        50% { left: 100%; }
+        100% { left: 100%; }
+    }
+
+    .hero-badge .dot {
+        width: 8px;
+        height: 8px;
+        background: linear-gradient(135deg, #8B93FF, #AFF42B);
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+    }
 
     .hero-main-title {
-        font-size: clamp(4rem, 10vw, 8rem);
-        font-weight: 600;
-        line-height: 0.9;
-        letter-spacing: -0.02em;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(3.5rem, 8vw, 7rem);
+        font-weight: 700;
+        line-height: 0.95;
+        letter-spacing: -0.03em;
         color: #0f172a;
         margin-bottom: 30px;
         text-align: center;
@@ -111,7 +162,10 @@
     }
 
     .hero-main-title .highlight {
-        color: #FB923C;
+        background: linear-gradient(135deg, #8B93FF 0%, #AFF42B 50%, #FFE870 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
         position: relative;
         display: inline-block;
     }
@@ -122,36 +176,45 @@
         bottom: -8px;
         left: 0;
         right: 0;
-        height: 6px;
+        height: 4px;
         background: linear-gradient(90deg, #8B93FF, #AFF42B, #FFE870);
-        border-radius: 3px;
-        opacity: 0.4;
+        border-radius: 2px;
+        opacity: 0.3;
         animation: shimmer 3s ease-in-out infinite;
     }
 
     @keyframes shimmer {
-
-        0%,
-        100% {
-            opacity: 0.4;
+        0%, 100% {
+            opacity: 0.3;
             transform: scaleX(1);
         }
-
         50% {
-            opacity: 0.8;
+            opacity: 0.6;
             transform: scaleX(1.05);
         }
     }
 
     .hero-subtitle {
+        font-family: 'Inter', sans-serif;
+        font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+        font-weight: 400;
+        line-height: 1.6;
+        color: #64748b;
+        text-align: center;
+        margin: 30px auto 50px;
+        max-width: 800px;
+        position: relative;
+    }
+
+    .hero-description {
         font-family: 'JetBrains Mono', monospace;
-        font-size: clamp(0.875rem, 2vw, 1.125rem);
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
         font-weight: 500;
         color: #8B93FF;
         text-transform: uppercase;
-        letter-spacing: 0.15em;
-        margin-bottom: 25px;
+        letter-spacing: 0.1em;
         text-align: center;
+        margin-bottom: 60px;
         position: relative;
         display: flex;
         align-items: center;
@@ -159,37 +222,13 @@
         gap: 20px;
     }
 
-    .hero-subtitle::before,
-    .hero-subtitle::after {
+    .hero-description::before,
+    .hero-description::after {
         content: '';
         width: 60px;
-        height: 2px;
+        height: 1px;
         background: linear-gradient(90deg, transparent, #8B93FF, transparent);
         animation: pulse 2s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-
-        0%,
-        100% {
-            opacity: 0.5;
-        }
-
-        50% {
-            opacity: 1;
-        }
-    }
-
-    .hero-description {
-        font-family: 'Inter', sans-serif;
-        font-size: clamp(1.25rem, 3vw, 1.75rem);
-        font-weight: 400;
-        line-height: 1.5;
-        color: #475569;
-        text-align: center;
-        margin: 40px auto 60px;
-        max-width: 1000px;
-        position: relative;
     }
 
     /* Enhanced Button Design */
@@ -215,7 +254,7 @@
         align-items: center;
         gap: 12px;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 15px 35px rgba(139, 147, 255, 0.3);
+        box-shadow: 0 20px 40px rgba(139, 147, 255, 0.3);
         position: relative;
         overflow: hidden;
         border: 2px solid transparent;
@@ -238,13 +277,13 @@
 
     .hero-primary-btn:hover {
         transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 25px 50px rgba(139, 147, 255, 0.4);
+        box-shadow: 0 30px 60px rgba(139, 147, 255, 0.4);
         border-color: rgba(255, 255, 255, 0.3);
     }
 
     .hero-secondary-btn {
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
         color: #475569;
         font-family: 'Inter', sans-serif;
         font-size: 1.125rem;
@@ -284,7 +323,7 @@
         box-shadow: 0 15px 30px rgba(139, 147, 255, 0.2);
     }
 
-    /* Stats Section Enhancement */
+    /* Enhanced Stats Section */
     .hero-stats {
         display: flex;
         justify-content: center;
@@ -297,10 +336,10 @@
     .hero-stats::before {
         content: '';
         position: absolute;
-        top: -20px;
+        top: -30px;
         left: 50%;
         transform: translateX(-50%);
-        width: 200px;
+        width: 300px;
         height: 1px;
         background: linear-gradient(90deg, transparent, #8B93FF, transparent);
     }
@@ -308,50 +347,51 @@
     .stat-item {
         text-align: center;
         position: relative;
-        padding: 30px 20px;
-        background: rgba(255, 255, 255, 0.6);
-        backdrop-filter: blur(10px);
-        border-radius: 20px;
-        border: 1px solid rgba(139, 147, 255, 0.1);
-        transition: all 0.3s ease;
-        min-width: 160px;
+        padding: 40px 30px;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        border: 1px solid rgba(139, 147, 255, 0.15);
+        transition: all 0.4s ease;
+        min-width: 180px;
+        box-shadow: 0 10px 30px rgba(139, 147, 255, 0.1);
     }
 
     .stat-item:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 20px 40px rgba(139, 147, 255, 0.15);
+        transform: translateY(-8px);
+        box-shadow: 0 25px 50px rgba(139, 147, 255, 0.2);
         border-color: rgba(139, 147, 255, 0.3);
     }
 
     .stat-number {
-        font-family: 'Fredoka', sans-serif;
-        font-size: 3rem;
-        font-weight: 600;
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 700;
         background: linear-gradient(135deg, #8B93FF, #AFF42B);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
         background-clip: text;
         display: block;
-        margin-bottom: 10px;
+        margin-bottom: 15px;
         line-height: 1;
     }
 
     .stat-label {
         font-family: 'Inter', sans-serif;
         font-size: 0.875rem;
-        font-weight: 500;
+        font-weight: 600;
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
 
-    /* Tech Stack Preview */
+    /* Enhanced Tech Stack Preview */
     .tech-preview {
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 30px;
-        margin: 80px 0 40px;
+        gap: 40px;
+        margin: 100px 0 60px;
         flex-wrap: wrap;
     }
 
@@ -362,37 +402,67 @@
         color: #64748b;
         text-transform: uppercase;
         letter-spacing: 0.1em;
+        position: relative;
+    }
+
+    .tech-preview-label::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #8B93FF, #AFF42B);
+        border-radius: 1px;
     }
 
     .tech-icons {
         display: flex;
-        gap: 20px;
+        gap: 25px;
         align-items: center;
         flex-wrap: wrap;
         justify-content: center;
     }
 
     .tech-icon {
-        width: 50px;
-        height: 50px;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
-        border-radius: 12px;
+        width: 60px;
+        height: 60px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
+        border-radius: 16px;
         display: flex;
         align-items: center;
         justify-content: center;
-        border: 1px solid rgba(139, 147, 255, 0.1);
-        transition: all 0.3s ease;
-        font-size: 24px;
+        border: 1px solid rgba(139, 147, 255, 0.15);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        font-size: 28px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tech-icon::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(139, 147, 255, 0.1), rgba(175, 244, 43, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .tech-icon:hover::before {
+        opacity: 1;
     }
 
     .tech-icon:hover {
-        transform: translateY(-3px) rotate(5deg);
-        box-shadow: 0 10px 25px rgba(139, 147, 255, 0.2);
+        transform: translateY(-5px) rotate(5deg) scale(1.1);
+        box-shadow: 0 15px 35px rgba(139, 147, 255, 0.25);
         border-color: rgba(139, 147, 255, 0.3);
     }
 
-    /* Scroll Indicator Enhancement */
+    /* Enhanced Scroll Indicator */
     .scroll-indicator {
         position: absolute;
         bottom: 40px;
@@ -409,10 +479,10 @@
     }
 
     .scroll-arrow {
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(10px);
+        width: 50px;
+        height: 50px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(20px);
         border: 2px solid rgba(139, 147, 255, 0.2);
         border-radius: 50%;
         display: flex;
@@ -420,27 +490,38 @@
         justify-content: center;
         animation: bounce 2s infinite;
         transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .scroll-arrow::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(139, 147, 255, 0.1), rgba(175, 244, 43, 0.1));
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .scroll-arrow:hover::before {
+        opacity: 1;
     }
 
     .scroll-arrow:hover {
         border-color: #8B93FF;
-        background: rgba(139, 147, 255, 0.1);
+        transform: scale(1.1);
     }
 
     @keyframes bounce {
-
-        0%,
-        20%,
-        50%,
-        80%,
-        100% {
+        0%, 20%, 50%, 80%, 100% {
             transform: translateY(0);
         }
-
         40% {
             transform: translateY(-10px);
         }
-
         60% {
             transform: translateY(-5px);
         }
@@ -449,16 +530,23 @@
     /* Responsive Design */
     @media (max-width: 768px) {
         .hero-area-3-inner {
-            padding: 80px 0 60px;
+            padding: 60px 0 40px;
         }
 
-        .hero-subtitle {
+        .hero-badge {
+            margin-bottom: 30px;
+            padding: 10px 20px;
+            font-size: 12px;
+        }
+
+        .hero-description {
             gap: 15px;
+            margin-bottom: 40px;
         }
 
-        .hero-subtitle::before,
-        .hero-subtitle::after {
-            width: 40px;
+        .hero-description::before,
+        .hero-description::after {
+            width: 30px;
         }
 
         .hero-cta-wrapper {
@@ -480,7 +568,7 @@
 
         .stat-item {
             min-width: 140px;
-            padding: 20px 15px;
+            padding: 30px 20px;
         }
 
         .stat-number {
@@ -488,7 +576,31 @@
         }
 
         .tech-preview {
-            margin: 60px 0 30px;
+            margin: 60px 0 40px;
+            gap: 25px;
+        }
+
+        .tech-icon {
+            width: 50px;
+            height: 50px;
+            font-size: 24px;
+        }
+
+        .floating-orb {
+            opacity: 0.4;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .hero-stats {
+            gap: 25px;
+        }
+
+        .stat-number {
+            font-size: 2rem;
+        }
+
+        .tech-icons {
             gap: 20px;
         }
 
@@ -497,29 +609,15 @@
             height: 45px;
             font-size: 20px;
         }
-
-        .floating-orb {
-            opacity: 0.5;
-        }
-    }
-
-    @media (max-width: 480px) {
-        .hero-stats {
-            gap: 30px;
-        }
-
-        .stat-number {
-            font-size: 2rem;
-        }
-
-        .tech-icons {
-            gap: 15px;
-        }
     }
 </style>
 
 <section class="hero-area-2">
-    <!-- Floating Orbs -->
+    <!-- Enhanced Grid Pattern -->
+    <div class="grid-pattern"></div>
+    
+    <!-- Enhanced Floating Orbs -->
+    <div class="floating-orb"></div>
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
     <div class="floating-orb"></div>
@@ -529,34 +627,93 @@
         <div class="hero-area-3-inner">
             <div class="section-header">
                 <div class="section-title-wrapper">
+                    <!-- Enhanced Badge -->
+                    <div class="hero-badge fade-anim" data-delay="0.2">
+                        <div class="dot"></div>
+                        <span>Available for Freelance Projects</span>
+                    </div>
+                    
                     <div class="title-wrapper">
-                        <h1 class="bebas-neue-regular hero-main-title move-anim" data-delay="0.45">
-                            Codes By
-                            <!-- <h1 class="section-title typewriter-text fade-anim" data-text='["STUDIO", "DESIGN"]'>STUDIO</h1> -->
-                            <span class="" style="color: #FC7C82;" data-text='["DAWSON"]'>DAWSON</span>
+                        <h1 class="hero-main-title move-anim" data-delay="0.45">
+                            Crafting Digital
+                            <span class="highlight">Experiences</span>
+                            That Matter
                         </h1>
-                        <!-- <p class="hero-description fade-anim" data-delay="0.6">Freelance Developer | Web Development | Mobile Apps Development </p> -->
+                        
+                        <p class="hero-subtitle fade-anim" data-delay="0.6">
+                            Full-stack developer specializing in modern web applications, mobile apps, and e-commerce solutions. 
+                            Transforming ideas into powerful, scalable digital products with clean code and exceptional user experiences.
+                        </p>
+                        
+                        <div class="hero-description fade-anim" data-delay="0.75">
+                            <span>Freelance Developer Since 2019</span>
+                        </div>
                     </div>
-                    <div class="subtitle-wrapper">
-                        <span class="section-subtitle fade-anim" data-direction="bottom" data-delay="0.75">
-                            <span class="marquee">
-                                <span>CREATIVE DESIGN AGENCY</span>
-                                <span>CREATIVE DESIGN AGENCY</span>
-                            </span>
-                        </span>
-                    </div>
-
                 </div>
             </div>
 
-            <!-- <div class="section-content-wr -->
-
-            <!-- <span class="empty-space hide-mobile" style="height: 20px"></span> -->
-            <div class="image-wrapper parallax-view fade-anim">
-                <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
+            <!-- Enhanced CTA Buttons -->
+            <div class="hero-cta-wrapper fade-anim" data-delay="0.9">
+                <a href="#contact" class="hero-primary-btn">
+                    <span>Start Your Project</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+                <a href="#works" class="hero-secondary-btn">
+                    <span>View My Work</span>
+                    <i class="fa-solid fa-eye"></i>
+                </a>
             </div>
 
+            <!-- Enhanced Stats Section -->
+            <div class="hero-stats fade-anim" data-delay="1.1">
+                <div class="stat-item">
+                    <span class="stat-number t-counter">5+</span>
+                    <span class="stat-label">Years Experience</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number t-counter">50+</span>
+                    <span class="stat-label">Projects Delivered</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number t-counter">30+</span>
+                    <span class="stat-label">Happy Clients</span>
+                </div>
+            </div>
 
+            <!-- Enhanced Tech Stack Preview -->
+            <div class="tech-preview fade-anim" data-delay="1.3">
+                <span class="tech-preview-label">Tech Stack</span>
+                <div class="tech-icons">
+                    <div class="tech-icon">
+                        <i class="devicon-php-plain colored"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="devicon-react-original colored"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="devicon-nodejs-plain colored"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="devicon-laravel-plain colored"></i>
+                    </div>
+                    <div class="tech-icon">
+                        <i class="devicon-mysql-plain colored"></i>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Enhanced Scroll Indicator -->
+            <div class="scroll-indicator fade-anim" data-delay="1.5">
+                <span>Scroll to explore</span>
+                <div class="scroll-arrow">
+                    <i class="fa-solid fa-arrow-down"></i>
+                </div>
+            </div>
+
+            <!-- Banner Image -->
+            <div class="image-wrapper parallax-view fade-anim" data-delay="1.2">
+                <img class="w-100" src="assets/imgs/cbd/banner.png" alt="Dawson - Full Stack Developer" data-speed="0.5">
+            </div>
         </div>
     </div>
 </section>
