@@ -9,7 +9,7 @@
 <header class="header-area-4">
     <div class="header-main header-sticky">
         <div class="container">
-            <div class="header-area-4-inner">
+            <div class="cbd-color-primary-bg header-area-4-inner">
                 <div class="header-logo">
                     <a href="index.html">
                         <img src="assets/imgs/logo/logo.png" class="normal-logo" alt="Site Logo">
@@ -82,7 +82,7 @@
                     </nav>
                 </div>
                 <div class="header-button">
-                    <a class="t-btn t-btn-primary bg-active" href="contact.html">Let’s Connect</a>
+                    <a class="cbd-orange-btn t-btn t-btn-primary bg-active" href="contact.html">Let's Connect</a>
                 </div>
                 <div class="header-offcanvas d-xl-none">
                     <button class="side-toggle">

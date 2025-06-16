@@ -45,8 +45,9 @@
                 </div>
             </div>
         </div>
-    </div>
-    <div class="image-wrapper parallax-view fade-anim">
-        <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
+        <span class="empty-space hide-mobile" style="height: 100px"></span>
+        <div class="image-wrapper parallax-view fade-anim">
+            <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
+        </div>
     </div>
 </section>

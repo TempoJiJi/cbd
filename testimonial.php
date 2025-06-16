@@ -1,63 +1,105 @@
-<section class="blog-area-3 pin-on-bottom">
-    <div class="container">
-        <div class="blog-area-3-inner section-spacing">
+<style>
+</style>
+
+
+<section class="testimonial-area pin-on-bottom">
+    <div class="testimonial-area-inner section-spacing-top">
+        <div class="container">
             <div class="section-header">
                 <div class="section-title-wrapper fade-anim">
                     <div class="subtitle-wrapper">
-                        <span class="section-subtitle">( Our Insights )</span>
+                        <span class="section-subtitle">Our Testimonial</span>
                     </div>
                     <div class="title-wrapper">
-                        <h2 class="section-title">Press Releases</h2>
+                        <h2 class="section-title">What our clients say</h2>
                     </div>
-                </div>
-                <div class="btn-wrapper fade-anim">
-                    <div class="t-btn-group">
-                        <a class='t-btn t-btn-circle' href='/blog'>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                        <a class='t-btn t-btn-primary' href='/blog'>Blogs & News</a>
-                        <a class='t-btn t-btn-circle' href='/blog'>
-                            <i class="fa-solid fa-arrow-right"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div class="blogs-wrapper-box">
-                <div class="blogs-wrapper blog-hover-active">
-                    <article class="blog-3 active fade-anim">
-                        <span class="tag">// Branding Strategy</span>
-                        <h2 class="title"><a href='/blog-details'>Why Creative Strategy is the Key to Brand
-                                Loyalty</a></h2>
-                        <div class="meta">
-                            <span class="date">August 01, 2024</span>
-                        </div>
-                        <div class="thumb">
-                            <a href='/blog-details'><img src="assets/imgs/blog/blog-7.webp" alt="image"></a>
-                        </div>
-                    </article>
-                    <article class="blog-3 fade-anim">
-                        <span class="tag">// Customer Experience</span>
-                        <h2 class="title"><a href='/blog-details'>How Feux Merges Creativity with Strategy and
-                                Innovations</a></h2>
-                        <div class="meta">
-                            <span class="date">July 22, 2024</span>
-                        </div>
-                        <div class="thumb">
-                            <a href='/blog-details'><img src="assets/imgs/blog/blog-8.webp" alt="image"></a>
-                        </div>
-                    </article>
-                    <article class="blog-3 fade-anim">
-                        <span class="tag">// Branding Strategy</span>
-                        <h2 class="title"><a href='/blog-details'>How Feux Creates Meaningful Brand Identity</a></h2>
-                        <div class="meta">
-                            <span class="date">July 15, 2024</span>
-                        </div>
-                        <div class="thumb">
-                            <a href='/blog-details'><img src="assets/imgs/blog/blog-9.webp" alt="image"></a>
-                        </div>
-                    </article>
                 </div>
             </div>
         </div>
+        <div class="testimonial-wrapper-box fade-anim">
+            <div class="container">
+                <div class="testimonial-wrapper fade-anim">
+                    <div class="slide-nav">
+                        <div class="testimonial-button-prev slide-nav-button"><img src="assets/imgs/icon/icon-14.webp" alt="image"></div>
+                        <div class="testimonial-button-next slide-nav-button"><img src="assets/imgs/icon/icon-15.webp" alt="image"></div>
+                    </div>
+                    <div class="swiper testimonial-content-active">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="cbd-yellow-block testimonial-item-1">
+                                    <div class="content">
+                                        <div class="text-wrapper">
+                                            <p class="text">“Feux transformed our online presence with their innovative web design
+                                                and marketing strategies. Their attention to detail and dedication to our goals were
+                                                incredible."</p>
+                                        </div>
+                                        <div class="author">
+                                            <div class="meta">
+                                                <h3 class="name has-left-line">Emily Jack H.</h3>
+                                                <span class="post">UI/UX Designer, Luxeco</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="cbd-orange-block testimonial-item-1">
+                                    <div class="content">
+                                        <div class="text-wrapper">
+                                            <p class="text">"Working with Feux was a game-changer for our brand. Their team brought
+                                                unparalleled creativity to our campaigns and aligned it perfectly with our marketing
+                                                strategy.”</p>
+                                        </div>
+                                        <div class="author">
+                                            <div class="meta">
+                                                <h3 class="name has-left-line">David Parker</h3>
+                                                <span class="post">Social Media Manager, Flexwear</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="cbd-cyan-block testimonial-item-1">
+                                    <div class="content">
+                                        <div class="text-wrapper">
+                                            <p class="text">"Feux delivered exceptional service at every stage of our project. Their
+                                                team is responsive, professional, and dedicated to delivering real results.</p>
+                                        </div>
+                                        <div class="author">
+                                            <div class="meta">
+                                                <h3 class="name has-left-line">Olivia Bennett</h3>
+                                                <span class="post">Creative Director, PureVibes</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper testimonial-nav-active">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="avatar">
+                                    <img src="assets/imgs/client/client-1.webp" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="avatar">
+                                    <img src="assets/imgs/client/client-2.webp" alt="image">
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="avatar">
+                                    <img src="assets/imgs/client/client-3.webp" alt="image">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <span class="empty-space hide-mobile" style="height: 150px"></span>
+
     </div>
 </section>

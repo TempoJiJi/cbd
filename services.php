@@ -1,4 +1,8 @@
 <style>
+    .section-spacing {
+        padding-bottom: 0px !important;
+    }
+
     .services-area-3 {
         font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     }
@@ -7,7 +11,7 @@
         font-size: 18px !important;
         line-height: 1.6 !important;
         font-weight: 400 !important;
-        color: rgba(255, 255, 255, 0.85) !important;
+        color: rgba(0, 0, 0, 0.85) !important;
         margin-bottom: 0 !important;
         letter-spacing: 0.3px;
         max-width: 90%;
@@ -17,7 +21,7 @@
         font-size: 32px !important;
         font-weight: 600 !important;
         line-height: 1.3 !important;
-        color: #ffffff !important;
+        color: rgb(0, 0, 0) !important;
         margin-bottom: 20px !important;
         letter-spacing: -0.5px;
         font-family: 'Inter', sans-serif !important;
@@ -26,7 +30,7 @@
     .service-box-3 .number {
         font-size: 14px !important;
         font-weight: 500 !important;
-        color: rgba(175, 244, 43, 0.9) !important;
+        color: #8B93FF !important;
         letter-spacing: 1px;
         margin-bottom: 15px !important;
         text-transform: uppercase;
@@ -46,7 +50,7 @@
     .services-area-3 .section-subtitle {
         font-size: 14px !important;
         font-weight: 500 !important;
-        color: rgba(175, 244, 43, 0.9) !important;
+        color: #8B93FF !important;
         letter-spacing: 1.2px !important;
         text-transform: uppercase !important;
         margin-bottom: 15px !important;
@@ -56,7 +60,7 @@
         font-size: 48px !important;
         font-weight: 700 !important;
         line-height: 1.2 !important;
-        color: #ffffff !important;
+        color: rgb(0, 0, 0) !important;
         letter-spacing: -1px !important;
         margin-bottom: 0 !important;
     }
@@ -66,12 +70,12 @@
         .service-box-3 .content .title {
             font-size: 28px !important;
         }
-        
+
         .service-description {
             font-size: 17px !important;
             max-width: 95%;
         }
-        
+
         .services-area-3 .section-title {
             font-size: 42px !important;
         }
@@ -82,26 +86,26 @@
             font-size: 24px !important;
             margin-bottom: 15px !important;
         }
-        
+
         .service-description {
             font-size: 16px !important;
             line-height: 1.5 !important;
             max-width: 100%;
         }
-        
+
         .service-box-3 .content {
             padding-right: 20px;
             max-width: 100%;
         }
-        
+
         .service-box-3-inner {
             padding: 40px 0 !important;
         }
-        
+
         .services-area-3 .section-title {
             font-size: 36px !important;
         }
-        
+
         .service-box-3 .number {
             font-size: 12px !important;
             margin-bottom: 12px !important;
@@ -112,15 +116,15 @@
         .service-box-3 .content .title {
             font-size: 22px !important;
         }
-        
+
         .service-description {
             font-size: 15px !important;
         }
-        
+
         .services-area-3 .section-title {
             font-size: 32px !important;
         }
-        
+
         .service-box-3 .content {
             padding-right: 10px;
         }
@@ -135,15 +139,15 @@
 
     /* Better text contrast on dark backgrounds */
     .service-box-3:nth-child(even) .service-description {
-        color: rgba(255, 255, 255, 0.9) !important;
+        color: rgba(0, 0, 0, 0.9) !important;
     }
 
     .service-box-3:nth-child(odd) .service-description {
-        color: rgba(255, 255, 255, 0.85) !important;
+        color: rgba(0, 0, 0, 0.85) !important;
     }
 </style>
 
-<section class="services-area-3">
+<section class="cbd-bg-color services-area-3">
     <div class="services-area-inner section-spacing">
         <div class="container">
             <div class="section-header">
