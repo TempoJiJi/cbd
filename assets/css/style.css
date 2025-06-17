@@ -125,6 +125,7 @@
   --white: #FFFFFF;
   --white-2: #FFFFFF;
   --action: #AFF42B;
+  --banner-border: rgba(14, 15, 17, 0.08);
 }
 
 /*----------------------------------------*/
@@ -148,6 +149,7 @@
   --white: #FFFFFF;
   --white-2: #FFFFFF;
   --action: #AFF42B;
+  --banner-border: rgba(199, 204, 213, 0.2);
 }
 
 * {
@@ -1186,7 +1188,7 @@ section {
   text-align: center;
   line-height: 46px;
   font-size: 20px;
-  color: var(--primary);
+  color: var(--black);
   left: 0;
   top: 0;
   height: 46px;
@@ -4049,7 +4051,7 @@ btn-text-flip
 }
 @media (max-width: 575px) {
   .header-area-4 .header-button {
-    display: none;
+    /* display: none; */
   }
 }
 .header-area-4 .header-offcanvas i {
@@ -5195,7 +5197,7 @@ btn-text-flip
 }
 .hero-area .section-content-wrapper {
   margin-top: 34px;
-  border-top: 1px solid rgba(14, 15, 17, 0.08);
+  border-top: 1px solid var(--banner-border);
 }
 .hero-area .section-content {
   position: relative;

@@ -44,7 +44,7 @@
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        font-size: 18px;
+        font-size: 20px;
         color: #fff;
         transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
@@ -234,10 +234,10 @@
                         </div>
                     </button>
                 </div>
-                <div class="header-offcanvas d-xl-none">
+                <!-- <div class="header-offcanvas d-xl-none">
                     <button class="side-toggle">
                         <img src="assets/imgs/icon/icon-4.webp" alt="image"></button>
-                </div>
+                </div> -->
             </div>
         </div>
     </div>
