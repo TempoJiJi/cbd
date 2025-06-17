@@ -7,7 +7,7 @@
                         <span class="ibm-plex-mono-regular section-subtitle char-anim" data-direction="left" data-delay="0.45" data-offset="100">CODES BY</span>
                     </div>
                     <div class="title-wrapper type-out-wrapper">
-                        <h1 style="color: #fc7c82;" class="ibm-plex-mono-regular section-title typed-out fade-anim" data-direction="left" data-delay="0.30" data-offset="100">DAWSON
+                        <h1 style="color: #fc7c82 !important;" class="ibm-plex-mono-regular section-title typed-out fade-anim" data-direction="left" data-delay="0.30" data-offset="100">DAWSON
                         </h1>
                     </div>
                     <div class="subtitle-wrapper">
@@ -37,11 +37,11 @@
                         </div>
                         <div class="btn-wrapper fade-anim" data-delay="0.60">
                             <div class="t-btn-group">
-                                <a class="t-btn t-btn-circle" href="contact.html">
+                                <a class="cbd-purple-btn t-btn t-btn-circle" href="#work_section">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
-                                <a class="t-btn t-btn-primary" href="contact.html">Let's Connect</a>
-                                <a class="t-btn t-btn-circle" href="contact.html">
+                                <a class="cbd-purple-btn t-btn t-btn-primary" href="#work_section">See My Works</a>
+                                <a class="cbd-purple-btn t-btn t-btn-circle" href="#work_section">
                                     <i class="fa-solid fa-arrow-right"></i>
                                 </a>
                             </div>

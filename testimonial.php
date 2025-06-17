@@ -26,7 +26,7 @@
                     <div class="swiper testimonial-content-active">
                         <div class="swiper-wrapper">
                             <div class="swiper-slide">
-                                <div class="cbd-yellow-block testimonial-item-1">
+                                <div class="cbd-pink-block testimonial-item-1">
                                     <div class="content">
                                         <div class="text-wrapper">
                                             <p class="text">“Feux transformed our online presence with their innovative web design

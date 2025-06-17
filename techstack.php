@@ -26,7 +26,7 @@
         font-weight: 600;
         margin-bottom: 20px;
         /* Reduced from 30px to 20px */
-        color: #333;
+        color: #fb923c;
         position: relative;
         display: inline-block;
     }
@@ -109,7 +109,7 @@
     .tech-name {
         font-size: 14px;
         font-weight: 500;
-        color: #666;
+        /* color: #666; */
         transition: color 0.3s ease;
         position: relative;
         z-index: 2;
@@ -118,7 +118,7 @@
     }
 
     .tech-item:hover .tech-name {
-        color: #333;
+        /* color: #333; */
         font-weight: 600;
     }
 

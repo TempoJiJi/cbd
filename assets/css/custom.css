@@ -66,6 +66,12 @@
   color: var(--cbd-black) !important;
 }
 
+.cbd-purple-btn {
+  background-color: var(--cbd-purple) !important;
+  border-color: var(--cbd-purple) !important;
+  color: var(--cbd-black) !important;
+}
+
 .cbd-black-btn {
   background-color: var(--cbd-black) !important;
   border-color: var(--cbd-black) !important;
@@ -89,6 +95,13 @@
   border-color: #06b6d4 !important;
   color: #1a1a1a !important;
 }
+
+.cbd-pink-block {
+  background-color: #fb923c !important;
+  border-color: #fb923c !important;
+  color: #1a1a1a !important;
+}
+
 
 span.empty-space {
   display: block;

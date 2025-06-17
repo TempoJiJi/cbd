@@ -82,7 +82,7 @@
                     </nav>
                 </div>
                 <div class="header-button">
-                    <a class="cbd-orange-btn t-btn t-btn-primary bg-active" href="contact.html">Let's Connect</a>
+                    <button id="theme-toggle" class="cbd-orange-btn t-btn t-btn-primary bg-active">Toggle Theme</button>
                 </div>
                 <div class="header-offcanvas d-xl-none">
                     <button class="side-toggle">
