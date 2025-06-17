@@ -57,21 +57,29 @@
         height: auto;
         /* You may need to set a height manually */
     }
+
+    .banner-container-cbd {
+        padding-bottom: 50px;
+        /* background-color: #fc7c82;
+        padding-top: 10px;
+        padding-bottom: 50px;
+        padding-left: 50px;
+        padding-right: 50px;
+        border-radius: 50px;
+        margin-top: 30px;
+        width: 90%; */
+    }
 </style>
 
 <section class="hero-area-2 section-spacing">
     <div class="hero-area-2-inner section-spacing-top">
-        <!-- <div class="hero-area-3 area-shape-1">
-            <img src="assets/imgs/shape/shape-18.webp" alt="image">
-        </div> -->
 
-
-        <div class="container large">
+        <div class="banner-container-cbd container large">
             <div class="section-header">
                 <div class="section-title-wrapper">
                     <div class="title-wrapper">
                         <h4 class="ibm-plex-mono-bold-italic section-title-cbd fade-anim">CODES BY</h4>
-                        <h4 style="color: #FC7C82;" class="ibm-plex-mono-bold-italic section-title typewriter-text fade-anim" data-text='["DAWSON"]'>DAWSON</h4>
+                        <h4 style="color: #1a1a1a;" class="ibm-plex-mono-bold-italic section-title typewriter-text fade-anim">DAWSON</h4>
                     </div>
                     <div class="subtitle-wrapper">
                         <span class="section-subtitle fade-anim" data-direction="bottom" data-delay="0.75">
@@ -94,6 +102,15 @@
                         </a>
                     </div>
                 </div>
+                <!-- <span class="empty-space hide-mobile" style="height: 10px"></span> -->
+                <div style="border-radius:50px;" class="image-wrapper parallax-view">
+                    <img class="w-100" src="assets/imgs/cbd/banner_coding.jpg" alt="image" data-speed="0.5">
+                    <!-- <video loop muted autoplay playsinline>
+                        <source src="assets/imgs/cbd/banner.mp4" type="video/mp4">
+                    </video> -->
+
+                </div>
+
                 <!-- <div class="image-wrapper parallax-view">
                     <img class="w-100" src="assets/imgs/cbd/banner-laptop.jpg" alt="image" data-speed="0.5">
                 </div> -->
