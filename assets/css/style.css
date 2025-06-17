@@ -5662,16 +5662,16 @@ btn-text-flip
   }
 }
 .hero-area-2 .section-content-wrapper {
-  background-image: linear-gradient(180deg, #FFFAF4 88px, #F5F0EA 88px, #F5F0EA 100%);
+  /* background-image: linear-gradient(180deg, #FFFAF4 88px, #F5F0EA 88px, #F5F0EA 100%); */
 }
 @media only screen and (max-width: 1199px) {
   .hero-area-2 .section-content-wrapper {
-    background-image: linear-gradient(180deg, #FFFAF4 48px, #F5F0EA 48px, #F5F0EA 100%);
+    /* background-image: linear-gradient(180deg, #FFFAF4 48px, #F5F0EA 48px, #F5F0EA 100%); */
   }
 }
 @media only screen and (max-width: 767px) {
   .hero-area-2 .section-content-wrapper {
-    background-image: linear-gradient(180deg, #FFFAF4 148px, #F5F0EA 148px, #F5F0EA 100%);
+    /* background-image: linear-gradient(180deg, #FFFAF4 148px, #F5F0EA 148px, #F5F0EA 100%); */
   }
 }
 
