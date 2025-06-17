@@ -15,6 +15,10 @@
   border-radius: 50%;
   animation: gentleFloat 15s ease-in-out infinite;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  transform-origin: center;
 }
 
 .shape:nth-child(1) {
@@ -71,6 +75,71 @@
   background: linear-gradient(135deg, rgba(255, 78, 193, 0.28), rgba(255, 232, 112, 0.14));
 }
 
+/* Hover Effects for Shapes */
+.shape:hover {
+  transform: scale(1.2) rotate(15deg);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+  animation-play-state: paused;
+  z-index: -5;
+}
+
+.shape:nth-child(1):hover {
+  background: linear-gradient(135deg, rgba(252, 124, 130, 0.6), rgba(252, 124, 130, 0.3));
+  filter: blur(0px) brightness(1.2);
+}
+
+.shape:nth-child(2):hover {
+  background: linear-gradient(135deg, rgba(162, 110, 236, 0.5), rgba(162, 110, 236, 0.25));
+  filter: blur(0px) brightness(1.2);
+}
+
+.shape:nth-child(3):hover {
+  background: linear-gradient(135deg, rgba(251, 146, 60, 0.45), rgba(251, 146, 60, 0.22));
+  filter: blur(0px) brightness(1.2);
+}
+
+.shape:nth-child(4):hover {
+  background: linear-gradient(135deg, rgba(51, 246, 179, 0.5), rgba(51, 246, 179, 0.25));
+  filter: blur(0px) brightness(1.2);
+}
+
+.shape:nth-child(5):hover {
+  background: linear-gradient(135deg, rgba(255, 232, 112, 0.55), rgba(255, 232, 112, 0.28));
+  filter: blur(0px) brightness(1.2);
+}
+
+.shape:nth-child(6):hover {
+  background: linear-gradient(135deg, rgba(255, 78, 193, 0.55), rgba(255, 232, 112, 0.28));
+  filter: blur(0px) brightness(1.2);
+}
+
+/* Ripple Effect on Click */
+.shape:active {
+  transform: scale(0.95) rotate(5deg);
+  transition: all 0.1s ease;
+}
+
+.shape:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: translate(-50%, -50%);
+  animation: ripple 0.6s ease-out;
+}
+
+@keyframes ripple {
+  to {
+    width: 200%;
+    height: 200%;
+    opacity: 0;
+  }
+}
+
 @keyframes gentleFloat {
   0%,
   100% {
@@ -110,6 +179,9 @@
   border-radius: 50%;
   animation: particleDrift 25s linear infinite;
   box-shadow: 0 0 15px currentColor;
+  pointer-events: auto;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .particle:nth-child(1) {
@@ -172,6 +244,91 @@
   background: rgba(251, 146, 60, 0.6);
 }
 
+/* Hover Effects for Particles */
+.particle:hover {
+  transform: scale(3);
+  animation-play-state: paused;
+  box-shadow: 0 0 30px currentColor, 0 0 60px currentColor;
+  z-index: -5;
+}
+
+.particle:nth-child(1):hover {
+  background: rgba(252, 124, 130, 1);
+  box-shadow: 0 0 30px rgba(252, 124, 130, 0.8), 0 0 60px rgba(252, 124, 130, 0.4);
+}
+
+.particle:nth-child(2):hover {
+  background: rgba(162, 110, 236, 1);
+  box-shadow: 0 0 30px rgba(162, 110, 236, 0.8), 0 0 60px rgba(162, 110, 236, 0.4);
+}
+
+.particle:nth-child(3):hover {
+  background: rgba(251, 146, 60, 1);
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.8), 0 0 60px rgba(251, 146, 60, 0.4);
+}
+
+.particle:nth-child(4):hover {
+  background: rgba(51, 246, 179, 1);
+  box-shadow: 0 0 30px rgba(51, 246, 179, 0.8), 0 0 60px rgba(51, 246, 179, 0.4);
+}
+
+.particle:nth-child(5):hover {
+  background: rgba(255, 232, 112, 1);
+  box-shadow: 0 0 30px rgba(255, 232, 112, 0.8), 0 0 60px rgba(255, 232, 112, 0.4);
+}
+
+.particle:nth-child(6):hover {
+  background: rgba(252, 124, 130, 1);
+  box-shadow: 0 0 30px rgba(252, 124, 130, 0.8), 0 0 60px rgba(252, 124, 130, 0.4);
+}
+
+.particle:nth-child(7):hover {
+  background: rgba(162, 110, 236, 1);
+  box-shadow: 0 0 30px rgba(162, 110, 236, 0.8), 0 0 60px rgba(162, 110, 236, 0.4);
+}
+
+.particle:nth-child(8):hover {
+  background: rgba(51, 246, 179, 1);
+  box-shadow: 0 0 30px rgba(51, 246, 179, 0.8), 0 0 60px rgba(51, 246, 179, 0.4);
+}
+
+.particle:nth-child(9):hover {
+  background: rgba(255, 232, 112, 1);
+  box-shadow: 0 0 30px rgba(255, 232, 112, 0.8), 0 0 60px rgba(255, 232, 112, 0.4);
+}
+
+.particle:nth-child(10):hover {
+  background: rgba(251, 146, 60, 1);
+  box-shadow: 0 0 30px rgba(251, 146, 60, 0.8), 0 0 60px rgba(251, 146, 60, 0.4);
+}
+
+/* Particle Click Effect */
+.particle:active {
+  transform: scale(5);
+  transition: all 0.1s ease;
+}
+
+.particle:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: currentColor;
+  transform: translate(-50%, -50%);
+  animation: particleExplosion 0.4s ease-out;
+}
+
+@keyframes particleExplosion {
+  to {
+    width: 100px;
+    height: 100px;
+    opacity: 0;
+  }
+}
+
 @keyframes particleDrift {
   0% {
     transform: translateY(0) translateX(0);
@@ -189,9 +346,60 @@
   }
 }
 
+/* Global Hover Effects */
+body:hover .shape {
+  animation-duration: 20s;
+}
+
+body:hover .particle {
+  animation-duration: 30s;
+}
+
+/* Magnetic Effect for Nearby Elements */
+.shape:hover ~ .shape {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+.particle:hover ~ .particle {
+  transform: scale(1.5);
+  filter: brightness(1.2);
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .shape {
     transform: scale(0.7);
+  }
+  
+  .shape:hover {
+    transform: scale(0.85) rotate(10deg);
+  }
+  
+  .particle:hover {
+    transform: scale(2);
+  }
+}
+
+/* Performance Optimization */
+.shape,
+.particle {
+  will-change: transform, opacity, filter;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Accessibility - Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .shape,
+  .particle {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .shape:hover,
+  .particle:hover {
+    transform: none !important;
   }
 }
