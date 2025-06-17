@@ -3,6 +3,12 @@
     .head-title {
         text-align: center;
     }
+
+    .bebas-neue-regular {
+        font-family: "Bebas Neue", sans-serif !important;
+        font-weight: 400;
+        font-style: normal;
+    }
 </style>
 
 <section class="hero-area-3">
@@ -15,7 +21,7 @@
 
                 <div class="section-title-wrapper">
                     <div class="title-wrapper head-title">
-                        <h1 class="section-title move-anim" data-delay="0.45">Codes By
+                        <h1 class="bebas-neue-regular section-title move-anim" data-delay="0.45">Codes By
                             <span>Dawson</span>
                         </h1>
                     </div>
@@ -47,7 +53,7 @@
         </div>
         <span class="empty-space hide-mobile" style="height: 100px"></span>
         <div class="image-wrapper parallax-view fade-anim">
-            <img class="w-100" src="assets/imgs/cbd/banner.png" alt="image" data-speed="0.5">
+            <img class="w-100" src="assets/imgs/cbd/banner_coding.jpg" alt="image" data-speed="0.5">
         </div>
     </div>
 </section>
