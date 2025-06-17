@@ -12,7 +12,7 @@
             <div class="cbd-color-primary-bg header-area-4-inner">
                 <div class="header-logo">
                     <!-- <a href="index.html">
-                        <img src="assets/imgs/cbd/logo.png" class="normal-logo" alt="Site Logo">
+                        <img src="" class="normal-logo" alt="Site Logo">
                     </a> -->
                 </div>
                 <div class="header-nav pos-center">

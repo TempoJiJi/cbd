@@ -54,6 +54,12 @@
   color: #ff6b35 !important;
 }
 
+.cbd-pink-btn {
+  background-color: var(--cbd-pink) !important;
+  border-color: var(--cbd-pink) !important;
+  color: var(--cbd-black) !important;
+}
+
 .cbd-orange-btn {
   background-color: var(--cbd-orange) !important;
   border-color: var(--cbd-orange) !important;

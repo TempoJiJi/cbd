@@ -1,59 +1,54 @@
-<style>
-    /* text alight center */
-    .head-title {
-        text-align: center;
-    }
-
-    .bebas-neue-regular {
-        font-family: "Bebas Neue", sans-serif !important;
-        font-weight: 400;
-        font-style: normal;
-    }
-</style>
-
-<section class="hero-area-3">
-    <div class="container">
-        <div class="hero-area-3-inner section-spacing">
-            <div class="area-shape-1">
-                <img src="assets/imgs/shape/shape-18.webp" alt="image">
-            </div>
+<section class="hero-area">
+    <div class="hero-area-inner section-spacing-top">
+        <div class="container">
             <div class="section-header">
-
                 <div class="section-title-wrapper">
-                    <div class="title-wrapper head-title">
-                        <h1 class="bebas-neue-regular section-title move-anim" data-delay="0.45">Codes By
-                            <span>Dawson</span>
+                    <div class="subtitle-wrapper">
+                        <span class="ibm-plex-mono-regular section-subtitle char-anim" data-direction="left" data-delay="0.45" data-offset="100">CODES BY</span>
+                    </div>
+                    <div class="title-wrapper type-out-wrapper">
+                        <h1 style="color: #fc7c82;" class="ibm-plex-mono-regular section-title typed-out fade-anim" data-direction="left" data-delay="0.30" data-offset="100">DAWSON
                         </h1>
                     </div>
+                    <div class="subtitle-wrapper">
+                        <p style="padding-top: 15px;" class="text word-anim" data-stagger="0.1">Building High-Impact Web & App Products.</p>
+                    </div>
+
                 </div>
             </div>
-            <div class="section-content-wrapper">
-                <div class="content-shape-1 fade-anim btn-item" data-direction="top" data-offset="150" data-ease="bounce" data-delay="1.05">
-                    <div class="btn-move">
-                        <a href="#about"><img src="assets/imgs/shape/shape-17.webp" alt="image"></a>
+        </div>
+        <div class="section-content-wrapper">
+            <div class="container">
+                <div class="section-content section-spacing-bottom">
+                    <div class="content-lines">
+                        <div class="line-1"></div>
+                        <div class="line-2"></div>
+                        <div class="line-3"></div>
+                        <div class="line-4"></div>
                     </div>
-                </div>
-                <div class="section-content">
-                    <div class="text-wrapper fade-anim" data-delay="0.60">
-                        <p class="text">Building High-Impact Web & App Products.</p>
+                    <div class="hero-thumb fade-anim" data-direction="left" data-delay="0.60" data-duration="2" data-offset="100">
+                        <div class="image-wrapper parallax-view fade-anim">
+                            <img class="w-100" src="assets/imgs/cbd/banner_coding.jpg" alt="image" data-speed="0.5">
+                        </div>
                     </div>
-                    <div class="btn-wrapper fade-anim" data-delay="0.75">
-                        <div class="t-btn-group">
-                            <a class='t-btn t-btn-circle' href='/contact'>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
-                            <a class='t-btn t-btn-primary' href='/contact'>Let's Connect</a>
-                            <a class='t-btn t-btn-circle' href='/contact'>
-                                <i class="fa-solid fa-arrow-right"></i>
-                            </a>
+                    <div class="hero-content">
+                        <div class="text-wrapper">
+                            <p class="text word-anim" data-stagger="0.1">Full Stack Developer | <br> Web Development | <br> Mobile App Development</p>
+                        </div>
+                        <div class="btn-wrapper fade-anim" data-delay="0.60">
+                            <div class="t-btn-group">
+                                <a class="t-btn t-btn-circle" href="contact.html">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                                <a class="t-btn t-btn-primary" href="contact.html">Let's Connect</a>
+                                <a class="t-btn t-btn-circle" href="contact.html">
+                                    <i class="fa-solid fa-arrow-right"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <span class="empty-space hide-mobile" style="height: 100px"></span>
-        <div class="image-wrapper parallax-view fade-anim">
-            <img class="w-100" src="assets/imgs/cbd/banner_coding.jpg" alt="image" data-speed="0.5">
         </div>
     </div>
 </section>

@@ -242,7 +242,7 @@ $projects = [
 
 ?>
 
-<section class="service-area" style="margin-bottom: 50px;">
+<section id="work_section" class="service-area" style="margin-bottom: 50px;">
     <div class="service-area-inner section-spacing-top">
         <div class="container">
             <div class="section-header">

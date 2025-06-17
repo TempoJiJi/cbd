@@ -32,12 +32,16 @@
 
   <link rel="stylesheet" href="assets/css/style.css">
   <link rel="stylesheet" href="assets/css/custom.css">
+  <link rel="stylesheet" href="assets/css/background.css">
 
 
 </head>
 
 
-<body class="body-wrapper body-creative-agency">
+<body style="background-color:rgb(255, 255, 255);" class="body-wrapper body-creative-agency">
+
+  <?php include 'background.php'; ?>
+
 
   <!-- Preloader -->
   <div id="preloader">
@@ -137,7 +141,7 @@
 
       <main>
 
-        <?php include 'banner.php'; ?>
+        <?php include 'banner2.php'; ?>
 
         <?php include 'about.php'; ?>
 
@@ -185,8 +189,6 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-  <!-- <script src="assets/js/nayla.js"></script> -->
-
 
 
 </body>
