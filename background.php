@@ -3,6 +3,8 @@
       <div class="shape"></div>
       <div class="shape"></div>
       <div class="shape"></div>
+      <div class="shape"></div>
+      <div class="shape"></div>
     </div>
 
     <!-- Soft Particles -->

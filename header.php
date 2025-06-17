@@ -87,7 +87,7 @@
             width: 45px;
             height: 45px;
         }
-        
+
         .theme-icon {
             font-size: 16px;
         }
@@ -99,9 +99,12 @@
     }
 
     @keyframes pulse {
-        0%, 100% {
+
+        0%,
+        100% {
             transform: scale(1);
         }
+
         50% {
             transform: scale(1.05);
         }
@@ -158,76 +161,18 @@
                 <div class="header-nav pos-center">
                     <nav class="main-menu">
                         <ul>
-                            <li class="menu-item-has-children">
-                                <a href="#">Home</a>
-                                <ul class="dp-menu">
-                                    <li><a href="creative-agency.html">Creative Agency</a></li>
-                                    <li><a href="design-agency.html">Design Agency</a></li>
-                                    <li><a href="digital-agency.html">Digital Agency</a></li>
-                                    <li><a href="ai-agency.html">AI Agency</a></li>
-                                    <li><a href="marketing-agency.html">Marketing Agency</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="about.html">About Us</a></li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Service</a>
-                                <ul class="dp-menu">
-                                    <li><a href="services.html">Services</a></li>
-                                    <li><a href="service-details.html">Service Details</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Pages</a>
-                                <ul class="dp-menu">
-                                    <li><a href="about.html">About Us</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Service</a>
-                                        <ul>
-                                            <li><a href="services.html">Services</a></li>
-                                            <li><a href="service-details.html">Service Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Portfolio Pages</a>
-                                        <ul>
-                                            <li><a href="portfolio.html">Portfolio</a></li>
-                                            <li><a href="portfolio-02.html">Portfolio 02</a></li>
-                                            <li><a href="portfolio-03.html">Portfolio 03</a></li>
-                                            <li><a href="portfolio-details.html">Portfolio Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="team.html">Team</a></li>
-                                    <li class="menu-item-has-children">
-                                        <a href="#">Blog Pages</a>
-                                        <ul>
-                                            <li><a href="blog.html">Blog</a></li>
-                                            <li><a href="blog-grid.html">Blog Grid</a></li>
-                                            <li><a href="blog-details.html">Blog Details</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="contact.html">Contact</a></li>
-                                </ul>
-                            </li>
-                            <li class="menu-item-has-children">
-                                <a href="#">Blog</a>
-                                <ul class="dp-menu">
-                                    <li><a href="blog.html">Blog</a></li>
-                                    <li><a href="blog-grid.html">Blog Grid</a></li>
-                                    <li><a href="blog-details.html">Blog Details</a></li>
-                                </ul>
-                            </li>
-                            <li><a href="contact.html">Contact</a></li>
+                            <li><a href="#about_section">About Me</a></li>
+                            <li><a href="#teckstack_section">Tech Stack</a></li>
+                            <li><a href="#work_section">Works</a></li>
+                            <li><a href="#service_section">Services</a></li>
+                            <!-- <li><a href="#testimonial_section">Testimonial</a></li> -->
+                            <li><a href="#footer_section">Contact</a></li>
+
                         </ul>
                     </nav>
                 </div>
                 <div class="header-button">
-                    <button 
-                        id="theme-toggle" 
-                        class="theme-toggle-btn"
-                        data-tooltip="Switch Theme"
-                        aria-label="Toggle between light and dark theme"
-                    >
+                    <button id="theme-toggle" class="theme-toggle-btn" data-tooltip="Switch Theme" aria-label="Toggle between light and dark theme">
                         <div class="theme-icon-container">
                             <i class="fas fa-sun theme-icon sun-icon"></i>
                             <i class="fas fa-moon theme-icon moon-icon"></i>

@@ -1,4 +1,4 @@
-<footer class="footer-area-3">
+<footer id="footer_section" class="footer-area-3">
     <div class="area-shape-1"><img src="assets/imgs/shape/shape-44.webp" alt="image"></div>
     <div class="area-shape-2"><img src="assets/imgs/shape/shape-44.webp" alt="image"></div>
     <div class="cta-area-2">

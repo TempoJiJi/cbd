@@ -198,7 +198,7 @@
     }
 </style>
 
-<section class="techstack-section">
+<section id="teckstack_section" class="techstack-section">
     <div class="container">
         <div class="section-spacing">
             <div class="section-header">

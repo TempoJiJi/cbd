@@ -5,7 +5,7 @@
 </style>
 
 
-<section id="about" class="about-area-3">
+<section id="about_section" class="about-area-3">
     <div class="container">
         <div class="about-area-3-inner section-spacing-top">
             <div class="section-header">

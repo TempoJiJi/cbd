@@ -147,7 +147,7 @@
     }
 </style>
 
-<section class="cbd-bg-color services-area-3">
+<section id="service_section" class="cbd-bg-color services-area-3">
     <div class="services-area-inner section-spacing">
         <div class="container">
             <div class="section-header">

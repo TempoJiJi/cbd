@@ -84,7 +84,7 @@
             </div>
             <div class="section-content-wrapper">
                 <div class="content-shape-1 fade-anim btn-item" data-direction="top" data-offset="150">
-                    <div class="btn-move">
+                    <div style="height:150px; width:150px; background-color: #a26eec; border-radius:50%; padding: 22px;" class="btn-move">
                         <a href="#about"><img style="opacity: 1;" src="assets/imgs/shape/shape-17.webp" alt="image"></a>
                     </div>
                 </div>

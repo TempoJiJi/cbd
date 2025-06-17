@@ -1,8 +1,4 @@
-<style>
-</style>
-
-
-<section class="testimonial-area pin-on-bottom">
+<section id="testimonial_section" class="testimonial-area pin-on-bottom">
     <div class="testimonial-area-inner section-spacing-top">
         <div class="container">
             <div class="section-header">
