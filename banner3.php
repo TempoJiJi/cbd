@@ -204,7 +204,7 @@
         transform: scale(1.1);
     }
 
-    /* Simple decorative lines */
+    /* Simple decorative lines with glow animation */
     .banner-shapes::before,
     .banner-shapes::after {
         content: '';
@@ -216,6 +216,7 @@
         border-radius: 1px;
         opacity: 0.6;
         animation: lineGlow 4s ease-in-out infinite;
+        transform-origin: center;
     }
 
     .banner-shapes::before {
@@ -228,14 +229,17 @@
         animation-delay: 2s;
     }
 
+    /* Line glow animation - works on all screen sizes */
     @keyframes lineGlow {
         0%, 100% {
             opacity: 0.6;
             transform: scaleX(1);
+            box-shadow: 0 0 0 rgba(251, 146, 60, 0);
         }
         50% {
             opacity: 1;
             transform: scaleX(1.2);
+            box-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
         }
     }
 
@@ -298,6 +302,20 @@
     [data-theme="dark"] .banner-shapes::before,
     [data-theme="dark"] .banner-shapes::after {
         background-color: #a26eec;
+    }
+
+    /* Dark theme line glow animation */
+    [data-theme="dark"] @keyframes lineGlow {
+        0%, 100% {
+            opacity: 0.6;
+            transform: scaleX(1);
+            box-shadow: 0 0 0 rgba(162, 110, 236, 0);
+        }
+        50% {
+            opacity: 1;
+            transform: scaleX(1.2);
+            box-shadow: 0 0 10px rgba(162, 110, 236, 0.5);
+        }
     }
 
     [data-theme="dark"] .orbit-element {
@@ -386,6 +404,8 @@
         .banner-shapes::before,
         .banner-shapes::after {
             width: 80px;
+            /* Keep the lineGlow animation */
+            animation: lineGlow 4s ease-in-out infinite;
         }
 
         .banner-shapes::before {
@@ -442,19 +462,24 @@
             border-bottom: 45px solid #33f6b3;
         }
 
-        /* Show decorative lines in mobile with smaller size */
+        /* Keep decorative lines with glow animation in mobile */
         .banner-shapes::before,
         .banner-shapes::after {
             width: 60px;
             height: 1.5px;
+            /* Ensure animation continues in mobile */
+            animation: lineGlow 4s ease-in-out infinite;
+            opacity: 0.6;
         }
 
         .banner-shapes::before {
             left: -90px;
+            animation-delay: 0s;
         }
 
         .banner-shapes::after {
             right: -90px;
+            animation-delay: 2s;
         }
 
         .orbit-container {
@@ -491,19 +516,24 @@
             border-bottom: 35px solid #33f6b3;
         }
 
-        /* Smaller decorative lines for very small screens */
+        /* Keep decorative lines with glow animation for very small screens */
         .banner-shapes::before,
         .banner-shapes::after {
             width: 40px;
             height: 1px;
+            /* Ensure animation continues on small mobile */
+            animation: lineGlow 4s ease-in-out infinite;
+            opacity: 0.6;
         }
 
         .banner-shapes::before {
             left: -70px;
+            animation-delay: 0s;
         }
 
         .banner-shapes::after {
             right: -70px;
+            animation-delay: 2s;
         }
     }
 </style>
