@@ -17,18 +17,18 @@
         letter-spacing: -0.01em;
     }
 
-    /* Hero area full height with grid background */
+    /* Hero area full height with animated gradient background */
     .hero-area-3 {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         position: relative;
-        background-color: #f5f5f5;
+        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f0f0f0 100%);
         overflow: hidden;
-        transition: background-color 0.3s ease;
+        transition: all 0.3s ease;
     }
 
-    /* Grid background with theme support */
+    /* Animated gradient background */
     .hero-area-3::before {
         content: '';
         position: absolute;
@@ -36,24 +36,37 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background-image: 
-            linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
-        background-size: 40px 40px;
+        background: linear-gradient(45deg, 
+            rgba(251, 146, 60, 0.05) 0%, 
+            rgba(252, 124, 130, 0.05) 25%, 
+            rgba(162, 110, 236, 0.05) 50%, 
+            rgba(51, 246, 179, 0.05) 75%, 
+            rgba(255, 232, 112, 0.05) 100%);
+        background-size: 400% 400%;
+        animation: gradientShift 15s ease infinite;
         z-index: 1;
         pointer-events: none;
-        transition: background-image 0.3s ease;
     }
 
-    /* Dark theme grid */
+    @keyframes gradientShift {
+        0% { background-position: 0% 50%; }
+        50% { background-position: 100% 50%; }
+        100% { background-position: 0% 50%; }
+    }
+
+    /* Dark theme */
     [data-theme="dark"] .hero-area-3 {
-        background-color: #1a1a1a;
+        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
     }
 
     [data-theme="dark"] .hero-area-3::before {
-        background-image: 
-            linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
+        background: linear-gradient(45deg, 
+            rgba(251, 146, 60, 0.1) 0%, 
+            rgba(252, 124, 130, 0.1) 25%, 
+            rgba(162, 110, 236, 0.1) 50%, 
+            rgba(51, 246, 179, 0.1) 75%, 
+            rgba(255, 232, 112, 0.1) 100%);
+        background-size: 400% 400%;
     }
 
     .hero-area-3-inner {
@@ -68,89 +81,120 @@
         padding-top: 120px;
     }
 
-    /* Enhanced 3D geometric shapes */
+    /* Floating particles background */
+    .floating-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .particle {
+        position: absolute;
+        width: 4px;
+        height: 4px;
+        background: linear-gradient(45deg, #fb923c, #fc7c82);
+        border-radius: 50%;
+        opacity: 0.6;
+        animation: floatUp 8s linear infinite;
+    }
+
+    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
+    .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
+    .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
+    .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
+    .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
+    .particle:nth-child(7) { left: 70%; animation-delay: 6s; }
+    .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
+    .particle:nth-child(9) { left: 90%; animation-delay: 0.5s; }
+    .particle:nth-child(10) { left: 15%; animation-delay: 1.5s; }
+
+    @keyframes floatUp {
+        0% {
+            transform: translateY(100vh) scale(0);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.6;
+            transform: scale(1);
+        }
+        90% {
+            opacity: 0.6;
+        }
+        100% {
+            transform: translateY(-100px) scale(0);
+            opacity: 0;
+        }
+    }
+
+    /* Enhanced 3D geometric shapes with glow effects */
     .banner-shapes {
         position: relative;
         margin-bottom: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 40px;
-        perspective: 1000px;
+        gap: 60px;
+        perspective: 1200px;
     }
 
     .shape-element {
         position: relative;
-        animation: float3D 8s ease-in-out infinite;
+        animation: float3D 10s ease-in-out infinite;
         transform-style: preserve-3d;
+        filter: drop-shadow(0 10px 30px rgba(0, 0, 0, 0.1));
     }
 
-    .shape-element:nth-child(1) {
-        animation-delay: 0s;
-    }
+    .shape-element:nth-child(1) { animation-delay: 0s; }
+    .shape-element:nth-child(2) { animation-delay: 3s; }
+    .shape-element:nth-child(3) { animation-delay: 6s; }
 
-    .shape-element:nth-child(2) {
-        animation-delay: 2.5s;
-    }
-
-    .shape-element:nth-child(3) {
-        animation-delay: 5s;
-    }
-
-    /* 3D Circle with enhanced shadows */
+    /* Glowing 3D Circle */
     .shape-circle {
-        width: 90px;
-        height: 90px;
+        width: 100px;
+        height: 100px;
         border-radius: 50%;
         background: linear-gradient(135deg, #fb923c 0%, #fc7c82 50%, #ff6b9d 100%);
         position: relative;
         transform-style: preserve-3d;
         box-shadow: 
-            0 20px 40px rgba(251, 146, 60, 0.3),
-            0 10px 20px rgba(252, 124, 130, 0.2),
-            inset 0 -5px 15px rgba(0, 0, 0, 0.1),
-            inset 0 5px 15px rgba(255, 255, 255, 0.3);
+            0 0 40px rgba(251, 146, 60, 0.4),
+            0 20px 40px rgba(252, 124, 130, 0.3),
+            inset 0 -8px 20px rgba(0, 0, 0, 0.1),
+            inset 0 8px 20px rgba(255, 255, 255, 0.3);
+        animation: glow 4s ease-in-out infinite;
     }
 
     .shape-circle::before {
         content: '';
         position: absolute;
-        top: 15%;
-        left: 20%;
-        width: 30%;
-        height: 30%;
-        background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
+        top: 20%;
+        left: 25%;
+        width: 35%;
+        height: 35%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.8) 0%, transparent 70%);
         border-radius: 50%;
-        filter: blur(3px);
+        filter: blur(4px);
     }
 
-    .shape-circle::after {
-        content: '';
-        position: absolute;
-        bottom: -30px;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 80px;
-        height: 20px;
-        background: radial-gradient(ellipse, rgba(251, 146, 60, 0.4) 0%, transparent 70%);
-        border-radius: 50%;
-        filter: blur(8px);
-        z-index: -1;
-    }
-
-    /* 3D Square with depth */
+    /* Rotating 3D Square */
     .shape-square {
-        width: 70px;
-        height: 70px;
+        width: 80px;
+        height: 80px;
         background: linear-gradient(135deg, #a26eec 0%, #33f6b3 50%, #7dd3fc 100%);
         transform: rotate(45deg);
         position: relative;
         transform-style: preserve-3d;
         box-shadow: 
-            0 25px 50px rgba(162, 110, 236, 0.4),
-            0 15px 30px rgba(51, 246, 179, 0.2),
-            inset 0 -8px 20px rgba(0, 0, 0, 0.15),
-            inset 0 8px 20px rgba(255, 255, 255, 0.2);
+            0 0 50px rgba(162, 110, 236, 0.5),
+            0 25px 50px rgba(51, 246, 179, 0.3),
+            inset 0 -10px 25px rgba(0, 0, 0, 0.15),
+            inset 0 10px 25px rgba(255, 255, 255, 0.2);
+        animation: rotateGlow 6s linear infinite;
     }
 
     .shape-square::before {
@@ -160,190 +204,243 @@
         left: 0;
         right: 0;
         bottom: 0;
-        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
-        transform: translateZ(5px);
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.4) 50%, transparent 70%);
+        animation: shine 3s ease-in-out infinite;
     }
 
-    .shape-square::after {
-        content: '';
-        position: absolute;
-        bottom: -40px;
-        left: 50%;
-        transform: translateX(-50%) rotate(-45deg);
-        width: 60px;
-        height: 15px;
-        background: radial-gradient(ellipse, rgba(162, 110, 236, 0.5) 0%, transparent 70%);
-        border-radius: 50%;
-        filter: blur(10px);
-        z-index: -1;
-    }
-
-    /* 3D Triangle with enhanced depth */
+    /* Pulsing 3D Triangle */
     .shape-triangle {
         width: 0;
         height: 0;
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-        border-bottom: 70px solid #ffe870;
+        border-left: 45px solid transparent;
+        border-right: 45px solid transparent;
+        border-bottom: 80px solid #ffe870;
         position: relative;
-        filter: drop-shadow(0 20px 30px rgba(255, 232, 112, 0.4))
-                drop-shadow(0 10px 15px rgba(255, 232, 112, 0.2));
+        filter: drop-shadow(0 0 30px rgba(255, 232, 112, 0.6))
+                drop-shadow(0 20px 30px rgba(255, 232, 112, 0.3));
+        animation: pulse 3s ease-in-out infinite;
     }
 
     .shape-triangle::before {
         content: '';
         position: absolute;
-        top: 20px;
-        left: -15px;
+        top: 25px;
+        left: -18px;
         width: 0;
         height: 0;
-        border-left: 15px solid transparent;
-        border-right: 15px solid transparent;
-        border-bottom: 25px solid rgba(255, 255, 255, 0.3);
+        border-left: 18px solid transparent;
+        border-right: 18px solid transparent;
+        border-bottom: 30px solid rgba(255, 255, 255, 0.4);
         filter: blur(2px);
     }
 
-    .shape-triangle::after {
-        content: '';
-        position: absolute;
-        bottom: -45px;
-        left: -30px;
-        width: 60px;
-        height: 20px;
-        background: radial-gradient(ellipse, rgba(255, 232, 112, 0.5) 0%, transparent 70%);
-        border-radius: 50%;
-        filter: blur(12px);
-        z-index: -1;
-    }
-
-    /* Enhanced 3D floating animation */
+    /* Enhanced animations */
     @keyframes float3D {
         0%, 100% {
-            transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+            transform: translateY(0px) rotateX(0deg) rotateY(0deg) rotateZ(0deg);
         }
         25% {
-            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+            transform: translateY(-20px) rotateX(10deg) rotateY(10deg) rotateZ(5deg);
         }
         50% {
-            transform: translateY(-25px) rotateX(0deg) rotateY(10deg);
+            transform: translateY(-35px) rotateX(0deg) rotateY(20deg) rotateZ(0deg);
         }
         75% {
-            transform: translateY(-10px) rotateX(-5deg) rotateY(5deg);
+            transform: translateY(-15px) rotateX(-10deg) rotateY(10deg) rotateZ(-5deg);
         }
     }
 
-    /* Enhanced decorative lines with 3D effect */
+    @keyframes glow {
+        0%, 100% {
+            box-shadow: 
+                0 0 40px rgba(251, 146, 60, 0.4),
+                0 20px 40px rgba(252, 124, 130, 0.3),
+                inset 0 -8px 20px rgba(0, 0, 0, 0.1),
+                inset 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+        50% {
+            box-shadow: 
+                0 0 60px rgba(251, 146, 60, 0.6),
+                0 25px 50px rgba(252, 124, 130, 0.4),
+                inset 0 -8px 20px rgba(0, 0, 0, 0.1),
+                inset 0 8px 20px rgba(255, 255, 255, 0.3);
+        }
+    }
+
+    @keyframes rotateGlow {
+        0% {
+            transform: rotate(45deg);
+            box-shadow: 
+                0 0 50px rgba(162, 110, 236, 0.5),
+                0 25px 50px rgba(51, 246, 179, 0.3),
+                inset 0 -10px 25px rgba(0, 0, 0, 0.15),
+                inset 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+        50% {
+            transform: rotate(225deg);
+            box-shadow: 
+                0 0 70px rgba(162, 110, 236, 0.7),
+                0 30px 60px rgba(51, 246, 179, 0.4),
+                inset 0 -10px 25px rgba(0, 0, 0, 0.15),
+                inset 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+        100% {
+            transform: rotate(405deg);
+            box-shadow: 
+                0 0 50px rgba(162, 110, 236, 0.5),
+                0 25px 50px rgba(51, 246, 179, 0.3),
+                inset 0 -10px 25px rgba(0, 0, 0, 0.15),
+                inset 0 10px 25px rgba(255, 255, 255, 0.2);
+        }
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            transform: scale(1);
+            filter: drop-shadow(0 0 30px rgba(255, 232, 112, 0.6))
+                    drop-shadow(0 20px 30px rgba(255, 232, 112, 0.3));
+        }
+        50% {
+            transform: scale(1.1);
+            filter: drop-shadow(0 0 50px rgba(255, 232, 112, 0.8))
+                    drop-shadow(0 25px 40px rgba(255, 232, 112, 0.4));
+        }
+    }
+
+    @keyframes shine {
+        0%, 100% { opacity: 0; }
+        50% { opacity: 1; }
+    }
+
+    /* Animated decorative elements */
     .banner-shapes::before,
     .banner-shapes::after {
         content: '';
         position: absolute;
-        width: 120px;
-        height: 3px;
-        background: linear-gradient(90deg, transparent, #fb923c 20%, #fc7c82 50%, #a26eec 80%, transparent);
+        width: 150px;
+        height: 4px;
+        background: linear-gradient(90deg, 
+            transparent, 
+            rgba(251, 146, 60, 0.8) 20%, 
+            rgba(252, 124, 130, 0.8) 50%, 
+            rgba(162, 110, 236, 0.8) 80%, 
+            transparent);
         top: 50%;
-        opacity: 0.6;
         border-radius: 2px;
-        box-shadow: 0 5px 15px rgba(251, 146, 60, 0.3);
+        box-shadow: 0 0 20px rgba(251, 146, 60, 0.4);
+        animation: lineFlow 6s ease-in-out infinite;
     }
 
     .banner-shapes::before {
-        left: -180px;
-        animation: lineGlow 4s ease-in-out infinite;
+        left: -220px;
+        animation-delay: 0s;
     }
 
     .banner-shapes::after {
-        right: -180px;
-        animation: lineGlow 4s ease-in-out infinite 2s;
+        right: -220px;
+        animation-delay: 3s;
     }
 
-    @keyframes lineGlow {
+    @keyframes lineFlow {
         0%, 100% {
             opacity: 0.6;
-            box-shadow: 0 5px 15px rgba(251, 146, 60, 0.3);
+            transform: scaleX(1);
+            box-shadow: 0 0 20px rgba(251, 146, 60, 0.4);
         }
         50% {
             opacity: 1;
-            box-shadow: 0 8px 25px rgba(251, 146, 60, 0.5);
+            transform: scaleX(1.2);
+            box-shadow: 0 0 40px rgba(251, 146, 60, 0.6);
         }
     }
 
-    /* Enhanced grid dots accent with 3D effect */
-    .grid-accent {
+    /* Orbiting elements */
+    .orbit-container {
         position: absolute;
-        width: 8px;
-        height: 8px;
-        background: radial-gradient(circle, #fb923c 0%, #fc7c82 100%);
+        width: 300px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 0;
+    }
+
+    .orbit-element {
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        background: linear-gradient(45deg, #fb923c, #fc7c82);
         border-radius: 50%;
-        opacity: 0.4;
-        z-index: 1;
-        box-shadow: 
-            0 5px 15px rgba(251, 146, 60, 0.4),
-            0 0 20px rgba(252, 124, 130, 0.2);
+        box-shadow: 0 0 20px rgba(251, 146, 60, 0.6);
+        animation: orbit 20s linear infinite;
     }
 
-    .grid-accent:nth-child(1) {
-        top: 20%;
-        left: 15%;
-        animation: pulse3D 4s ease-in-out infinite;
+    .orbit-element:nth-child(1) {
+        animation-delay: 0s;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
-    .grid-accent:nth-child(2) {
-        top: 30%;
-        right: 20%;
-        animation: pulse3D 4s ease-in-out infinite 1.5s;
+    .orbit-element:nth-child(2) {
+        animation-delay: 10s;
+        top: 50%;
+        right: 0;
+        transform: translateY(-50%);
     }
 
-    .grid-accent:nth-child(3) {
-        bottom: 25%;
-        left: 25%;
-        animation: pulse3D 4s ease-in-out infinite 3s;
+    @keyframes orbit {
+        0% { transform: rotate(0deg) translateX(150px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(150px) rotate(-360deg); }
     }
 
-    @keyframes pulse3D {
+    /* Enhanced text glow effect */
+    .banner-title-cbd {
+        text-shadow: 0 0 30px rgba(251, 146, 60, 0.3);
+        animation: textGlow 4s ease-in-out infinite;
+    }
+
+    @keyframes textGlow {
         0%, 100% {
-            opacity: 0.4;
-            transform: scale(1);
-            box-shadow: 
-                0 5px 15px rgba(251, 146, 60, 0.4),
-                0 0 20px rgba(252, 124, 130, 0.2);
+            text-shadow: 0 0 30px rgba(251, 146, 60, 0.3);
         }
         50% {
-            opacity: 1;
-            transform: scale(1.8);
-            box-shadow: 
-                0 10px 30px rgba(251, 146, 60, 0.6),
-                0 0 40px rgba(252, 124, 130, 0.4);
+            text-shadow: 0 0 50px rgba(251, 146, 60, 0.5);
         }
     }
 
-    /* Dark theme adjustments for shapes */
+    /* Dark theme adjustments */
+    [data-theme="dark"] .particle {
+        background: linear-gradient(45deg, #fb923c, #a26eec);
+        box-shadow: 0 0 10px rgba(251, 146, 60, 0.4);
+    }
+
     [data-theme="dark"] .shape-circle {
         box-shadow: 
-            0 20px 40px rgba(251, 146, 60, 0.4),
-            0 10px 20px rgba(252, 124, 130, 0.3),
-            inset 0 -5px 15px rgba(0, 0, 0, 0.3),
-            inset 0 5px 15px rgba(255, 255, 255, 0.1);
-    }
-
-    [data-theme="dark"] .shape-square {
-        box-shadow: 
-            0 25px 50px rgba(162, 110, 236, 0.5),
-            0 15px 30px rgba(51, 246, 179, 0.3),
+            0 0 50px rgba(251, 146, 60, 0.6),
+            0 20px 40px rgba(252, 124, 130, 0.4),
             inset 0 -8px 20px rgba(0, 0, 0, 0.3),
             inset 0 8px 20px rgba(255, 255, 255, 0.1);
     }
 
-    [data-theme="dark"] .shape-triangle {
-        filter: drop-shadow(0 20px 30px rgba(255, 232, 112, 0.5))
-                drop-shadow(0 10px 15px rgba(255, 232, 112, 0.3));
-    }
-
-    [data-theme="dark"] .grid-accent {
+    [data-theme="dark"] .shape-square {
         box-shadow: 
-            0 5px 15px rgba(251, 146, 60, 0.6),
-            0 0 20px rgba(252, 124, 130, 0.4);
+            0 0 60px rgba(162, 110, 236, 0.7),
+            0 25px 50px rgba(51, 246, 179, 0.4),
+            inset 0 -10px 25px rgba(0, 0, 0, 0.3),
+            inset 0 10px 25px rgba(255, 255, 255, 0.1);
     }
 
+    [data-theme="dark"] .shape-triangle {
+        filter: drop-shadow(0 0 40px rgba(255, 232, 112, 0.8))
+                drop-shadow(0 20px 30px rgba(255, 232, 112, 0.4));
+    }
+
+    [data-theme="dark"] .banner-title-cbd {
+        text-shadow: 0 0 40px rgba(251, 146, 60, 0.5);
+    }
+
+    /* Responsive adjustments */
     @media only screen and (max-width: 1919px) {
         .banner-title-cbd {
             font-size: 100px !important;
@@ -364,6 +461,15 @@
         .hero-area-3-inner {
             padding-top: 140px;
         }
+
+        .banner-shapes {
+            gap: 40px;
+        }
+
+        .orbit-container {
+            width: 250px;
+            height: 250px;
+        }
     }
 
     @media only screen and (max-width: 991px) {
@@ -380,12 +486,67 @@
             padding-top: 160px;
         }
 
-        .hero-area-3::before {
-            background-size: 30px 30px;
+        .banner-shapes {
+            margin-bottom: 40px;
+            gap: 30px;
+        }
+
+        .shape-circle {
+            width: 80px;
+            height: 80px;
+        }
+
+        .shape-square {
+            width: 65px;
+            height: 65px;
+        }
+
+        .shape-triangle {
+            border-left: 35px solid transparent;
+            border-right: 35px solid transparent;
+            border-bottom: 65px solid #ffe870;
+        }
+
+        .banner-shapes::before,
+        .banner-shapes::after {
+            width: 100px;
+        }
+
+        .banner-shapes::before {
+            left: -150px;
+        }
+
+        .banner-shapes::after {
+            right: -150px;
+        }
+
+        .orbit-container {
+            width: 200px;
+            height: 200px;
+        }
+
+        .orbit-element {
+            width: 8px;
+            height: 8px;
+        }
+    }
+
+    @media only screen and (max-width: 767px) {
+        .section-content-wrapper {
+            text-align: center;
+        }
+
+        .banner-title-cbd {
+            padding-top: 20px;
+            font-size: 80px !important;
+        }
+
+        .hero-area-3-inner {
+            padding-top: 180px;
         }
 
         .banner-shapes {
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             gap: 25px;
         }
 
@@ -407,38 +568,24 @@
 
         .banner-shapes::before,
         .banner-shapes::after {
-            width: 80px;
+            display: none;
         }
 
-        .banner-shapes::before {
-            left: -120px;
+        .orbit-container {
+            display: none;
         }
 
-        .banner-shapes::after {
-            right: -120px;
+        .particle:nth-child(n+6) {
+            display: none;
         }
     }
 
-    @media only screen and (max-width: 767px) {
-        .section-content-wrapper {
-            text-align: center;
-        }
-
-        .banner-title-cbd {
-            padding-top: 20px;
-            font-size: 80px !important;
-        }
-
+    @media only screen and (max-width: 480px) {
         .hero-area-3-inner {
-            padding-top: 180px;
-        }
-
-        .hero-area-3::before {
-            background-size: 25px 25px;
+            padding-top: 200px;
         }
 
         .banner-shapes {
-            margin-bottom: 30px;
             gap: 20px;
         }
 
@@ -457,54 +604,34 @@
             border-right: 25px solid transparent;
             border-bottom: 45px solid #ffe870;
         }
-
-        .banner-shapes::before,
-        .banner-shapes::after {
-            display: none;
-        }
-
-        .grid-accent {
-            display: none;
-        }
-    }
-
-    @media only screen and (max-width: 480px) {
-        .hero-area-3-inner {
-            padding-top: 200px;
-        }
-
-        .banner-shapes {
-            gap: 15px;
-        }
-
-        .shape-circle {
-            width: 50px;
-            height: 50px;
-        }
-
-        .shape-square {
-            width: 35px;
-            height: 35px;
-        }
-
-        .shape-triangle {
-            border-left: 20px solid transparent;
-            border-right: 20px solid transparent;
-            border-bottom: 35px solid #ffe870;
-        }
     }
 </style>
 
 <section class="hero-area-3">
-    <!-- Enhanced grid accent dots -->
-    <div class="grid-accent"></div>
-    <div class="grid-accent"></div>
-    <div class="grid-accent"></div>
+    <!-- Floating particles background -->
+    <div class="floating-particles">
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+        <div class="particle"></div>
+    </div>
 
     <div class="container">
         <div class="hero-area-3-inner section-spacing">
             <div class="section-header">
-                <!-- Enhanced 3D geometric shapes above title -->
+                <!-- Orbiting elements -->
+                <div class="orbit-container">
+                    <div class="orbit-element"></div>
+                    <div class="orbit-element"></div>
+                </div>
+
+                <!-- Enhanced 3D geometric shapes with glow effects -->
                 <div class="banner-shapes fade-anim" data-delay="0.15">
                     <div class="shape-element">
                         <div class="shape-circle"></div>
