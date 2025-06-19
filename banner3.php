@@ -442,9 +442,19 @@
             border-bottom: 45px solid #33f6b3;
         }
 
+        /* Show decorative lines in mobile with smaller size */
         .banner-shapes::before,
         .banner-shapes::after {
-            display: none;
+            width: 60px;
+            height: 1.5px;
+        }
+
+        .banner-shapes::before {
+            left: -90px;
+        }
+
+        .banner-shapes::after {
+            right: -90px;
         }
 
         .orbit-container {
@@ -479,6 +489,21 @@
             border-left: 20px solid transparent;
             border-right: 20px solid transparent;
             border-bottom: 35px solid #33f6b3;
+        }
+
+        /* Smaller decorative lines for very small screens */
+        .banner-shapes::before,
+        .banner-shapes::after {
+            width: 40px;
+            height: 1px;
+        }
+
+        .banner-shapes::before {
+            left: -70px;
+        }
+
+        .banner-shapes::after {
+            right: -70px;
         }
     }
 </style>
