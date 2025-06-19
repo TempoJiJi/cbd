@@ -141,7 +141,7 @@
 
       <main>
 
-        <?php include 'banner2.php'; ?>
+        <?php include 'banner.php'; ?>
 
         <?php include 'about.php'; ?>
 
