@@ -17,7 +17,7 @@
         letter-spacing: -0.01em;
     }
 
-    /* Hero area full height with clean background */
+    /* Hero area full height with grid background */
     .hero-area-3 {
         min-height: 100vh;
         display: flex;
@@ -28,9 +28,32 @@
         transition: background-color 0.3s ease;
     }
 
-    /* Dark theme background */
+    /* Grid background with theme support */
+    .hero-area-3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 1;
+        pointer-events: none;
+        transition: background-image 0.3s ease;
+    }
+
+    /* Dark theme grid */
     [data-theme="dark"] .hero-area-3 {
         background-color: #1a1a1a;
+    }
+
+    [data-theme="dark"] .hero-area-3::before {
+        background-image: 
+            linear-gradient(rgba(255, 255, 255, 0.08) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(255, 255, 255, 0.08) 1px, transparent 1px);
     }
 
     .hero-area-3-inner {
@@ -45,19 +68,21 @@
         padding-top: 120px;
     }
 
-    /* Linear geometric shapes */
+    /* Enhanced 3D geometric shapes */
     .banner-shapes {
         position: relative;
         margin-bottom: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 50px;
+        gap: 40px;
+        perspective: 1000px;
     }
 
     .shape-element {
         position: relative;
-        animation: floatLinear 6s ease-in-out infinite;
+        animation: float3D 8s ease-in-out infinite;
+        transform-style: preserve-3d;
     }
 
     .shape-element:nth-child(1) {
@@ -65,224 +90,258 @@
     }
 
     .shape-element:nth-child(2) {
-        animation-delay: 2s;
+        animation-delay: 2.5s;
     }
 
     .shape-element:nth-child(3) {
-        animation-delay: 4s;
+        animation-delay: 5s;
     }
 
-    /* Linear Circle */
+    /* 3D Circle with enhanced shadows */
     .shape-circle {
-        width: 80px;
-        height: 80px;
-        border: 3px solid #fb923c;
+        width: 90px;
+        height: 90px;
         border-radius: 50%;
-        background: transparent;
+        background: linear-gradient(135deg, #fb923c 0%, #fc7c82 50%, #ff6b9d 100%);
         position: relative;
-        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        box-shadow: 
+            0 20px 40px rgba(251, 146, 60, 0.3),
+            0 10px 20px rgba(252, 124, 130, 0.2),
+            inset 0 -5px 15px rgba(0, 0, 0, 0.1),
+            inset 0 5px 15px rgba(255, 255, 255, 0.3);
     }
 
     .shape-circle::before {
         content: '';
         position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        width: 20px;
-        height: 20px;
-        background: #fb923c;
+        top: 15%;
+        left: 20%;
+        width: 30%;
+        height: 30%;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.6) 0%, transparent 70%);
         border-radius: 50%;
-        transition: all 0.3s ease;
+        filter: blur(3px);
     }
 
-    .shape-circle:hover {
-        border-color: #fc7c82;
-        transform: scale(1.1);
+    .shape-circle::after {
+        content: '';
+        position: absolute;
+        bottom: -30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 20px;
+        background: radial-gradient(ellipse, rgba(251, 146, 60, 0.4) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(8px);
+        z-index: -1;
     }
 
-    .shape-circle:hover::before {
-        background: #fc7c82;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-
-    /* Linear Square */
+    /* 3D Square with depth */
     .shape-square {
         width: 70px;
         height: 70px;
-        border: 3px solid #a26eec;
-        background: transparent;
+        background: linear-gradient(135deg, #a26eec 0%, #33f6b3 50%, #7dd3fc 100%);
         transform: rotate(45deg);
         position: relative;
-        transition: all 0.3s ease;
+        transform-style: preserve-3d;
+        box-shadow: 
+            0 25px 50px rgba(162, 110, 236, 0.4),
+            0 15px 30px rgba(51, 246, 179, 0.2),
+            inset 0 -8px 20px rgba(0, 0, 0, 0.15),
+            inset 0 8px 20px rgba(255, 255, 255, 0.2);
     }
 
     .shape-square::before {
         content: '';
         position: absolute;
-        top: 50%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.3) 50%, transparent 70%);
+        transform: translateZ(5px);
+    }
+
+    .shape-square::after {
+        content: '';
+        position: absolute;
+        bottom: -40px;
         left: 50%;
-        transform: translate(-50%, -50%);
-        width: 18px;
-        height: 18px;
-        background: #a26eec;
-        transition: all 0.3s ease;
+        transform: translateX(-50%) rotate(-45deg);
+        width: 60px;
+        height: 15px;
+        background: radial-gradient(ellipse, rgba(162, 110, 236, 0.5) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(10px);
+        z-index: -1;
     }
 
-    .shape-square:hover {
-        border-color: #33f6b3;
-        transform: rotate(45deg) scale(1.1);
-    }
-
-    .shape-square:hover::before {
-        background: #33f6b3;
-        transform: translate(-50%, -50%) scale(1.2);
-    }
-
-    /* Linear Triangle */
+    /* 3D Triangle with enhanced depth */
     .shape-triangle {
         width: 0;
         height: 0;
-        border-left: 35px solid transparent;
-        border-right: 35px solid transparent;
-        border-bottom: 60px solid transparent;
-        border-bottom-color: #ffe870;
+        border-left: 40px solid transparent;
+        border-right: 40px solid transparent;
+        border-bottom: 70px solid #ffe870;
         position: relative;
-        transition: all 0.3s ease;
+        filter: drop-shadow(0 20px 30px rgba(255, 232, 112, 0.4))
+                drop-shadow(0 10px 15px rgba(255, 232, 112, 0.2));
     }
 
     .shape-triangle::before {
         content: '';
         position: absolute;
-        top: 15px;
-        left: -12px;
+        top: 20px;
+        left: -15px;
         width: 0;
         height: 0;
-        border-left: 12px solid transparent;
-        border-right: 12px solid transparent;
-        border-bottom: 20px solid #f5f5f5;
-        transition: all 0.3s ease;
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-bottom: 25px solid rgba(255, 255, 255, 0.3);
+        filter: blur(2px);
     }
 
-    [data-theme="dark"] .shape-triangle::before {
-        border-bottom-color: #1a1a1a;
+    .shape-triangle::after {
+        content: '';
+        position: absolute;
+        bottom: -45px;
+        left: -30px;
+        width: 60px;
+        height: 20px;
+        background: radial-gradient(ellipse, rgba(255, 232, 112, 0.5) 0%, transparent 70%);
+        border-radius: 50%;
+        filter: blur(12px);
+        z-index: -1;
     }
 
-    .shape-triangle:hover {
-        border-bottom-color: #ffce5c;
-        transform: scale(1.1);
-    }
-
-    /* Linear floating animation */
-    @keyframes floatLinear {
+    /* Enhanced 3D floating animation */
+    @keyframes float3D {
         0%, 100% {
-            transform: translateY(0px);
+            transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+        }
+        25% {
+            transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
         }
         50% {
-            transform: translateY(-20px);
+            transform: translateY(-25px) rotateX(0deg) rotateY(10deg);
+        }
+        75% {
+            transform: translateY(-10px) rotateX(-5deg) rotateY(5deg);
         }
     }
 
-    /* Linear decorative lines */
+    /* Enhanced decorative lines with 3D effect */
     .banner-shapes::before,
     .banner-shapes::after {
         content: '';
         position: absolute;
-        width: 100px;
-        height: 2px;
-        background: linear-gradient(90deg, transparent, #fb923c 50%, transparent);
+        width: 120px;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, #fb923c 20%, #fc7c82 50%, #a26eec 80%, transparent);
         top: 50%;
-        opacity: 0.5;
-        transition: all 0.3s ease;
+        opacity: 0.6;
+        border-radius: 2px;
+        box-shadow: 0 5px 15px rgba(251, 146, 60, 0.3);
     }
 
     .banner-shapes::before {
-        left: -150px;
-        animation: lineSlide 4s ease-in-out infinite;
+        left: -180px;
+        animation: lineGlow 4s ease-in-out infinite;
     }
 
     .banner-shapes::after {
-        right: -150px;
-        animation: lineSlide 4s ease-in-out infinite 2s;
+        right: -180px;
+        animation: lineGlow 4s ease-in-out infinite 2s;
     }
 
-    @keyframes lineSlide {
-        0%, 100% {
-            opacity: 0.5;
-            transform: scaleX(1);
-        }
-        50% {
-            opacity: 1;
-            transform: scaleX(1.2);
-        }
-    }
-
-    /* Linear accent dots */
-    .linear-accent {
-        position: absolute;
-        width: 6px;
-        height: 6px;
-        background: #fb923c;
-        border-radius: 50%;
-        opacity: 0.6;
-        z-index: 1;
-        transition: all 0.3s ease;
-    }
-
-    .linear-accent:nth-child(1) {
-        top: 20%;
-        left: 15%;
-        animation: dotPulse 3s ease-in-out infinite;
-    }
-
-    .linear-accent:nth-child(2) {
-        top: 30%;
-        right: 20%;
-        animation: dotPulse 3s ease-in-out infinite 1s;
-        background: #a26eec;
-    }
-
-    .linear-accent:nth-child(3) {
-        bottom: 25%;
-        left: 25%;
-        animation: dotPulse 3s ease-in-out infinite 2s;
-        background: #ffe870;
-    }
-
-    @keyframes dotPulse {
+    @keyframes lineGlow {
         0%, 100% {
             opacity: 0.6;
-            transform: scale(1);
+            box-shadow: 0 5px 15px rgba(251, 146, 60, 0.3);
         }
         50% {
             opacity: 1;
-            transform: scale(1.5);
+            box-shadow: 0 8px 25px rgba(251, 146, 60, 0.5);
         }
     }
 
-    /* Dark theme adjustments for linear shapes */
-    [data-theme="dark"] .shape-circle {
-        border-color: #fb923c;
+    /* Enhanced grid dots accent with 3D effect */
+    .grid-accent {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: radial-gradient(circle, #fb923c 0%, #fc7c82 100%);
+        border-radius: 50%;
+        opacity: 0.4;
+        z-index: 1;
+        box-shadow: 
+            0 5px 15px rgba(251, 146, 60, 0.4),
+            0 0 20px rgba(252, 124, 130, 0.2);
     }
 
-    [data-theme="dark"] .shape-circle::before {
-        background: #fb923c;
+    .grid-accent:nth-child(1) {
+        top: 20%;
+        left: 15%;
+        animation: pulse3D 4s ease-in-out infinite;
+    }
+
+    .grid-accent:nth-child(2) {
+        top: 30%;
+        right: 20%;
+        animation: pulse3D 4s ease-in-out infinite 1.5s;
+    }
+
+    .grid-accent:nth-child(3) {
+        bottom: 25%;
+        left: 25%;
+        animation: pulse3D 4s ease-in-out infinite 3s;
+    }
+
+    @keyframes pulse3D {
+        0%, 100% {
+            opacity: 0.4;
+            transform: scale(1);
+            box-shadow: 
+                0 5px 15px rgba(251, 146, 60, 0.4),
+                0 0 20px rgba(252, 124, 130, 0.2);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1.8);
+            box-shadow: 
+                0 10px 30px rgba(251, 146, 60, 0.6),
+                0 0 40px rgba(252, 124, 130, 0.4);
+        }
+    }
+
+    /* Dark theme adjustments for shapes */
+    [data-theme="dark"] .shape-circle {
+        box-shadow: 
+            0 20px 40px rgba(251, 146, 60, 0.4),
+            0 10px 20px rgba(252, 124, 130, 0.3),
+            inset 0 -5px 15px rgba(0, 0, 0, 0.3),
+            inset 0 5px 15px rgba(255, 255, 255, 0.1);
     }
 
     [data-theme="dark"] .shape-square {
-        border-color: #a26eec;
-    }
-
-    [data-theme="dark"] .shape-square::before {
-        background: #a26eec;
+        box-shadow: 
+            0 25px 50px rgba(162, 110, 236, 0.5),
+            0 15px 30px rgba(51, 246, 179, 0.3),
+            inset 0 -8px 20px rgba(0, 0, 0, 0.3),
+            inset 0 8px 20px rgba(255, 255, 255, 0.1);
     }
 
     [data-theme="dark"] .shape-triangle {
-        border-bottom-color: #ffe870;
+        filter: drop-shadow(0 20px 30px rgba(255, 232, 112, 0.5))
+                drop-shadow(0 10px 15px rgba(255, 232, 112, 0.3));
     }
 
-    [data-theme="dark"] .linear-accent {
-        opacity: 0.8;
+    [data-theme="dark"] .grid-accent {
+        box-shadow: 
+            0 5px 15px rgba(251, 146, 60, 0.6),
+            0 0 20px rgba(252, 124, 130, 0.4);
     }
 
     @media only screen and (max-width: 1919px) {
@@ -321,49 +380,29 @@
             padding-top: 160px;
         }
 
+        .hero-area-3::before {
+            background-size: 30px 30px;
+        }
+
         .banner-shapes {
             margin-bottom: 40px;
-            gap: 35px;
+            gap: 25px;
         }
 
         .shape-circle {
-            width: 65px;
-            height: 65px;
-            border-width: 2px;
-        }
-
-        .shape-circle::before {
-            width: 16px;
-            height: 16px;
+            width: 70px;
+            height: 70px;
         }
 
         .shape-square {
             width: 55px;
             height: 55px;
-            border-width: 2px;
-        }
-
-        .shape-square::before {
-            width: 14px;
-            height: 14px;
         }
 
         .shape-triangle {
-            border-left: 28px solid transparent;
-            border-right: 28px solid transparent;
-            border-bottom: 48px solid #ffe870;
-        }
-
-        .shape-triangle::before {
-            top: 12px;
-            left: -10px;
-            border-left: 10px solid transparent;
-            border-right: 10px solid transparent;
-            border-bottom: 16px solid #f5f5f5;
-        }
-
-        [data-theme="dark"] .shape-triangle::before {
-            border-bottom-color: #1a1a1a;
+            border-left: 30px solid transparent;
+            border-right: 30px solid transparent;
+            border-bottom: 55px solid #ffe870;
         }
 
         .banner-shapes::before,
@@ -394,19 +433,18 @@
             padding-top: 180px;
         }
 
+        .hero-area-3::before {
+            background-size: 25px 25px;
+        }
+
         .banner-shapes {
             margin-bottom: 30px;
-            gap: 25px;
+            gap: 20px;
         }
 
         .shape-circle {
-            width: 55px;
-            height: 55px;
-        }
-
-        .shape-circle::before {
-            width: 14px;
-            height: 14px;
+            width: 60px;
+            height: 60px;
         }
 
         .shape-square {
@@ -414,27 +452,10 @@
             height: 45px;
         }
 
-        .shape-square::before {
-            width: 12px;
-            height: 12px;
-        }
-
         .shape-triangle {
-            border-left: 22px solid transparent;
-            border-right: 22px solid transparent;
-            border-bottom: 38px solid #ffe870;
-        }
-
-        .shape-triangle::before {
-            top: 10px;
-            left: -8px;
-            border-left: 8px solid transparent;
-            border-right: 8px solid transparent;
-            border-bottom: 13px solid #f5f5f5;
-        }
-
-        [data-theme="dark"] .shape-triangle::before {
-            border-bottom-color: #1a1a1a;
+            border-left: 25px solid transparent;
+            border-right: 25px solid transparent;
+            border-bottom: 45px solid #ffe870;
         }
 
         .banner-shapes::before,
@@ -442,7 +463,7 @@
             display: none;
         }
 
-        .linear-accent {
+        .grid-accent {
             display: none;
         }
     }
@@ -453,17 +474,12 @@
         }
 
         .banner-shapes {
-            gap: 20px;
+            gap: 15px;
         }
 
         .shape-circle {
-            width: 45px;
-            height: 45px;
-        }
-
-        .shape-circle::before {
-            width: 12px;
-            height: 12px;
+            width: 50px;
+            height: 50px;
         }
 
         .shape-square {
@@ -471,41 +487,24 @@
             height: 35px;
         }
 
-        .shape-square::before {
-            width: 10px;
-            height: 10px;
-        }
-
         .shape-triangle {
-            border-left: 18px solid transparent;
-            border-right: 18px solid transparent;
-            border-bottom: 30px solid #ffe870;
-        }
-
-        .shape-triangle::before {
-            top: 8px;
-            left: -6px;
-            border-left: 6px solid transparent;
-            border-right: 6px solid transparent;
-            border-bottom: 10px solid #f5f5f5;
-        }
-
-        [data-theme="dark"] .shape-triangle::before {
-            border-bottom-color: #1a1a1a;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-bottom: 35px solid #ffe870;
         }
     }
 </style>
 
 <section class="hero-area-3">
-    <!-- Linear accent dots -->
-    <div class="linear-accent"></div>
-    <div class="linear-accent"></div>
-    <div class="linear-accent"></div>
+    <!-- Enhanced grid accent dots -->
+    <div class="grid-accent"></div>
+    <div class="grid-accent"></div>
+    <div class="grid-accent"></div>
 
     <div class="container">
         <div class="hero-area-3-inner section-spacing">
             <div class="section-header">
-                <!-- Linear geometric shapes above title -->
+                <!-- Enhanced 3D geometric shapes above title -->
                 <div class="banner-shapes fade-anim" data-delay="0.15">
                     <div class="shape-element">
                         <div class="shape-circle"></div>
