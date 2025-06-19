@@ -81,7 +81,7 @@
         padding-top: 120px;
     }
 
-    /* Floating particles background */
+    /* Enhanced floating particles background */
     .floating-particles {
         position: absolute;
         top: 0;
@@ -92,42 +92,176 @@
         pointer-events: none;
     }
 
+    /* Main floating particles */
     .particle {
         position: absolute;
-        width: 4px;
-        height: 4px;
-        background: linear-gradient(45deg, #fb923c, #fc7c82);
         border-radius: 50%;
-        opacity: 0.6;
-        animation: floatUp 8s linear infinite;
+        opacity: 0.7;
+        animation: floatUp 12s linear infinite;
     }
 
-    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
-    .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
-    .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
-    .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
-    .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
-    .particle:nth-child(7) { left: 70%; animation-delay: 6s; }
-    .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
-    .particle:nth-child(9) { left: 90%; animation-delay: 0.5s; }
-    .particle:nth-child(10) { left: 15%; animation-delay: 1.5s; }
+    /* Different particle sizes and colors */
+    .particle.small {
+        width: 3px;
+        height: 3px;
+        background: #fb923c;
+    }
+
+    .particle.medium {
+        width: 5px;
+        height: 5px;
+        background: #fc7c82;
+    }
+
+    .particle.large {
+        width: 7px;
+        height: 7px;
+        background: #a26eec;
+    }
+
+    .particle.extra-large {
+        width: 9px;
+        height: 9px;
+        background: #33f6b3;
+    }
+
+    /* Particle positioning and delays */
+    .particle:nth-child(1) { left: 5%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 12%; animation-delay: 1.5s; }
+    .particle:nth-child(3) { left: 18%; animation-delay: 3s; }
+    .particle:nth-child(4) { left: 25%; animation-delay: 4.5s; }
+    .particle:nth-child(5) { left: 32%; animation-delay: 6s; }
+    .particle:nth-child(6) { left: 38%; animation-delay: 7.5s; }
+    .particle:nth-child(7) { left: 45%; animation-delay: 9s; }
+    .particle:nth-child(8) { left: 52%; animation-delay: 10.5s; }
+    .particle:nth-child(9) { left: 58%; animation-delay: 0.8s; }
+    .particle:nth-child(10) { left: 65%; animation-delay: 2.3s; }
+    .particle:nth-child(11) { left: 72%; animation-delay: 3.8s; }
+    .particle:nth-child(12) { left: 78%; animation-delay: 5.3s; }
+    .particle:nth-child(13) { left: 85%; animation-delay: 6.8s; }
+    .particle:nth-child(14) { left: 92%; animation-delay: 8.3s; }
+    .particle:nth-child(15) { left: 8%; animation-delay: 9.8s; }
+    .particle:nth-child(16) { left: 15%; animation-delay: 11.3s; }
+    .particle:nth-child(17) { left: 22%; animation-delay: 1.2s; }
+    .particle:nth-child(18) { left: 28%; animation-delay: 2.7s; }
+    .particle:nth-child(19) { left: 35%; animation-delay: 4.2s; }
+    .particle:nth-child(20) { left: 42%; animation-delay: 5.7s; }
+    .particle:nth-child(21) { left: 48%; animation-delay: 7.2s; }
+    .particle:nth-child(22) { left: 55%; animation-delay: 8.7s; }
+    .particle:nth-child(23) { left: 62%; animation-delay: 10.2s; }
+    .particle:nth-child(24) { left: 68%; animation-delay: 11.7s; }
+    .particle:nth-child(25) { left: 75%; animation-delay: 0.4s; }
 
     @keyframes floatUp {
         0% {
             transform: translateY(100vh) scale(0);
             opacity: 0;
         }
-        10% {
-            opacity: 0.6;
+        5% {
+            opacity: 0.7;
             transform: scale(1);
         }
-        90% {
-            opacity: 0.6;
+        95% {
+            opacity: 0.7;
         }
         100% {
             transform: translateY(-100px) scale(0);
             opacity: 0;
+        }
+    }
+
+    /* Ambient particles - smaller and more subtle */
+    .ambient-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .ambient-particle {
+        position: absolute;
+        width: 2px;
+        height: 2px;
+        background: rgba(251, 146, 60, 0.4);
+        border-radius: 50%;
+        animation: ambientFloat 20s linear infinite;
+    }
+
+    .ambient-particle:nth-child(1) { left: 3%; animation-delay: 0s; }
+    .ambient-particle:nth-child(2) { left: 9%; animation-delay: 2s; }
+    .ambient-particle:nth-child(3) { left: 16%; animation-delay: 4s; }
+    .ambient-particle:nth-child(4) { left: 23%; animation-delay: 6s; }
+    .ambient-particle:nth-child(5) { left: 31%; animation-delay: 8s; }
+    .ambient-particle:nth-child(6) { left: 39%; animation-delay: 10s; }
+    .ambient-particle:nth-child(7) { left: 47%; animation-delay: 12s; }
+    .ambient-particle:nth-child(8) { left: 54%; animation-delay: 14s; }
+    .ambient-particle:nth-child(9) { left: 61%; animation-delay: 16s; }
+    .ambient-particle:nth-child(10) { left: 69%; animation-delay: 18s; }
+    .ambient-particle:nth-child(11) { left: 76%; animation-delay: 1s; }
+    .ambient-particle:nth-child(12) { left: 83%; animation-delay: 3s; }
+    .ambient-particle:nth-child(13) { left: 91%; animation-delay: 5s; }
+    .ambient-particle:nth-child(14) { left: 97%; animation-delay: 7s; }
+    .ambient-particle:nth-child(15) { left: 6%; animation-delay: 9s; }
+
+    @keyframes ambientFloat {
+        0% {
+            transform: translateY(100vh) translateX(0px);
+            opacity: 0;
+        }
+        10% {
+            opacity: 0.4;
+        }
+        90% {
+            opacity: 0.4;
+        }
+        100% {
+            transform: translateY(-100px) translateX(20px);
+            opacity: 0;
+        }
+    }
+
+    /* Sparkle particles - tiny twinkling effects */
+    .sparkle-particles {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .sparkle {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        background: #fff;
+        border-radius: 50%;
+        animation: sparkleEffect 3s ease-in-out infinite;
+    }
+
+    .sparkle:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+    .sparkle:nth-child(2) { top: 30%; left: 25%; animation-delay: 0.5s; }
+    .sparkle:nth-child(3) { top: 15%; left: 40%; animation-delay: 1s; }
+    .sparkle:nth-child(4) { top: 45%; left: 15%; animation-delay: 1.5s; }
+    .sparkle:nth-child(5) { top: 25%; left: 60%; animation-delay: 2s; }
+    .sparkle:nth-child(6) { top: 35%; left: 75%; animation-delay: 2.5s; }
+    .sparkle:nth-child(7) { top: 50%; left: 30%; animation-delay: 0.3s; }
+    .sparkle:nth-child(8) { top: 40%; left: 85%; animation-delay: 0.8s; }
+    .sparkle:nth-child(9) { top: 60%; left: 20%; animation-delay: 1.3s; }
+    .sparkle:nth-child(10) { top: 55%; left: 70%; animation-delay: 1.8s; }
+
+    @keyframes sparkleEffect {
+        0%, 100% {
+            opacity: 0;
+            transform: scale(0);
+        }
+        50% {
+            opacity: 1;
+            transform: scale(1);
         }
     }
 
@@ -279,8 +413,28 @@
     }
 
     /* Dark theme adjustments */
-    [data-theme="dark"] .particle {
-        background: linear-gradient(45deg, #fb923c, #a26eec);
+    [data-theme="dark"] .particle.small {
+        background: #fb923c;
+    }
+
+    [data-theme="dark"] .particle.medium {
+        background: #fc7c82;
+    }
+
+    [data-theme="dark"] .particle.large {
+        background: #a26eec;
+    }
+
+    [data-theme="dark"] .particle.extra-large {
+        background: #33f6b3;
+    }
+
+    [data-theme="dark"] .ambient-particle {
+        background: rgba(162, 110, 236, 0.4);
+    }
+
+    [data-theme="dark"] .sparkle {
+        background: rgba(255, 255, 255, 0.8);
     }
 
     [data-theme="dark"] .shape-circle {
@@ -405,6 +559,19 @@
             width: 6px;
             height: 6px;
         }
+
+        /* Reduce particles on tablet */
+        .particle:nth-child(n+16) {
+            display: none;
+        }
+
+        .ambient-particle:nth-child(n+11) {
+            display: none;
+        }
+
+        .sparkle:nth-child(n+6) {
+            display: none;
+        }
     }
 
     @media only screen and (max-width: 767px) {
@@ -451,7 +618,16 @@
             display: none;
         }
 
-        .particle:nth-child(n+6) {
+        /* Reduce particles significantly on mobile */
+        .particle:nth-child(n+11) {
+            display: none;
+        }
+
+        .ambient-particle:nth-child(n+8) {
+            display: none;
+        }
+
+        .sparkle:nth-child(n+4) {
             display: none;
         }
     }
@@ -480,22 +656,84 @@
             border-right: 20px solid transparent;
             border-bottom: 35px solid #33f6b3;
         }
+
+        /* Minimal particles on small mobile */
+        .particle:nth-child(n+8) {
+            display: none;
+        }
+
+        .ambient-particle:nth-child(n+5) {
+            display: none;
+        }
+
+        .sparkle:nth-child(n+3) {
+            display: none;
+        }
     }
 </style>
 
 <section class="hero-area-3">
-    <!-- Floating particles background -->
+    <!-- Enhanced floating particles background -->
     <div class="floating-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
+        <!-- Main particles with different sizes -->
+        <div class="particle small"></div>
+        <div class="particle medium"></div>
+        <div class="particle large"></div>
+        <div class="particle small"></div>
+        <div class="particle extra-large"></div>
+        <div class="particle medium"></div>
+        <div class="particle small"></div>
+        <div class="particle large"></div>
+        <div class="particle medium"></div>
+        <div class="particle small"></div>
+        <div class="particle extra-large"></div>
+        <div class="particle medium"></div>
+        <div class="particle large"></div>
+        <div class="particle small"></div>
+        <div class="particle medium"></div>
+        <div class="particle large"></div>
+        <div class="particle small"></div>
+        <div class="particle extra-large"></div>
+        <div class="particle medium"></div>
+        <div class="particle small"></div>
+        <div class="particle large"></div>
+        <div class="particle medium"></div>
+        <div class="particle small"></div>
+        <div class="particle extra-large"></div>
+        <div class="particle medium"></div>
+    </div>
+
+    <!-- Ambient particles - smaller and more subtle -->
+    <div class="ambient-particles">
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+        <div class="ambient-particle"></div>
+    </div>
+
+    <!-- Sparkle particles - tiny twinkling effects -->
+    <div class="sparkle-particles">
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
+        <div class="sparkle"></div>
     </div>
 
     <div class="container">
