@@ -152,7 +152,7 @@
 <header class="header-area-4">
     <div class="header-main header-sticky">
         <div class="container">
-            <div class="cbd-color-primary-bg header-area-4-inner">
+            <div style="background-color: var(--cbd-primary) " class="header-area-4-inner">
                 <div class="header-logo">
                     <!-- <a href="index.html">
                         <img src="" class="normal-logo" alt="Site Logo">
