@@ -119,9 +119,7 @@
   --secondary: #525355;
   --border: #0E0F11;
   --bg: #fefefe;
-
-
-
+  --header-bg: #4B5563;
   --theme: #AFF42B;
   --black: #0E0F11;
   --black-2: #525355;
@@ -148,6 +146,7 @@
   --secondary: #ffffff;
   --border: #ffffff;
   --bg: #2d2d2d;
+  --header-bg: #4A4A4A;
   --theme: #AFF42B;
   --black: #0E0F11;
   --black-2: #525355;

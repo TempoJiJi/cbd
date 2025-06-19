@@ -1,4 +1,13 @@
 <style>
+
+    .header-container {
+        background-color: var(--cbd-orange-red);
+    }
+
+    .header-container a {
+        color: var(--white) !important;
+    }
+
     .header-sticky {
         padding-top: 24px;
     }
@@ -17,12 +26,12 @@
         align-items: center;
         justify-content: center;
         overflow: hidden;
-        box-shadow: 0 4px 15px rgba(252, 124, 130, 0.3);
+        /* box-shadow: 0 4px 15px rgba(252, 124, 130, 0.3); */
     }
 
     .theme-toggle-btn:hover {
         transform: translateY(-2px);
-        box-shadow: 0 8px 25px rgba(252, 124, 130, 0.4);
+        /* box-shadow: 0 8px 25px rgba(252, 124, 130, 0.4); */
         border-color: #fb923c;
     }
 
@@ -63,11 +72,11 @@
     [data-theme="dark"] .theme-toggle-btn {
         background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
         border-color: #a26eec;
-        box-shadow: 0 4px 15px rgba(162, 110, 236, 0.3);
+        /* box-shadow: 0 4px 15px rgba(162, 110, 236, 0.3); */
     }
 
     [data-theme="dark"] .theme-toggle-btn:hover {
-        box-shadow: 0 8px 25px rgba(162, 110, 236, 0.4);
+        /* box-shadow: 0 8px 25px rgba(162, 110, 236, 0.4); */
         border-color: #8b7cf6;
     }
 
@@ -152,7 +161,7 @@
 <header class="header-area-4">
     <div class="header-main header-sticky">
         <div class="container">
-            <div style="background-color: var(--cbd-yellow) " class="header-area-4-inner">
+            <div class="header-container header-area-4-inner">
                 <div class="header-logo">
                     <!-- <a href="index.html">
                         <img src="" class="normal-logo" alt="Site Logo">

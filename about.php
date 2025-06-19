@@ -11,7 +11,7 @@
             <div class="section-header">
                 <div class="section-title-wrapper">
                     <div class="title-wrapper fade-anim">
-                        <h1 class="section-title">The Developer Behind the Code.</h2>
+                        <h1 style="color: var(--cbd-orange-red)" class="section-title">The Developer Behind the Code.</h2>
                             <div class="subtitle-wrapper fade-anim">
                                 <span class="section-subtitle">(Since 2019)</span>
                             </div>
@@ -45,7 +45,7 @@
                         </div>
                     </div>
                     <div style="margin-top: 10px;" class="image-wrapper parallax-view fade-anim">
-                        <img class="w-100" src="assets/imgs/cbd/banner_coding.jpg" alt="image" data-speed="0.5">
+                        <img class="w-100" src="assets/imgs/cbd/coding_guy.jpeg" alt="image" data-speed="0.5">
                     </div>
 
                 </div>

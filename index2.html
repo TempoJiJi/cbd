@@ -1,503 +1,1281 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Starry Night Sky Background</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Feux HTML Template" />
 
-        body {
-            overflow: hidden;
-            background: #000;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-        }
+    <title>Feux - Agency HTML Template</title>
 
-        .sky-container {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at top, #001122 0%, #000511 40%, #000000 100%);
-        }
+    <!-- Fav Icon -->
+    <link rel="icon" type="image/x-icon" href="assets/imgs/logo/favicon.png" />
 
-        /* Milky Way effect */
-        .milky-way {
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(ellipse at center, 
-                rgba(30, 60, 114, 0.4) 0%, 
-                rgba(42, 82, 152, 0.3) 15%, 
-                rgba(20, 40, 80, 0.2) 30%, 
-                rgba(15, 30, 60, 0.1) 45%,
-                transparent 70%);
-            transform: rotate(-30deg);
-            animation: shimmer 60s ease-in-out infinite;
-        }
+    <!-- Vendor CSS Files -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/vendor/all.min.css" />
+    <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="assets/vendor/progressbar.css" />
+    <link rel="stylesheet" href="assets/vendor/meanmenu.min.css" />
+    <link rel="stylesheet" href="assets/vendor/magnific-popup.css" />
+    <link rel="stylesheet" href="assets/vendor/animate.min.css" />
+    <link rel="stylesheet" href="assets/vendor/nice-select.css" />
 
-        .milky-way::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at center,
-                rgba(100, 150, 255, 0.1) 0%,
-                rgba(80, 120, 200, 0.05) 20%,
-                transparent 50%);
-            filter: blur(20px);
-        }
+    <!-- Template Main CSS File -->
+    <link rel="stylesheet" href="assets/css/style.css" />
+  </head>
 
-        @keyframes shimmer {
-            0%, 100% { opacity: 0.8; transform: rotate(-30deg) scale(1); }
-            50% { opacity: 1; transform: rotate(-30deg) scale(1.05); }
-        }
-
-        /* Star layers */
-        .stars-layer {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-        }
-
-        .star {
-            position: absolute;
-            background: white;
-            border-radius: 50%;
-            animation: twinkle linear infinite;
-        }
-
-        /* Small distant stars */
-        .star.small {
-            width: 1px;
-            height: 1px;
-            box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
-        }
-
-        /* Medium stars */
-        .star.medium {
-            width: 2px;
-            height: 2px;
-            box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
-        }
-
-        /* Large bright stars */
-        .star.large {
-            width: 3px;
-            height: 3px;
-            box-shadow: 0 0 4px rgba(255, 255, 255, 1), 0 0 8px rgba(200, 220, 255, 0.5);
-        }
-
-        @keyframes twinkle {
-            0%, 100% { opacity: 0.2; transform: scale(0.8); }
-            50% { opacity: 1; transform: scale(1.2); }
-        }
-
-        /* Shooting stars */
-        .shooting-star {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: white;
-            border-radius: 50%;
-            animation: shoot 3s linear infinite;
-            opacity: 0;
-        }
-
-        .shooting-star::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 150px;
-            height: 1px;
-            background: linear-gradient(90deg, white, transparent);
-            transform: translateX(-100%);
-        }
-
-        @keyframes shoot {
-            0% {
-                opacity: 0;
-                transform: translateX(0) translateY(0);
-            }
-            5% {
-                opacity: 1;
-            }
-            70% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(-500px) translateY(300px);
-            }
-        }
-
-        /* Meteors */
-        .meteor {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: radial-gradient(circle, #ffffff 0%, #ffcc66 50%, #ff6600 100%);
-            border-radius: 50%;
-            opacity: 0;
-            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 200, 100, 0.8);
-            animation: meteorFall 3s linear;
-        }
-
-        .meteor::after {
-            content: '';
-            position: absolute;
-            top: -1px;
-            right: 2px;
-            width: 250px;
-            height: 3px;
-            background: linear-gradient(to left, transparent 0%, rgba(255, 200, 100, 0.4) 30%, rgba(255, 220, 150, 0.8) 60%, rgba(255, 255, 200, 1) 100%);
-            transform-origin: right center;
-            filter: blur(2px);
-        }
-
-        @keyframes meteorFall {
-            0% {
-                opacity: 0;
-                transform: translate(0, 0);
-            }
-            5% {
-                opacity: 1;
-            }
-            95% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0;
-                transform: translate(-800px, 600px);
-            }
-        }
-
-        /* Full Moon */
-        .moon {
-            position: absolute;
-            top: 15%;
-            right: 20%;
-            width: 80px;
-            height: 80px;
-            background: 
-                radial-gradient(circle at 70% 70%, #f4f1e8 0%, #e8e5d8 40%, #d4d1c4 100%);
-            border-radius: 50%;
-            box-shadow: 
-                0 0 50px rgba(255, 255, 240, 0.9),
-                0 0 100px rgba(255, 255, 240, 0.5),
-                0 0 150px rgba(255, 255, 240, 0.3),
-                inset -15px -15px 40px rgba(100, 100, 80, 0.5),
-                inset 5px 5px 20px rgba(255, 255, 240, 0.3);
-            animation: moonGlow 6s ease-in-out infinite;
-            overflow: hidden;
-        }
-
-        /* Moon surface details */
-        .moon::before {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(circle at 25% 25%, transparent 8%, rgba(120, 120, 100, 0.1) 10%, transparent 12%),
-                radial-gradient(circle at 70% 20%, transparent 5%, rgba(120, 120, 100, 0.15) 7%, transparent 9%),
-                radial-gradient(circle at 40% 60%, transparent 6%, rgba(120, 120, 100, 0.1) 8%, transparent 10%),
-                radial-gradient(circle at 80% 70%, transparent 4%, rgba(120, 120, 100, 0.12) 6%, transparent 8%),
-                radial-gradient(circle at 20% 80%, transparent 3%, rgba(120, 120, 100, 0.08) 5%, transparent 7%),
-                radial-gradient(circle at 60% 45%, transparent 7%, rgba(120, 120, 100, 0.1) 9%, transparent 11%);
-            filter: blur(0.5px);
-        }
-
-        /* Additional texture layer */
-        .moon::after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: 
-                radial-gradient(ellipse at 30% 30%, rgba(255, 255, 240, 0.2) 0%, transparent 40%),
-                radial-gradient(ellipse at 70% 70%, transparent 0%, rgba(100, 100, 80, 0.2) 60%, transparent 100%);
-            mix-blend-mode: overlay;
-        }
-
-        @keyframes moonGlow {
-            0%, 100% {
-                box-shadow: 
-                    0 0 50px rgba(255, 255, 240, 0.9),
-                    0 0 100px rgba(255, 255, 240, 0.5),
-                    0 0 150px rgba(255, 255, 240, 0.3),
-                    inset -15px -15px 40px rgba(100, 100, 80, 0.5),
-                    inset 5px 5px 20px rgba(255, 255, 240, 0.3);
-            }
-            50% {
-                box-shadow: 
-                    0 0 60px rgba(255, 255, 240, 1),
-                    0 0 120px rgba(255, 255, 240, 0.6),
-                    0 0 180px rgba(255, 255, 240, 0.4),
-                    inset -15px -15px 40px rgba(100, 100, 80, 0.5),
-                    inset 5px 5px 20px rgba(255, 255, 240, 0.3);
-            }
-        }
-
-        /* Nebula clouds */
-        .nebula {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(60px);
-            opacity: 0.15;
-            animation: float 100s infinite ease-in-out;
-        }
-
-        .nebula1 {
-            width: 800px;
-            height: 600px;
-            background: radial-gradient(ellipse, rgba(30, 60, 120, 0.8), transparent);
-            top: 10%;
-            left: 20%;
-        }
-
-        .nebula2 {
-            width: 600px;
-            height: 400px;
-            background: radial-gradient(ellipse, rgba(40, 80, 160, 0.6), transparent);
-            bottom: 20%;
-            right: 15%;
-            animation-delay: -30s;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            33% { transform: translate(30px, -20px) scale(1.1); }
-            66% { transform: translate(-20px, 10px) scale(0.95); }
-        }
-
-        /* Silhouette landscape */
-        .landscape {
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-            height: 150px;
-            background: black;
-            clip-path: polygon(
-                0 100%, 
-                0 80%, 
-                10% 75%, 
-                20% 85%, 
-                30% 70%, 
-                40% 80%, 
-                50% 75%, 
-                60% 85%, 
-                70% 65%, 
-                80% 75%, 
-                90% 80%, 
-                100% 85%, 
-                100% 100%
-            );
-        }
-
-        /* Content overlay */
-        .content-overlay {
-            position: absolute;
-            top: 40%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 10;
-            color: white;
-        }
-
-        .title {
-            font-size: 3.5rem;
-            font-weight: 200;
-            letter-spacing: 8px;
-            margin-bottom: 1rem;
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
-            animation: fadeIn 3s ease-out;
-        }
-
-        .subtitle {
-            font-size: 1.2rem;
-            font-weight: 300;
-            letter-spacing: 4px;
-            color: rgba(200, 220, 255, 0.7);
-            animation: fadeIn 3s ease-out 0.5s both;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Responsive adjustments */
-        @media (max-width: 768px) {
-            .title {
-                font-size: 2.5rem;
-                letter-spacing: 4px;
-            }
-            .subtitle {
-                font-size: 1rem;
-                letter-spacing: 2px;
-            }
-            .landscape {
-                height: 100px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <div class="sky-container">
-        <!-- Milky Way -->
-        <div class="milky-way"></div>
-        
-        <!-- Full Moon -->
-        <div class="moon"></div>
-        
-        <!-- Nebula clouds -->
-        <div class="nebula nebula1"></div>
-        <div class="nebula nebula2"></div>
-        
-        <!-- Star layers -->
-        <div class="stars-layer" id="stars-small"></div>
-        <div class="stars-layer" id="stars-medium"></div>
-        <div class="stars-layer" id="stars-large"></div>
-        
-        <!-- Shooting stars container -->
-        <div id="shooting-stars"></div>
-        
-        <!-- Meteors container -->
-        <div id="meteors"></div>
-        
-        <!-- Landscape silhouette -->
-        <div class="landscape"></div>
-        
-        <!-- Content -->
-        <div class="content-overlay">
-            <h1 class="title">STELLAR NIGHTS</h1>
-            <p class="subtitle">Under the infinite cosmos</p>
+  <body class="body-wrapper body-ai-agency">
+    <!-- Preloader -->
+    <div id="preloader">
+      <div id="container" class="container-preloader">
+        <div class="animation-preloader">
+          <div class="spinner"></div>
         </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+      </div>
     </div>
 
-    <script>
-        // Generate stars
-        function createStars(container, count, className) {
-            for (let i = 0; i < count; i++) {
-                const star = document.createElement('div');
-                star.className = `star ${className}`;
-                
-                // Random position
-                star.style.left = Math.random() * 100 + '%';
-                star.style.top = Math.random() * 85 + '%'; // Keep above landscape
-                
-                // Random animation duration for twinkle
-                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
-                star.style.animationDelay = Math.random() * 3 + 's';
-                
-                container.appendChild(star);
-            }
-        }
+    <!-- Sroll to top -->
+    <div class="progress-wrap">
+      <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+        <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+      </svg>
+    </div>
 
-        // Create different star layers
-        createStars(document.getElementById('stars-small'), 200, 'small');
-        createStars(document.getElementById('stars-medium'), 50, 'medium');
-        createStars(document.getElementById('stars-large'), 15, 'large');
+    <!-- side toggle start -->
+    <aside class="fix">
+      <div class="side-info">
+        <div class="side-info-content">
+          <div class="offset-widget offset-header">
+            <div class="offset-logo">
+              <a href="index.html">
+                <img src="assets/imgs/logo/logo.png" alt="site logo" />
+              </a>
+            </div>
+            <button id="side-info-close" class="side-info-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </div>
+          <div class="mobile-menu d-xl-none fix"></div>
+          <div class="offset-info-box">
+            <h2 class="title">Hello There!</h2>
+            <p class="text">We offer comprehensive range of services to help your business thrive.</p>
+            <div class="t-btn-group">
+              <a class="t-btn t-btn-circle" href="contact.html">
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a class="t-btn t-btn-primary" href="contact.html">Let’s Connect</a>
+              <a class="t-btn t-btn-circle" href="contact.html">
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+            <div class="post-image">
+              <img src="assets/imgs/gallery/image-48.webp" alt="image" />
+              <img src="assets/imgs/gallery/image-49.webp" alt="image" />
+              <img src="assets/imgs/gallery/image-50.webp" alt="image" />
+              <img src="assets/imgs/gallery/image-51.webp" alt="image" />
+            </div>
+          </div>
+          <div class="offset-widget-box">
+            <h2 class="title">Information</h2>
+            <div class="contact-meta">
+              <div class="contact-item">
+                <span class="text"><a href="tel:+22306965119">+2230 6965 119</a></span>
+              </div>
+              <div class="contact-item">
+                <span class="text"><a href="mailto:feux@gmail.com">feux@gmail.com</a></span>
+              </div>
+              <div class="contact-item">
+                <span class="text">Avenue de Roma 1588, Lisboa</span>
+              </div>
+            </div>
+          </div>
+          <div class="offset-widget-box">
+            <h2 class="title">Connect Us On</h2>
+            <div class="social-links">
+              <a href="#">FB</a>
+              <a href="#">LN</a>
+              <a href="#">IN</a>
+              <a href="#">BE</a>
+            </div>
+          </div>
+          <div class="offset-logo-footer">
+            <img src="assets/imgs/logo/logo-6.png" alt="image" />
+          </div>
+        </div>
+      </div>
+    </aside>
+    <div class="offcanvas-overlay"></div>
+    <!-- side toggle end -->
 
-        // Create shooting stars
-        function createShootingStar() {
-            const shootingStarsContainer = document.getElementById('shooting-stars');
-            const shootingStar = document.createElement('div');
-            shootingStar.className = 'shooting-star';
-            
-            // Random starting position in upper portion of sky
-            shootingStar.style.left = Math.random() * 100 + '%';
-            shootingStar.style.top = Math.random() * 50 + '%';
-            
-            // Random animation duration
-            shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
-            
-            shootingStarsContainer.appendChild(shootingStar);
-            
-            // Remove after animation
-            setTimeout(() => {
-                shootingStar.remove();
-            }, 4000);
-        }
+    <!-- Header area start -->
+    <header class="header-area-4">
+      <div class="header-main header-sticky">
+        <div class="container">
+          <div class="header-area-4-inner">
+            <div class="header-logo">
+              <a href="index.html">
+                <img src="assets/imgs/logo/logo.png" class="normal-logo" alt="Site Logo" />
+              </a>
+            </div>
+            <div class="header-nav pos-center">
+              <nav class="main-menu">
+                <ul>
+                  <li class="menu-item-has-children">
+                    <a href="#">Home</a>
+                    <ul class="dp-menu">
+                      <li><a href="creative-agency.html">Creative Agency</a></li>
+                      <li><a href="design-agency.html">Design Agency</a></li>
+                      <li><a href="digital-agency.html">Digital Agency</a></li>
+                      <li><a href="ai-agency.html">AI Agency</a></li>
+                      <li><a href="marketing-agency.html">Marketing Agency</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="about.html">About Us</a></li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Service</a>
+                    <ul class="dp-menu">
+                      <li><a href="services.html">Services</a></li>
+                      <li><a href="service-details.html">Service Details</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Pages</a>
+                    <ul class="dp-menu">
+                      <li><a href="about.html">About Us</a></li>
+                      <li class="menu-item-has-children">
+                        <a href="#">Service</a>
+                        <ul>
+                          <li><a href="services.html">Services</a></li>
+                          <li><a href="service-details.html">Service Details</a></li>
+                        </ul>
+                      </li>
+                      <li class="menu-item-has-children">
+                        <a href="#">Portfolio Pages</a>
+                        <ul>
+                          <li><a href="portfolio.html">Portfolio</a></li>
+                          <li><a href="portfolio-02.html">Portfolio 02</a></li>
+                          <li><a href="portfolio-03.html">Portfolio 03</a></li>
+                          <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="team.html">Team</a></li>
+                      <li class="menu-item-has-children">
+                        <a href="#">Blog Pages</a>
+                        <ul>
+                          <li><a href="blog.html">Blog</a></li>
+                          <li><a href="blog-grid.html">Blog Grid</a></li>
+                          <li><a href="blog-details.html">Blog Details</a></li>
+                        </ul>
+                      </li>
+                      <li><a href="faq.html">FAQ</a></li>
+                      <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children">
+                    <a href="#">Blog</a>
+                    <ul class="dp-menu">
+                      <li><a href="blog.html">Blog</a></li>
+                      <li><a href="blog-grid.html">Blog Grid</a></li>
+                      <li><a href="blog-details.html">Blog Details</a></li>
+                    </ul>
+                  </li>
+                  <li><a href="contact.html">Contact</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="header-button">
+              <a class="t-btn t-btn-primary bg-active" href="contact.html">Let’s Connect</a>
+            </div>
+            <div class="header-offcanvas d-xl-none">
+              <button class="side-toggle">
+                <img src="assets/imgs/icon/icon-4.webp" alt="image" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- Header area end -->
 
-        // Periodically create shooting stars
-        setInterval(createShootingStar, 5000);
-        
-        // Create initial shooting star
-        setTimeout(createShootingStar, 1000);
+    <div class="has-smooth" id="has_smooth"></div>
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
+        <main>
+          <!-- hero area start  -->
+          <section class="hero-area-4">
+            <div class="hero-area-4-inner section-spacing-top">
+              <div class="area-bg">
+                <img src="assets/imgs/shape/shape-22.webp" alt="image" />
+              </div>
+              <div class="area-shape-1">
+                <img class="fade-anim" data-direction="left" data-delay="1.05" src="assets/imgs/shape/shape-20.webp" alt="image" />
+              </div>
+              <div class="area-shape-2">
+                <img class="fade-anim" data-direction="right" data-delay="1.20" src="assets/imgs/shape/shape-21.webp" alt="image" />
+              </div>
+              <div class="container">
+                <div class="section-content section-spacing-top">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper move-anim" data-delay="0.45">
+                      <h1 class="section-title"><span>Innovating</span> the Future of AI with <span>Feux</span></h1>
+                    </div>
+                  </div>
+                  <div class="text-wrapper fade-anim" data-delay="0.60">
+                    <p class="text">Focusing on how Feux AI is pushing boundaries in design and innovation</p>
+                  </div>
+                  <div class="btn-wrapper fade-anim" data-delay="0.75">
+                    <a class="t-btn t-btn-primary bg-active" href="contact.html">Get Started</a>
+                    <a class="t-btn t-btn-primary" href="contact.html">Contact Us</a>
+                  </div>
+                </div>
+              </div>
+              <div class="brand-area-4">
+                <div class="container">
+                  <div class="brand-area-4-inner section-spacing">
+                    <div class="section-header">
+                      <div class="section-title-wrapper">
+                        <div class="title-wrapper fade-anim">
+                          <h2 class="section-title">300+ Trusted Clients Over Worldwide</h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="brands-wrapper-box">
+                      <div class="brands-wrapper fade-anim">
+                        <div class="swiper brand-slider-active">
+                          <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-10.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-11.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-12.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-13.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-14.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-10.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-11.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-12.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-13.webp" alt="image" />
+                              </div>
+                            </div>
+                            <div class="swiper-slide">
+                              <div class="brand-item-4">
+                                <img src="assets/imgs/brand/brand-14.webp" alt="image" />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- hero area end  -->
 
-        // Create meteors
-        function createMeteor() {
-            const meteorsContainer = document.getElementById('meteors');
-            const meteor = document.createElement('div');
-            meteor.className = 'meteor';
-            
-            // Start from top-right area
-            meteor.style.right = Math.random() * 30 + '%'; // 0-30% from right
-            meteor.style.top = Math.random() * 30 + '%'; // 0-30% from top
-            
-            meteorsContainer.appendChild(meteor);
-            
-            // Remove after animation
-            setTimeout(() => {
-                meteor.remove();
-            }, 3000);
-        }
+          <!-- text slider area start  -->
+          <div class="text-slider-area-2">
+            <div class="text-slider-box">
+              <div class="text-slider fade-anim">
+                <div class="swiper text-slider-active-2">
+                  <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                      <div class="text-slider-item">
+                        <h2 class="title">
+                          <span class="icon">//</span>Where Artificial Intelligence Meets Bold Creativity<span class="icon">//</span>Empowering Brands
+                          Through Intelligent Design
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="text-slider-item">
+                        <h2 class="title">
+                          <span class="icon">//</span>Where Artificial Intelligence Meets Bold Creativity<span class="icon">//</span>Empowering Brands
+                          Through Intelligent Design
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="text-slider-item">
+                        <h2 class="title">
+                          <span class="icon">//</span>Where Artificial Intelligence Meets Bold Creativity<span class="icon">//</span>Empowering Brands
+                          Through Intelligent Design
+                        </h2>
+                      </div>
+                    </div>
+                    <div class="swiper-slide">
+                      <div class="text-slider-item">
+                        <h2 class="title">
+                          <span class="icon">//</span>Where Artificial Intelligence Meets Bold Creativity<span class="icon">//</span>Empowering Brands
+                          Through Intelligent Design
+                        </h2>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- text slider area end -->
 
-        // Create meteors at random intervals
-        function scheduleMeteor() {
-            createMeteor();
-            // Random interval between 8-20 seconds
-            const nextInterval = Math.random() * 12000 + 8000;
-            setTimeout(scheduleMeteor, nextInterval);
-        }
+          <!-- about area start  -->
+          <div class="about-area-6">
+            <div class="about-area-6-inner">
+              <div class="section-content fade-anim">
+                <div class="thumb thumb-1">
+                  <div class="shape-1">
+                    <img src="assets/imgs/shape/shape-50.webp" alt="image" />
+                  </div>
+                  <div class="image img_anim_reveal">
+                    <img src="assets/imgs/shape/shape-47.webp" alt="image" />
+                  </div>
+                </div>
+                <div class="thumb thumb-2">
+                  <div class="shape-1">
+                    <img src="assets/imgs/logo/logo-5-light.png" alt="image" />
+                  </div>
+                  <div class="video-button">
+                    <a class="video-popup" href="https://feux.wprealizer.com/wp-content/uploads/2025/04/intro_video.mp4"
+                      ><img src="assets/imgs/icon/icon-27.webp" alt="image" /><span class="text">Play intro video</span></a
+                    >
+                  </div>
+                  <div class="video">
+                    <video loop muted autoplay playsinline>
+                      <source src="https://feux.wprealizer.com/wp-content/uploads/2025/04/intro_video.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
+                <div class="thumb thumb-3">
+                  <span class="brand-text">FEUX AI</span>
+                  <div class="image img_anim_reveal">
+                    <img src="assets/imgs/shape/shape-49.webp" alt="image" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- about area end  -->
 
-        // Start meteor schedule after 3 seconds
-        setTimeout(scheduleMeteor, 3000);
+          <!-- about area start  -->
+          <section class="about-area-4">
+            <div class="container">
+              <div class="about-area-4-inner section-spacing">
+                <div class="section-content-wrapper">
+                  <div class="thumb fade-anim" data-direction="left">
+                    <img src="assets/imgs/shape/shape-23.webp" alt="image" />
+                  </div>
+                  <div class="section-content">
+                    <div class="section-title-wrapper fade-anim">
+                      <div class="subtitle-wrapper">
+                        <span class="section-subtitle">ABOUT AI</span>
+                      </div>
+                      <div class="title-wrapper">
+                        <h2 class="section-title">Shaping Our Future with Advanced AI Technologies</h2>
+                      </div>
+                    </div>
+                    <div class="text-wrapper fade-anim" data-direction="right">
+                      <p class="text">
+                        We are passionate about harnessing the power of artificial intelligence to create smart, innovative solutions that drive
+                        growth and transformation.
+                      </p>
+                      <p class="text">
+                        Our team of AI experts, data scientists, and creative technologists work collaboratively to develop customized AI models that
+                        solve complex challenges, streamline operations, and enhance user experiences.
+                      </p>
+                    </div>
+                    <div class="btn-wrapper fade-anim" data-direction="right">
+                      <div class="t-btn-group">
+                        <a class="t-btn t-btn-circle" href="about.html">
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a class="t-btn t-btn-primary" href="about.html">About Agency</a>
+                        <a class="t-btn t-btn-circle" href="about.html">
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- about area end  -->
 
-        // Parallax effect on mouse move
-        let mouseX = 0;
-        let mouseY = 0;
+          <!-- services area start  -->
+          <div class="service-area-4">
+            <div class="service-area-4-inner section-spacing">
+              <div class="container">
+                <div class="section-header">
+                  <div class="section-title-wrapper fade-anim">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">Our Services</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title">Our Best AI Solutions</h2>
+                    </div>
+                  </div>
+                  <div class="btn-wrapper fade-anim">
+                    <div class="t-btn-group">
+                      <a class="t-btn t-btn-circle" href="services.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                      <a class="t-btn t-btn-primary" href="services.html">Explore More</a>
+                      <a class="t-btn t-btn-circle" href="services.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="services-wrapper-box fade-anim">
+                <div class="container">
+                  <div class="services-wrapper">
+                    <ul class="nav nav-pills" id="pills-tab" role="tablist">
+                      <li class="nav-item" role="presentation">
+                        <div
+                          class="nav-link active"
+                          id="pills-home-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#pills-home"
+                          role="tab"
+                          aria-controls="pills-home"
+                          aria-selected="true"
+                        >
+                          <div class="service-name">
+                            <h2 class="title">AI-Powered Data Analytics</h2>
+                            <p class="text">34 Projects Available</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <div
+                          class="nav-link"
+                          id="pills-profile-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#pills-profile"
+                          role="tab"
+                          aria-controls="pills-profile"
+                          aria-selected="false"
+                        >
+                          <div class="service-name">
+                            <h2 class="title">AI Chatbots & Assistants</h2>
+                            <p class="text">41 Projects Available</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <div
+                          class="nav-link"
+                          id="pills-contact-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#pills-contact"
+                          role="tab"
+                          aria-controls="pills-contact"
+                          aria-selected="false"
+                        >
+                          <div class="service-name">
+                            <h2 class="title">Predictive AI Modeling</h2>
+                            <p class="text">28 Projects Available</p>
+                          </div>
+                        </div>
+                      </li>
+                      <li class="nav-item" role="presentation">
+                        <div
+                          class="nav-link"
+                          id="pills-disabled-tab"
+                          data-bs-toggle="pill"
+                          data-bs-target="#pills-disabled"
+                          role="tab"
+                          aria-controls="pills-disabled"
+                          aria-selected="false"
+                        >
+                          <div class="service-name">
+                            <h2 class="title">AI-Enhanced UX/UI Design</h2>
+                            <p class="text">69 Projects Available</p>
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                    <div class="tab-content" id="pills-tabContent">
+                      <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabindex="0">
+                        <div class="service-box-4">
+                          <div class="thumb">
+                            <div class="meta">20 Projects Done</div>
+                            <img src="assets/imgs/gallery/image-17.webp" alt="image" />
+                          </div>
+                          <div class="content">
+                            <h3 class="title">AI- Powered Data Analytics</h3>
+                            <p class="text">
+                              Our team of AI experts, data scientists, and creative technologists work collaboratively to develop customized AI models
+                              that solve complex challenges, streamline operations, and enhance user experiences.
+                            </p>
+                            <div class="t-btn-group">
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                              <a class="t-btn t-btn-primary" href="service-details.html">View Details</a>
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabindex="0">
+                        <div class="service-box-4">
+                          <div class="thumb">
+                            <div class="meta">28 Projects Done</div>
+                            <img src="assets/imgs/gallery/image-47.webp" alt="image" />
+                          </div>
+                          <div class="content">
+                            <h3 class="title">AI Chatbots & Assistants</h3>
+                            <p class="text">
+                              Artificial Intelligence (AI) chatbots and virtual assistants have now widely revolutionize how businesses interact with
+                              customers and streamline operations.
+                            </p>
+                            <div class="t-btn-group">
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                              <a class="t-btn t-btn-primary" href="service-details.html">View Details</a>
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab" tabindex="0">
+                        <div class="service-box-4">
+                          <div class="thumb">
+                            <div class="meta">18 Projects Done</div>
+                            <img src="assets/imgs/gallery/image-46.webp" alt="image" />
+                          </div>
+                          <div class="content">
+                            <h3 class="title">Predictive AI Modeling</h3>
+                            <p class="text">
+                              Predictive AI modeling leverages advanced algorithms and machine learning techniques to analyze historical data,
+                              identify patterns, and forecast future outcomes
+                            </p>
+                            <div class="t-btn-group">
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                              <a class="t-btn t-btn-primary" href="service-details.html">View Details</a>
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab" tabindex="0">
+                        <div class="service-box-4">
+                          <div class="thumb">
+                            <div class="meta">39 Projects Done</div>
+                            <img src="assets/imgs/gallery/image-45.webp" alt="image" />
+                          </div>
+                          <div class="content">
+                            <h3 class="title">AI-Enhanced UX/UI Design</h3>
+                            <p class="text">
+                              AI is transforming the field of UX/UI design, enabling designers to create user interfaces and experiences that are not
+                              only visually appealing but also highly intuitive and personalized.
+                            </p>
+                            <div class="t-btn-group">
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                              <a class="t-btn t-btn-primary" href="service-details.html">View Details</a>
+                              <a class="t-btn t-btn-circle" href="service-details.html">
+                                <i class="fa-solid fa-arrow-right"></i>
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- services area end  -->
 
-        document.addEventListener('mousemove', (e) => {
-            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
-            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
-            
-            // Move star layers at different speeds
-            document.getElementById('stars-small').style.transform = 
-                `translate(${mouseX * 5}px, ${mouseY * 5}px)`;
-            document.getElementById('stars-medium').style.transform = 
-                `translate(${mouseX * 10}px, ${mouseY * 10}px)`;
-            document.getElementById('stars-large').style.transform = 
-                `translate(${mouseX * 15}px, ${mouseY * 15}px)`;
-            
-            // Subtle movement for Milky Way
-            document.querySelector('.milky-way').style.transform = 
-                `rotate(-30deg) translate(${mouseX * 3}px, ${mouseY * 3}px)`;
-            
-            // Very subtle moon movement for realism
-            document.querySelector('.moon').style.transform = 
-                `translate(${mouseX * 2}px, ${mouseY * 2}px)`;
-        });
-    </script>
-</body>
+          <!-- work area start  -->
+          <section class="work-area-4">
+            <div class="container">
+              <div class="work-area-4-inner section-spacing-top">
+                <div class="section-header-wrapper">
+                  <div class="section-header">
+                    <div class="section-title-wrapper fade-anim">
+                      <div class="subtitle-wrapper">
+                        <span class="section-subtitle">OUR PORTFOLIO</span>
+                      </div>
+                      <div class="title-wrapper">
+                        <h2 class="section-title">Portfolio of AI Excellence</h2>
+                      </div>
+                    </div>
+                    <div class="btn-wrapper fade-anim">
+                      <div class="t-btn-group">
+                        <a class="t-btn t-btn-circle" href="portfolio.html">
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                        <a class="t-btn t-btn-primary" href="portfolio.html">Explore More</a>
+                        <a class="t-btn t-btn-circle" href="portfolio.html">
+                          <i class="fa-solid fa-arrow-right"></i>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="completed-projects move-anim">
+                    <span class="number">150+</span>
+                    <p class="text">Completed Projects</p>
+                  </div>
+                </div>
+                <div class="works-wrapper-box fade-anim">
+                  <div class="works-wrapper">
+                    <div class="work-box-4 work-panel">
+                      <div class="thumb">
+                        <div class="meta">
+                          <span class="tag">Business</span>
+                          <span class="tag">Assistant</span>
+                        </div>
+                        <img src="assets/imgs/project/project-7.webp" alt="image" />
+                      </div>
+                      <div class="content-wrapper">
+                        <div class="content">
+                          <p class="text">Project Name:</p>
+                          <h3 class="title">NexGen Chatbot</h3>
+                        </div>
+                        <div class="t-btn-group">
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                          <a class="t-btn t-btn-primary" href="portfolio-details.html">Full Project</a>
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="work-box-4 work-panel">
+                      <div class="thumb">
+                        <div class="meta">
+                          <span class="tag">Business</span>
+                          <span class="tag">Assistant</span>
+                        </div>
+                        <img src="assets/imgs/project/project-20.webp" alt="image" />
+                      </div>
+                      <div class="content-wrapper">
+                        <div class="content">
+                          <p class="text">Project Name:</p>
+                          <h3 class="title">Cognitech Creations</h3>
+                        </div>
+                        <div class="t-btn-group">
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                          <a class="t-btn t-btn-primary" href="portfolio-details.html">Full Project</a>
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="work-box-4 work-panel">
+                      <div class="thumb">
+                        <div class="meta">
+                          <span class="tag">Business</span>
+                          <span class="tag">Assistant</span>
+                        </div>
+                        <img src="assets/imgs/project/project-21.webp" alt="image" />
+                      </div>
+                      <div class="content-wrapper">
+                        <div class="content">
+                          <p class="text">Project Name:</p>
+                          <h3 class="title">Synthesized Solutions</h3>
+                        </div>
+                        <div class="t-btn-group">
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                          <a class="t-btn t-btn-primary" href="portfolio-details.html">Full Project</a>
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="work-box-4 work-panel">
+                      <div class="thumb">
+                        <div class="meta">
+                          <span class="tag">Business</span>
+                          <span class="tag">Assistant</span>
+                        </div>
+                        <img src="assets/imgs/project/project-22.webp" alt="image" />
+                      </div>
+                      <div class="content-wrapper">
+                        <div class="content">
+                          <p class="text">Project Name:</p>
+                          <h3 class="title">NovaMind Studio</h3>
+                        </div>
+                        <div class="t-btn-group">
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                          <a class="t-btn t-btn-primary" href="portfolio-details.html">Full Project</a>
+                          <a class="t-btn t-btn-circle" href="portfolio-details.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- work area end  -->
+
+          <!-- team area start  -->
+          <section class="team-area-4">
+            <div class="container">
+              <div class="team-area-4-inner section-spacing">
+                <div class="section-content move-anim">
+                  <div class="section-title-wrapper">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">TEAM MEMBERS</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title">Where Creativity Meets Technology: Our Talents for solutions</h2>
+                    </div>
+                  </div>
+                  <div class="team-members">
+                    <span class="number">50+</span>
+                    <p class="text">Completed Projects</p>
+                  </div>
+                  <div class="btn-wrapper">
+                    <div class="t-btn-group">
+                      <a class="t-btn t-btn-circle" href="team.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                      <a class="t-btn t-btn-primary" href="team.html">Explore More</a>
+                      <a class="t-btn t-btn-circle" href="team.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="team-wrapper-box">
+                  <div class="team-wrapper">
+                    <div class="team-box-4 fade-anim" data-direction="right" data-delay="0.30">
+                      <div class="thumb">
+                        <img src="assets/imgs/team/team-10.webp" alt="image" />
+                      </div>
+                      <div class="content">
+                        <h3 class="name">Alexandra Moore</h3>
+                        <span class="post">(Chief AI Architect)</span>
+                      </div>
+                      <div class="social-links-wrapper">
+                        <div class="links-holder">
+                          <i class="fa-solid fa-share-nodes"></i>
+                          <div class="social-links">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="team-box-4 fade-anim" data-direction="right" data-delay="0.45">
+                      <div class="thumb">
+                        <img src="assets/imgs/team/team-11.webp" alt="image" />
+                      </div>
+                      <div class="content">
+                        <h3 class="name">Emily Rodriguez</h3>
+                        <span class="post">(Head of Data Science)</span>
+                      </div>
+                      <div class="social-links-wrapper">
+                        <div class="links-holder">
+                          <i class="fa-solid fa-share-nodes"></i>
+                          <div class="social-links">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="team-box-4 fade-anim" data-direction="right" data-delay="0.30">
+                      <div class="thumb">
+                        <img src="assets/imgs/team/team-12.webp" alt="image" />
+                      </div>
+                      <div class="content">
+                        <h3 class="name">Jordan Williams</h3>
+                        <span class="post">(AI Ethics Officer)</span>
+                      </div>
+                      <div class="social-links-wrapper">
+                        <div class="links-holder">
+                          <i class="fa-solid fa-share-nodes"></i>
+                          <div class="social-links">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="team-box-4 fade-anim" data-direction="right" data-delay="0.45">
+                      <div class="thumb">
+                        <img src="assets/imgs/team/team-13.webp" alt="image" />
+                      </div>
+                      <div class="content">
+                        <h3 class="name">Ethan Brooklyn</h3>
+                        <span class="post">(AI Research Lead)</span>
+                      </div>
+                      <div class="social-links-wrapper">
+                        <div class="links-holder">
+                          <i class="fa-solid fa-share-nodes"></i>
+                          <div class="social-links">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- team area end  -->
+
+          <!-- process area start  -->
+          <section class="process-area-4">
+            <div class="container">
+              <div class="process-area-4-inner">
+                <div class="section-content section-spacing">
+                  <div class="section-title-wrapper fade-anim">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">WORK PROCESS</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title">How Feux Innovate</h2>
+                    </div>
+                  </div>
+                  <div class="accordion-wrapper-4 accordion-active">
+                    <div class="accordion" id="accordionExample">
+                      <div class="accordion-item active fade-anim">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseOne"
+                            aria-expanded="true"
+                            aria-controls="collapseOne"
+                          >
+                            Discovery & Consultation
+                          </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            We start by understanding your business needs, challenges, and goals. Our team collaborates with you to identify
+                            opportunities where AI can drive the most impact and gather all the necessary information to develop a tailored solution.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item fade-anim">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseTwo"
+                            aria-expanded="false"
+                            aria-controls="collapseTwo"
+                          >
+                            Solution Design & Ideation
+                          </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            We start by understanding your business needs, challenges, and goals. Our team collaborates with you to identify
+                            opportunities where AI can drive the most impact and gather all the necessary information to develop a tailored solution.
+                          </div>
+                        </div>
+                      </div>
+                      <div class="accordion-item fade-anim">
+                        <h2 class="accordion-header">
+                          <button
+                            class="accordion-button collapsed"
+                            type="button"
+                            data-bs-toggle="collapse"
+                            data-bs-target="#collapseThree"
+                            aria-expanded="false"
+                            aria-controls="collapseThree"
+                          >
+                            Development & Integration
+                          </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                          <div class="accordion-body">
+                            We start by understanding your business needs, challenges, and goals. Our team collaborates with you to identify
+                            opportunities where AI can drive the most impact and gather all the necessary information to develop a tailored solution.
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="section-thumb fade-anim" data-direction="right">
+                  <video loop muted autoplay playsinline>
+                    <source src="https://feux.wprealizer.com/wp-content/uploads/2025/04/how_we_work.mp4" type="video/mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- process area end -->
+
+          <!-- testimonial area start  -->
+          <section class="testimonial-area-4">
+            <div class="container">
+              <div class="testimonial-area-4-inner section-spacing-top">
+                <div class="section-content-wrapper">
+                  <div class="section-content fade-anim" data-direction="left">
+                    <div class="section-title-wrapper">
+                      <div class="subtitle-wrapper">
+                        <span class="section-subtitle">OUR TESTIMONIALS</span>
+                      </div>
+                      <div class="title-wrapper">
+                        <h2 class="section-title">The Impact of Our AI Solutions</h2>
+                      </div>
+                    </div>
+                    <div class="testimonial-reviews">
+                      <span class="number">269+</span>
+                      <p class="text">
+                        <span class="ratings">
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                          <i class="fa-solid fa-star"></i>
+                        </span>
+                        (4.9 rating based reviews)
+                      </p>
+                    </div>
+                  </div>
+                  <div class="testimonial-wrapper-box">
+                    <div class="testimonial-wrapper fade-anim">
+                      <div class="slide-nav-wrapper">
+                        <div class="slide-nav">
+                          <div class="testimonial-4-button-prev slide-nav-button"><i class="fa-solid fa-arrow-left"></i></div>
+                          <div class="testimonial-4-button-next slide-nav-button"><i class="fa-solid fa-arrow-right"></i></div>
+                        </div>
+                      </div>
+                      <div class="swiper testimonial-4-active">
+                        <div class="swiper-wrapper">
+                          <div class="swiper-slide">
+                            <div class="testimonial-item-4">
+                              <div class="content">
+                                <div class="text-wrapper">
+                                  <p class="text">
+                                    “Our approach ensures that every project we undertake is strategically crafted to build and elevate brands,
+                                    driving success through a perfect balance of creativity and technical expertise. From concept to execution, we
+                                    prioritize quality, functionality.”
+                                  </p>
+                                </div>
+                                <div class="author">
+                                  <div class="avatar">
+                                    <img src="assets/imgs/client/client-15.webp" alt="image" />
+                                  </div>
+                                  <div class="meta">
+                                    <h3 class="name">Sarah Matthews</h3>
+                                    <span class="post">CEO, TechNex Solutions</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="testimonial-item-4">
+                              <div class="content">
+                                <div class="text-wrapper">
+                                  <p class="text">
+                                    “Working with Feux AI Agency has been a game-changer for our company. Their innovative solutions streamlined our
+                                    operations and enhanced our customer engagement. The team’s expertise in AI is unmatched, and their commitment to
+                                    delivering results is evident in every project.”
+                                  </p>
+                                </div>
+                                <div class="author">
+                                  <div class="avatar">
+                                    <img src="assets/imgs/client/client-14.webp" alt="image" />
+                                  </div>
+                                  <div class="meta">
+                                    <h3 class="name">Alexandra Reed</h3>
+                                    <span class="post">CEO, Lumina Corp.</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="testimonial-item-4">
+                              <div class="content">
+                                <div class="text-wrapper">
+                                  <p class="text">
+                                    “Feux perfectly combines creativity and technical expertise. Their AI-powered marketing strategies helped us reach
+                                    new audiences and improve our ROI significantly. The team’s ability to tailor solutions to our needs was
+                                    impressive. A truly futuristic partner in business.”
+                                  </p>
+                                </div>
+                                <div class="author">
+                                  <div class="avatar">
+                                    <img src="assets/imgs/client/client-9.webp" alt="image" />
+                                  </div>
+                                  <div class="meta">
+                                    <h3 class="name">Michael Turner</h3>
+                                    <span class="post">Marketing Manager, NexGen</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide">
+                            <div class="testimonial-item-4">
+                              <div class="content">
+                                <div class="text-wrapper">
+                                  <p class="text">
+                                    "Feux helped us harness the power of AI to enhance our customer support system. Their chatbot integration was
+                                    seamless, and the results were instant—reduced response times and happier customers! Their attention to detail and
+                                    forward-thinking approach is second to none."
+                                  </p>
+                                </div>
+                                <div class="author">
+                                  <div class="avatar">
+                                    <img src="assets/imgs/client/client-10.webp" alt="image" />
+                                  </div>
+                                  <div class="meta">
+                                    <h3 class="name">Emily Collins</h3>
+                                    <span class="post">Product Manager, Zenith</span>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <!-- testimonial area end  -->
+
+          <!-- blog area start  -->
+          <div class="blog-area-4">
+            <div class="container">
+              <div class="blog-area-4-inner section-spacing">
+                <div class="section-header">
+                  <div class="section-title-wrapper fade-anim">
+                    <div class="subtitle-wrapper">
+                      <span class="section-subtitle">BLOGS & NEWS</span>
+                    </div>
+                    <div class="title-wrapper">
+                      <h2 class="section-title">Insights & Stories</h2>
+                    </div>
+                  </div>
+                  <div class="btn-wrapper fade-anim">
+                    <div class="t-btn-group">
+                      <a class="t-btn t-btn-circle" href="blog.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                      <a class="t-btn t-btn-primary" href="blog.html">Explore More</a>
+                      <a class="t-btn t-btn-circle" href="blog.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="blogs-wrapper-box">
+                  <div class="blogs-wrapper">
+                    <article class="blog-4 fade-anim" data-delay="0.30" data-direction="right">
+                      <div class="thumb">
+                        <a href="blog-details.html"><img src="assets/imgs/blog/blog-10.webp" alt="image" /> </a>
+                      </div>
+                      <div class="content">
+                        <div class="meta">
+                          <span class="tag">Marketing</span>
+                          <span class="date">October 3, 2024</span>
+                        </div>
+                        <h2 class="title"><a href="blog-details.html">How AI is Shaping the Future of Brand Strategy</a></h2>
+                      </div>
+                    </article>
+                    <article class="blog-4 fade-anim" data-delay="0.45" data-direction="right">
+                      <div class="thumb">
+                        <a href="blog-details.html"><img src="assets/imgs/blog/blog-11.webp" alt="image" /> </a>
+                      </div>
+                      <div class="content">
+                        <div class="meta">
+                          <span class="tag">Branding</span>
+                          <span class="date">October 3, 2024</span>
+                        </div>
+                        <h2 class="title"><a href="blog-details.html">Why Every Brand Needs an AI Strategy</a></h2>
+                      </div>
+                    </article>
+                    <article class="blog-4 fade-anim" data-delay="0.60" data-direction="right">
+                      <div class="thumb">
+                        <a href="blog-details.html"><img src="assets/imgs/blog/blog-12.webp" alt="image" /> </a>
+                      </div>
+                      <div class="content">
+                        <div class="meta">
+                          <span class="tag">Design</span>
+                          <span class="date">October 3, 2024</span>
+                        </div>
+                        <h2 class="title"><a href="blog-details.html">How AI Helps Brands Stay Ahead in Competitive Markets</a></h2>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- blog area ene  -->
+        </main>
+
+        <!-- footer area start  -->
+        <footer class="footer-area-4">
+          <div class="area-bg">
+            <img src="assets/imgs/shape/shape-46.webp" alt="image" />
+          </div>
+          <div class="cta-area-3 fade-anim">
+            <div class="container">
+              <div class="cta-area-3-inner section-spacing-top">
+                <div class="section-header">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="section-title">
+                        Transform Your Brand with <br />
+                        AI-Powered insights
+                      </h2>
+                    </div>
+                  </div>
+                  <div class="btn-wrapper">
+                    <div class="t-btn-group">
+                      <a class="t-btn t-btn-circle" href="contact.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                      <a class="t-btn t-btn-primary" href="contact.html">Let’s Start</a>
+                      <a class="t-btn t-btn-circle" href="contact.html">
+                        <i class="fa-solid fa-arrow-right"></i>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="footer-widget-wrapper-box">
+            <div class="container">
+              <div class="footer-widget-wrapper">
+                <div class="footer-widget-box">
+                  <div class="info-box">
+                    <div class="footer-logo">
+                      <a href="index.html"><img src="assets/imgs/logo/logo-4-light.png" alt="site logo" /></a>
+                    </div>
+                    <ul class="footer-nav-list">
+                      <li><a href="#">About</a></li>
+                      <li><a href="#">Portfolio</a></li>
+                      <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="social-links">
+                      <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                      <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                      <a href="#"><i class="fa-brands fa-behance"></i></a>
+                      <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="copyright-area">
+            <div class="container">
+              <div class="copyright-area-inner">
+                <div class="copyright-text">
+                  <p class="text">Powered by <a href="#">wprealizer</a></p>
+                </div>
+                <ul class="copyright-nav-list">
+                  <li><a href="#">Blogs</a></li>
+                  <li><a href="#">Terms & conditions</a></li>
+                  <li><a href="#">FAQ’s</a></li>
+                  <li><a href="#">Privacy</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <!-- footer area end  -->
+      </div>
+    </div>
+
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+    <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/jquery.magnific-popup.min.js"></script>
+    <script src="assets/vendor/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/counter.js"></script>
+    <script src="assets/vendor/progressbar.js"></script>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <script src="assets/vendor/ScrollSmoother.min.js"></script>
+    <script src="assets/vendor/ScrollTrigger.min.js"></script>
+    <script src="assets/vendor/SplitText.min.js"></script>
+    <script src="assets/vendor/jquery.meanmenu.min.js"></script>
+    <script src="assets/vendor/jquery.nice-select.min.js"></script>
+    <script src="assets/vendor/backToTop.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+  </body>
 </html>

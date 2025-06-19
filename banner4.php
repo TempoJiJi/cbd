@@ -78,7 +78,7 @@
                 <div class="section-title-wrapper">
                     <div class="title-wrapper head-title">
                         <h1 class="montserrat-alternates-semibold banner-title-cbd move-anim" data-delay="0.45">Codes By
-                            <span style="color: var(--cbd-orange);">Dawson</span>
+                            <span style="color: var(--cbd-orange-red);">Dawson</span>
                         </h1>
                         <div class="text-wrapper move-anim" data-delay="0.45">
                             <p class="montserrat-alternates-medium text">Building High-Impact Web & App Products.</p>
@@ -93,7 +93,7 @@
         </div>
         <span class="empty-space hide-mobile" style="height: 100px"></span>
         <div class="image-wrapper parallax-view fade-anim">
-            <img class="w-100" src="assets/imgs/cbd/banner_coding.jpg" alt="image" data-speed="0.5">
+            <img class="w-100" src="assets/imgs/cbd/banner_cat.jpg" alt="image" data-speed="0.5">
         </div>
     </div>
 </section>

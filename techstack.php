@@ -26,7 +26,7 @@
         font-weight: 600;
         margin-bottom: 20px;
         /* Reduced from 30px to 20px */
-        color: #fb923c;
+        color: var(--cbd-primary);
         position: relative;
         display: inline-block;
     }
@@ -211,40 +211,40 @@
 
             <div class="techstack-categories">
                 <!-- Languages & Core Technologies -->
-                <div class="techstack-category fade-anim" data-delay="0">
+                <div class="techstack-category" data-delay="0">
                     <h3 class="category-title">Languages & Core Technologies</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-php-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">PHP</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.2">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-nodejs-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Node.js</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.4">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-javascript-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">JavaScript</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.6">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-typescript-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">TypeScript</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.8">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-html5-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">HTML5</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="1">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-css3-plain colored techstack-icon"></i>
                             </div>
@@ -254,34 +254,34 @@
                 </div>
 
                 <!-- Frameworks & Libraries -->
-                <div class="techstack-category fade-anim" data-delay="0">
+                <div class="techstack-category fade-anim" data-delay="0.5">
                     <h3 class="category-title">Frameworks & Libraries</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-laravel-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Laravel</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.2">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-zend-original colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Zend</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.4">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-react-original colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">React</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.6">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-nextjs-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Next.js</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.8">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-express-original techstack-icon"></i>
                             </div>
@@ -291,22 +291,22 @@
                 </div>
 
                 <!-- Databases & Caching -->
-                <div class="techstack-category fade-anim" data-delay="0">
+                <div class="techstack-category fade-anim" data-delay="0.5">
                     <h3 class="category-title">Databases & Caching</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-mysql-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">MySQL</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.2">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-mongodb-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">MongoDB</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.4">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-redis-plain colored techstack-icon"></i>
                             </div>
@@ -319,25 +319,25 @@
                 <div class="techstack-category fade-anim" data-delay="0">
                     <h3 class="category-title">DevOps & Infrastructure</h3>
                     <div class="tech-grid">
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-apache-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Apache</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.2">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-nginx-original colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Nginx</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.4">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-docker-plain colored techstack-icon"></i>
                             </div>
                             <span class="tech-name">Docker</span>
                         </div>
-                        <div class="tech-item">
+                        <div class="tech-item move-anim" data-delay="0.6">
                             <div class="tech-icon-wrapper">
                                 <i class="devicon-amazonwebservices-plain-wordmark colored techstack-icon"></i>
                             </div>

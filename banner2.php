@@ -28,7 +28,7 @@
                     </div> -->
                     <div class="hero-thumb fade-anim" data-direction="left" data-delay="0.60" data-duration="2" data-offset="100">
                         <!-- <div class="image-wrapper parallax-view fade-anim"> -->
-                            <img src="assets/imgs/cbd/banner_coding.jpg">
+                            <img src="assets/imgs/cbd/coding_guy.jpeg">
                         <!-- </div> -->
                     </div>
                     <div class="hero-content">
