@@ -40,7 +40,7 @@
 
 <body data-theme="light" class="body-wrapper body-creative-agency">
 
-  <?php include 'background.php'; ?>
+  <?php // include 'background.php'; ?>
 
 
   <!-- Preloader -->

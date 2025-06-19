@@ -118,7 +118,10 @@
   --primary: #0E0F11;
   --secondary: #525355;
   --border: #0E0F11;
-  --bg: #ffffff;
+  --bg: radial-gradient(circle at center, #faffff 0%, #e2e2e2 100%);
+
+
+
   --theme: #AFF42B;
   --black: #0E0F11;
   --black-2: #525355;
@@ -142,7 +145,7 @@
   --primary: #ffffff;
   --secondary: #ffffff;
   --border: #ffffff;
-  --bg: #000000;
+  --bg: radial-gradient(circle at center, #07244b 0%, #000000 100%);
   --theme: #AFF42B;
   --black: #0E0F11;
   --black-2: #525355;
@@ -159,7 +162,7 @@
 }
 
 body {
-  background-color: var(--bg) !important; 
+  background: var(--bg) !important; 
   font-family: var(--font_instrumentsans);
   line-height: 1;
 }

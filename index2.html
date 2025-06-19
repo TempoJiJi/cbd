@@ -1,432 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minimalist Creative Background</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Starry Night Sky Background</title>
     <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-
-      body {
-        min-height: 100vh;
-        overflow-x: hidden;
-        position: relative;
-        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      }
-
-      /* Floating Geometric Shapes */
-      .geometric-layer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -10;
-        pointer-events: none;
-      }
-
-      .shape {
-        position: absolute;
-        background: rgba(139, 126, 216, 0.25);
-        border-radius: 50%;
-        animation: gentleFloat 15s ease-in-out infinite;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
-      }
-
-      .shape:nth-child(1) {
-        width: 300px;
-        height: 300px;
-        top: -150px;
-        right: -150px;
-        animation-delay: 0s;
-        background: linear-gradient(135deg, rgba(252, 124, 130, 0.3), rgba(252, 124, 130, 0.15));
-      }
-
-      .shape:nth-child(2) {
-        width: 200px;
-        height: 200px;
-        bottom: -100px;
-        left: -100px;
-        animation-delay: 5s;
-        background: linear-gradient(135deg, rgba(162, 110, 236, 0.25), rgba(162, 110, 236, 0.12));
-      }
-
-      .shape:nth-child(3) {
-        width: 150px;
-        height: 150px;
-        top: 20%;
-        left: 10%;
-        animation-delay: 10s;
-        background: linear-gradient(135deg, rgba(251, 146, 60, 0.22), rgba(251, 146, 60, 0.11));
-      }
-
-      .shape:nth-child(4) {
-        width: 120px;
-        height: 120px;
-        bottom: 30%;
-        right: 15%;
-        animation-delay: 7s;
-        background: linear-gradient(135deg, rgba(51, 246, 179, 0.25), rgba(51, 246, 179, 0.12));
-      }
-
-      .shape:nth-child(5) {
-        width: 180px;
-        height: 180px;
-        top: 50%;
-        left: 50%;
-        animation-delay: 3s;
-        background: linear-gradient(135deg, rgba(255, 232, 112, 0.28), rgba(255, 232, 112, 0.14));
-      }
-
-      @keyframes gentleFloat {
-        0%,
-        100% {
-          transform: translate(0, 0) rotate(0deg);
-          opacity: 0.8;
-        }
-        25% {
-          transform: translate(20px, -30px) rotate(90deg);
-          opacity: 1;
-        }
-        50% {
-          transform: translate(-10px, 20px) rotate(180deg);
-          opacity: 0.9;
-        }
-        75% {
-          transform: translate(30px, 10px) rotate(270deg);
-          opacity: 1;
-        }
-      }
-
-      /* Soft Particles */
-      .particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -9;
-        pointer-events: none;
-      }
-
-      .particle {
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        background: rgba(252, 124, 130, 0.6);
-        border-radius: 50%;
-        animation: particleDrift 25s linear infinite;
-        box-shadow: 0 0 15px currentColor;
-      }
-
-      .particle:nth-child(1) {
-        top: 10%;
-        left: 5%;
-        animation-delay: 0s;
-      }
-      .particle:nth-child(2) {
-        top: 30%;
-        left: 15%;
-        animation-delay: 3s;
-        background: rgba(162, 110, 236, 0.6);
-      }
-      .particle:nth-child(3) {
-        top: 50%;
-        left: 25%;
-        animation-delay: 6s;
-        background: rgba(251, 146, 60, 0.6);
-      }
-      .particle:nth-child(4) {
-        top: 70%;
-        left: 35%;
-        animation-delay: 9s;
-        background: rgba(51, 246, 179, 0.6);
-      }
-      .particle:nth-child(5) {
-        top: 20%;
-        left: 45%;
-        animation-delay: 12s;
-        background: rgba(255, 232, 112, 0.6);
-      }
-      .particle:nth-child(6) {
-        top: 40%;
-        left: 55%;
-        animation-delay: 15s;
-        background: rgba(252, 124, 130, 0.6);
-      }
-      .particle:nth-child(7) {
-        top: 60%;
-        left: 65%;
-        animation-delay: 18s;
-        background: rgba(162, 110, 236, 0.6);
-      }
-      .particle:nth-child(8) {
-        top: 80%;
-        left: 75%;
-        animation-delay: 21s;
-        background: rgba(51, 246, 179, 0.6);
-      }
-      .particle:nth-child(9) {
-        top: 15%;
-        left: 85%;
-        animation-delay: 24s;
-        background: rgba(255, 232, 112, 0.6);
-      }
-      .particle:nth-child(10) {
-        top: 35%;
-        left: 95%;
-        animation-delay: 2s;
-        background: rgba(251, 146, 60, 0.6);
-      }
-
-      @keyframes particleDrift {
-        0% {
-          transform: translateY(0) translateX(0);
-          opacity: 0;
-        }
-        10% {
-          opacity: 1;
-        }
-        90% {
-          opacity: 1;
-        }
-        100% {
-          transform: translateY(-100vh) translateX(50px);
-          opacity: 0;
-        }
-      }
-
-      /* Elegant Lines */
-      .elegant-lines {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -7;
-        pointer-events: none;
-      }
-
-      .line {
-        position: absolute;
-        background: linear-gradient(90deg, transparent 0%, rgba(252, 124, 130, 0.4) 50%, transparent 100%);
-        animation: lineGlow 8s ease-in-out infinite;
-        box-shadow: 0 0 10px rgba(252, 124, 130, 0.3);
-      }
-
-      .line:nth-child(1) {
-        width: 200px;
-        height: 3px;
-        top: 25%;
-        left: 30%;
-        animation-delay: 0s;
-      }
-
-      .line:nth-child(2) {
-        width: 150px;
-        height: 3px;
-        top: 65%;
-        right: 20%;
-        animation-delay: 2s;
-        background: linear-gradient(90deg, transparent 0%, rgba(162, 110, 236, 0.4) 50%, transparent 100%);
-        box-shadow: 0 0 10px rgba(162, 110, 236, 0.3);
-      }
-
-      .line:nth-child(3) {
-        width: 3px;
-        height: 120px;
-        top: 40%;
-        left: 60%;
-        animation-delay: 4s;
-        background: linear-gradient(0deg, transparent 0%, rgba(51, 246, 179, 0.4) 50%, transparent 100%);
-        box-shadow: 0 0 10px rgba(51, 246, 179, 0.3);
-      }
-
-      .line:nth-child(4) {
-        width: 180px;
-        height: 3px;
-        top: 15%;
-        right: 35%;
-        animation-delay: 1s;
-        background: linear-gradient(90deg, transparent 0%, rgba(255, 232, 112, 0.4) 50%, transparent 100%);
-        box-shadow: 0 0 10px rgba(255, 232, 112, 0.3);
-      }
-
-      .line:nth-child(5) {
-        width: 3px;
-        height: 100px;
-        bottom: 20%;
-        left: 25%;
-        animation-delay: 3s;
-        background: linear-gradient(0deg, transparent 0%, rgba(251, 146, 60, 0.4) 50%, transparent 100%);
-        box-shadow: 0 0 10px rgba(251, 146, 60, 0.3);
-      }
-
-      @keyframes lineGlow {
-        0%,
-        100% {
-          opacity: 0.6;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 1;
-          transform: scale(1.05);
-        }
-      }
-
-      /* Ambient Glow */
-      .ambient-glow {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -6;
-        pointer-events: none;
-      }
-
-      .glow {
-        position: absolute;
-        border-radius: 50%;
-        filter: blur(40px);
-        animation: ambientPulse 12s ease-in-out infinite;
-      }
-
-      .glow:nth-child(1) {
-        width: 400px;
-        height: 400px;
-        top: 10%;
-        right: 10%;
-        background: radial-gradient(circle, rgba(252, 124, 130, 0.2) 0%, transparent 70%);
-        animation-delay: 0s;
-      }
-
-      .glow:nth-child(2) {
-        width: 300px;
-        height: 300px;
-        bottom: 15%;
-        left: 15%;
-        background: radial-gradient(circle, rgba(255, 232, 112, 0.18) 0%, transparent 70%);
-        animation-delay: 4s;
-      }
-
-      .glow:nth-child(3) {
-        width: 350px;
-        height: 350px;
-        top: 50%;
-        left: 50%;
-        background: radial-gradient(circle, rgba(162, 110, 236, 0.15) 0%, transparent 70%);
-        animation-delay: 2s;
-      }
-
-      @keyframes ambientPulse {
-        0%,
-        100% {
-          opacity: 0.6;
-          transform: scale(1);
-        }
-        50% {
-          opacity: 0.9;
-          transform: scale(1.2);
-        }
-      }
-
-      /* Typography Elements */
-      .typography-layer {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -5;
-        pointer-events: none;
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      }
-
-      .text-element {
-        position: absolute;
-        font-size: 120px;
-        font-weight: 900;
-        color: rgba(162, 110, 236, 0.15);
-        animation: textFloat 30s ease-in-out infinite;
-        text-shadow: 0 0 20px rgba(162, 110, 236, 0.1);
-      }
-
-      .text-element:nth-child(1) {
-        top: 20%;
-        left: 5%;
-        transform: rotate(-15deg);
-        animation-delay: 0s;
-      }
-
-      .text-element:nth-child(2) {
-        bottom: 10%;
-        right: 10%;
-        transform: rotate(15deg);
-        animation-delay: 15s;
-        color: rgba(251, 146, 60, 0.15);
-        text-shadow: 0 0 20px rgba(251, 146, 60, 0.1);
-      }
-
-      @keyframes textFloat {
-        0%,
-        100% {
-          transform: rotate(-15deg) translate(0, 0);
-          opacity: 0.8;
-        }
-        50% {
-          transform: rotate(-15deg) translate(20px, -15px);
-          opacity: 1;
-        }
-      }
-
-      /* Responsive Design */
-      @media (max-width: 768px) {
-        .text-element {
-          font-size: 60px;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
-        .shape {
-          transform: scale(0.7);
+        body {
+            overflow: hidden;
+            background: #000;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
         }
 
-        .code-tag {
-          font-size: 14px;
+        .sky-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at top, #001122 0%, #000511 40%, #000000 100%);
         }
-      }
+
+        /* Milky Way effect */
+        .milky-way {
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(ellipse at center, 
+                rgba(30, 60, 114, 0.4) 0%, 
+                rgba(42, 82, 152, 0.3) 15%, 
+                rgba(20, 40, 80, 0.2) 30%, 
+                rgba(15, 30, 60, 0.1) 45%,
+                transparent 70%);
+            transform: rotate(-30deg);
+            animation: shimmer 60s ease-in-out infinite;
+        }
+
+        .milky-way::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at center,
+                rgba(100, 150, 255, 0.1) 0%,
+                rgba(80, 120, 200, 0.05) 20%,
+                transparent 50%);
+            filter: blur(20px);
+        }
+
+        @keyframes shimmer {
+            0%, 100% { opacity: 0.8; transform: rotate(-30deg) scale(1); }
+            50% { opacity: 1; transform: rotate(-30deg) scale(1.05); }
+        }
+
+        /* Star layers */
+        .stars-layer {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+
+        /* Small distant stars */
+        .star.small {
+            width: 1px;
+            height: 1px;
+            box-shadow: 0 0 1px rgba(255, 255, 255, 0.5);
+        }
+
+        /* Medium stars */
+        .star.medium {
+            width: 2px;
+            height: 2px;
+            box-shadow: 0 0 2px rgba(255, 255, 255, 0.8);
+        }
+
+        /* Large bright stars */
+        .star.large {
+            width: 3px;
+            height: 3px;
+            box-shadow: 0 0 4px rgba(255, 255, 255, 1), 0 0 8px rgba(200, 220, 255, 0.5);
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; transform: scale(0.8); }
+            50% { opacity: 1; transform: scale(1.2); }
+        }
+
+        /* Shooting stars */
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: shoot 3s linear infinite;
+            opacity: 0;
+        }
+
+        .shooting-star::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 150px;
+            height: 1px;
+            background: linear-gradient(90deg, white, transparent);
+            transform: translateX(-100%);
+        }
+
+        @keyframes shoot {
+            0% {
+                opacity: 0;
+                transform: translateX(0) translateY(0);
+            }
+            5% {
+                opacity: 1;
+            }
+            70% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translateX(-500px) translateY(300px);
+            }
+        }
+
+        /* Meteors */
+        .meteor {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: radial-gradient(circle, #ffffff 0%, #ffcc66 50%, #ff6600 100%);
+            border-radius: 50%;
+            opacity: 0;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 1), 0 0 20px rgba(255, 200, 100, 0.8);
+            animation: meteorFall 3s linear;
+        }
+
+        .meteor::after {
+            content: '';
+            position: absolute;
+            top: -1px;
+            right: 2px;
+            width: 250px;
+            height: 3px;
+            background: linear-gradient(to left, transparent 0%, rgba(255, 200, 100, 0.4) 30%, rgba(255, 220, 150, 0.8) 60%, rgba(255, 255, 200, 1) 100%);
+            transform-origin: right center;
+            filter: blur(2px);
+        }
+
+        @keyframes meteorFall {
+            0% {
+                opacity: 0;
+                transform: translate(0, 0);
+            }
+            5% {
+                opacity: 1;
+            }
+            95% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+                transform: translate(-800px, 600px);
+            }
+        }
+
+        /* Full Moon */
+        .moon {
+            position: absolute;
+            top: 15%;
+            right: 20%;
+            width: 80px;
+            height: 80px;
+            background: 
+                radial-gradient(circle at 70% 70%, #f4f1e8 0%, #e8e5d8 40%, #d4d1c4 100%);
+            border-radius: 50%;
+            box-shadow: 
+                0 0 50px rgba(255, 255, 240, 0.9),
+                0 0 100px rgba(255, 255, 240, 0.5),
+                0 0 150px rgba(255, 255, 240, 0.3),
+                inset -15px -15px 40px rgba(100, 100, 80, 0.5),
+                inset 5px 5px 20px rgba(255, 255, 240, 0.3);
+            animation: moonGlow 6s ease-in-out infinite;
+            overflow: hidden;
+        }
+
+        /* Moon surface details */
+        .moon::before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at 25% 25%, transparent 8%, rgba(120, 120, 100, 0.1) 10%, transparent 12%),
+                radial-gradient(circle at 70% 20%, transparent 5%, rgba(120, 120, 100, 0.15) 7%, transparent 9%),
+                radial-gradient(circle at 40% 60%, transparent 6%, rgba(120, 120, 100, 0.1) 8%, transparent 10%),
+                radial-gradient(circle at 80% 70%, transparent 4%, rgba(120, 120, 100, 0.12) 6%, transparent 8%),
+                radial-gradient(circle at 20% 80%, transparent 3%, rgba(120, 120, 100, 0.08) 5%, transparent 7%),
+                radial-gradient(circle at 60% 45%, transparent 7%, rgba(120, 120, 100, 0.1) 9%, transparent 11%);
+            filter: blur(0.5px);
+        }
+
+        /* Additional texture layer */
+        .moon::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(ellipse at 30% 30%, rgba(255, 255, 240, 0.2) 0%, transparent 40%),
+                radial-gradient(ellipse at 70% 70%, transparent 0%, rgba(100, 100, 80, 0.2) 60%, transparent 100%);
+            mix-blend-mode: overlay;
+        }
+
+        @keyframes moonGlow {
+            0%, 100% {
+                box-shadow: 
+                    0 0 50px rgba(255, 255, 240, 0.9),
+                    0 0 100px rgba(255, 255, 240, 0.5),
+                    0 0 150px rgba(255, 255, 240, 0.3),
+                    inset -15px -15px 40px rgba(100, 100, 80, 0.5),
+                    inset 5px 5px 20px rgba(255, 255, 240, 0.3);
+            }
+            50% {
+                box-shadow: 
+                    0 0 60px rgba(255, 255, 240, 1),
+                    0 0 120px rgba(255, 255, 240, 0.6),
+                    0 0 180px rgba(255, 255, 240, 0.4),
+                    inset -15px -15px 40px rgba(100, 100, 80, 0.5),
+                    inset 5px 5px 20px rgba(255, 255, 240, 0.3);
+            }
+        }
+
+        /* Nebula clouds */
+        .nebula {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(60px);
+            opacity: 0.15;
+            animation: float 100s infinite ease-in-out;
+        }
+
+        .nebula1 {
+            width: 800px;
+            height: 600px;
+            background: radial-gradient(ellipse, rgba(30, 60, 120, 0.8), transparent);
+            top: 10%;
+            left: 20%;
+        }
+
+        .nebula2 {
+            width: 600px;
+            height: 400px;
+            background: radial-gradient(ellipse, rgba(40, 80, 160, 0.6), transparent);
+            bottom: 20%;
+            right: 15%;
+            animation-delay: -30s;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            33% { transform: translate(30px, -20px) scale(1.1); }
+            66% { transform: translate(-20px, 10px) scale(0.95); }
+        }
+
+        /* Silhouette landscape */
+        .landscape {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 150px;
+            background: black;
+            clip-path: polygon(
+                0 100%, 
+                0 80%, 
+                10% 75%, 
+                20% 85%, 
+                30% 70%, 
+                40% 80%, 
+                50% 75%, 
+                60% 85%, 
+                70% 65%, 
+                80% 75%, 
+                90% 80%, 
+                100% 85%, 
+                100% 100%
+            );
+        }
+
+        /* Content overlay */
+        .content-overlay {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            z-index: 10;
+            color: white;
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: 200;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 20px rgba(100, 150, 255, 0.5);
+            animation: fadeIn 3s ease-out;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 4px;
+            color: rgba(200, 220, 255, 0.7);
+            animation: fadeIn 3s ease-out 0.5s both;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+                letter-spacing: 4px;
+            }
+            .subtitle {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            .landscape {
+                height: 100px;
+            }
+        }
     </style>
-  </head>
-  <body>
-    <!-- Floating Geometric Shapes -->
-    <div class="geometric-layer">
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
-      <div class="shape"></div>
+</head>
+<body>
+    <div class="sky-container">
+        <!-- Milky Way -->
+        <div class="milky-way"></div>
+        
+        <!-- Full Moon -->
+        <div class="moon"></div>
+        
+        <!-- Nebula clouds -->
+        <div class="nebula nebula1"></div>
+        <div class="nebula nebula2"></div>
+        
+        <!-- Star layers -->
+        <div class="stars-layer" id="stars-small"></div>
+        <div class="stars-layer" id="stars-medium"></div>
+        <div class="stars-layer" id="stars-large"></div>
+        
+        <!-- Shooting stars container -->
+        <div id="shooting-stars"></div>
+        
+        <!-- Meteors container -->
+        <div id="meteors"></div>
+        
+        <!-- Landscape silhouette -->
+        <div class="landscape"></div>
+        
+        <!-- Content -->
+        <div class="content-overlay">
+            <h1 class="title">STELLAR NIGHTS</h1>
+            <p class="subtitle">Under the infinite cosmos</p>
+        </div>
     </div>
 
-    <!-- Soft Particles -->
-    <div class="particles">
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-      <div class="particle"></div>
-    </div>
+    <script>
+        // Generate stars
+        function createStars(container, count, className) {
+            for (let i = 0; i < count; i++) {
+                const star = document.createElement('div');
+                star.className = `star ${className}`;
+                
+                // Random position
+                star.style.left = Math.random() * 100 + '%';
+                star.style.top = Math.random() * 85 + '%'; // Keep above landscape
+                
+                // Random animation duration for twinkle
+                star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                
+                container.appendChild(star);
+            }
+        }
 
-    <!-- Typography Elements -->
-    <div class="typography-layer">
-      <div class="text-element">CODE</div>
-      <div class="text-element">TECH</div>
-    </div>
+        // Create different star layers
+        createStars(document.getElementById('stars-small'), 200, 'small');
+        createStars(document.getElementById('stars-medium'), 50, 'medium');
+        createStars(document.getElementById('stars-large'), 15, 'large');
 
-    <!-- Your website content goes here -->
-  </body>
+        // Create shooting stars
+        function createShootingStar() {
+            const shootingStarsContainer = document.getElementById('shooting-stars');
+            const shootingStar = document.createElement('div');
+            shootingStar.className = 'shooting-star';
+            
+            // Random starting position in upper portion of sky
+            shootingStar.style.left = Math.random() * 100 + '%';
+            shootingStar.style.top = Math.random() * 50 + '%';
+            
+            // Random animation duration
+            shootingStar.style.animationDuration = (Math.random() * 2 + 2) + 's';
+            
+            shootingStarsContainer.appendChild(shootingStar);
+            
+            // Remove after animation
+            setTimeout(() => {
+                shootingStar.remove();
+            }, 4000);
+        }
+
+        // Periodically create shooting stars
+        setInterval(createShootingStar, 5000);
+        
+        // Create initial shooting star
+        setTimeout(createShootingStar, 1000);
+
+        // Create meteors
+        function createMeteor() {
+            const meteorsContainer = document.getElementById('meteors');
+            const meteor = document.createElement('div');
+            meteor.className = 'meteor';
+            
+            // Start from top-right area
+            meteor.style.right = Math.random() * 30 + '%'; // 0-30% from right
+            meteor.style.top = Math.random() * 30 + '%'; // 0-30% from top
+            
+            meteorsContainer.appendChild(meteor);
+            
+            // Remove after animation
+            setTimeout(() => {
+                meteor.remove();
+            }, 3000);
+        }
+
+        // Create meteors at random intervals
+        function scheduleMeteor() {
+            createMeteor();
+            // Random interval between 8-20 seconds
+            const nextInterval = Math.random() * 12000 + 8000;
+            setTimeout(scheduleMeteor, nextInterval);
+        }
+
+        // Start meteor schedule after 3 seconds
+        setTimeout(scheduleMeteor, 3000);
+
+        // Parallax effect on mouse move
+        let mouseX = 0;
+        let mouseY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+            mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
+            
+            // Move star layers at different speeds
+            document.getElementById('stars-small').style.transform = 
+                `translate(${mouseX * 5}px, ${mouseY * 5}px)`;
+            document.getElementById('stars-medium').style.transform = 
+                `translate(${mouseX * 10}px, ${mouseY * 10}px)`;
+            document.getElementById('stars-large').style.transform = 
+                `translate(${mouseX * 15}px, ${mouseY * 15}px)`;
+            
+            // Subtle movement for Milky Way
+            document.querySelector('.milky-way').style.transform = 
+                `rotate(-30deg) translate(${mouseX * 3}px, ${mouseY * 3}px)`;
+            
+            // Very subtle moon movement for realism
+            document.querySelector('.moon').style.transform = 
+                `translate(${mouseX * 2}px, ${mouseY * 2}px)`;
+        });
+    </script>
+</body>
 </html>
