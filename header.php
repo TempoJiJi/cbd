@@ -9,8 +9,8 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        border: 2px solid #fc7c82;
-        background: linear-gradient(135deg, #fc7c82 0%, #fb923c 100%);
+        /* border: 2px solid #fc7c82; */
+        background: var(--cbd-purple);
         cursor: pointer;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         display: flex;
@@ -152,7 +152,7 @@
 <header class="header-area-4">
     <div class="header-main header-sticky">
         <div class="container">
-            <div style="background-color: var(--cbd-primary) " class="header-area-4-inner">
+            <div style="background-color: var(--cbd-orange) " class="header-area-4-inner">
                 <div class="header-logo">
                     <!-- <a href="index.html">
                         <img src="" class="normal-logo" alt="Site Logo">

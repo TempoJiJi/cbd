@@ -139,7 +139,7 @@
 
       <main>
 
-        <?php include 'banner3.php'; ?>
+        <?php include 'banner4.php'; ?>
 
         <?php include 'about.php'; ?>
 

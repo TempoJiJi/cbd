@@ -118,7 +118,7 @@
   --primary: #0E0F11;
   --secondary: #525355;
   --border: #0E0F11;
-  --bg: radial-gradient(circle at center, #faffff 0%, #e2e2e2 100%);
+  --bg: #fefefe;
 
 
 
@@ -140,6 +140,7 @@
   --font_awesome: "Font Awesome 6 Free";
   --font_poppins: "Poppins", sans-serif;
   --font_dmsans: "DM Sans", serif;
+  --font_montserrat: "Montserrat Alternates", sans-serif;
 }
 
 [data-theme="dark"] {
