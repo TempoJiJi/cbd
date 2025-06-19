@@ -1,5 +1,5 @@
 <style>
-    /* text alight center */
+    /* text align center */
     .head-title {
         text-align: center;
     }
@@ -15,30 +15,18 @@
         font-weight: 500;
         line-height: 1.2;
         letter-spacing: -0.01em;
+        color: #000;
     }
 
-    /* Hero area full height with animated gradient background */
+    /* Hero area full height with clean background */
     .hero-area-3 {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
         position: relative;
         overflow: hidden;
+        background: #ffffff;
         transition: all 0.3s ease;
-    }
-
-    @keyframes gradientShift {
-        0% {
-            background-position: 0% 50%;
-        }
-
-        50% {
-            background-position: 100% 50%;
-        }
-
-        100% {
-            background-position: 0% 50%;
-        }
     }
 
     .hero-area-3-inner {
@@ -53,111 +41,20 @@
         padding-top: 120px;
     }
 
-    /* Floating particles background */
-    .floating-particles {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 1;
-        pointer-events: none;
-    }
-
-    .particle {
-        position: absolute;
-        width: 4px;
-        height: 4px;
-        background: linear-gradient(45deg, #fb923c, #fc7c82);
-        border-radius: 50%;
-        opacity: 0.6;
-        animation: floatUp 8s linear infinite;
-    }
-
-    .particle:nth-child(1) {
-        left: 10%;
-        animation-delay: 0s;
-    }
-
-    .particle:nth-child(2) {
-        left: 20%;
-        animation-delay: 1s;
-    }
-
-    .particle:nth-child(3) {
-        left: 30%;
-        animation-delay: 2s;
-    }
-
-    .particle:nth-child(4) {
-        left: 40%;
-        animation-delay: 3s;
-    }
-
-    .particle:nth-child(5) {
-        left: 50%;
-        animation-delay: 4s;
-    }
-
-    .particle:nth-child(6) {
-        left: 60%;
-        animation-delay: 5s;
-    }
-
-    .particle:nth-child(7) {
-        left: 70%;
-        animation-delay: 6s;
-    }
-
-    .particle:nth-child(8) {
-        left: 80%;
-        animation-delay: 7s;
-    }
-
-    .particle:nth-child(9) {
-        left: 90%;
-        animation-delay: 0.5s;
-    }
-
-    .particle:nth-child(10) {
-        left: 15%;
-        animation-delay: 1.5s;
-    }
-
-    @keyframes floatUp {
-        0% {
-            transform: translateY(100vh) scale(0);
-            opacity: 0;
-        }
-
-        10% {
-            opacity: 0.6;
-            transform: scale(1);
-        }
-
-        90% {
-            opacity: 0.6;
-        }
-
-        100% {
-            transform: translateY(-100px) scale(0);
-            opacity: 0;
-        }
-    }
-
-    /* Simple geometric shapes with single colors */
+    /* Minimal geometric elements */
     .banner-shapes {
         position: relative;
         margin-bottom: 60px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 60px;
+        gap: 80px;
     }
 
     .shape-element {
         position: relative;
-        animation: simpleFloat 6s ease-in-out infinite;
+        animation: gentleFloat 8s ease-in-out infinite;
+        opacity: 0.8;
     }
 
     .shape-element:nth-child(1) {
@@ -165,193 +62,156 @@
     }
 
     .shape-element:nth-child(2) {
-        animation-delay: 2s;
+        animation-delay: 2.5s;
     }
 
     .shape-element:nth-child(3) {
-        animation-delay: 4s;
+        animation-delay: 5s;
     }
 
-    /* Simple Circle */
+    /* Simple monochrome shapes */
     .shape-circle {
-        width: 80px;
-        height: 80px;
+        width: 60px;
+        height: 60px;
         border-radius: 50%;
-        background-color: #fb923c;
+        background-color: #000;
         transition: all 0.3s ease;
     }
 
-    /* Simple Square */
     .shape-square {
-        width: 70px;
-        height: 70px;
-        background-color: #a26eec;
+        width: 50px;
+        height: 50px;
+        background-color: #000;
         transform: rotate(45deg);
         transition: all 0.3s ease;
     }
 
-    /* Simple Triangle */
     .shape-triangle {
         width: 0;
         height: 0;
-        border-left: 40px solid transparent;
-        border-right: 40px solid transparent;
-        border-bottom: 70px solid #33f6b3;
+        border-left: 30px solid transparent;
+        border-right: 30px solid transparent;
+        border-bottom: 50px solid #000;
         transition: all 0.3s ease;
     }
 
-    /* Simple float animation */
-    @keyframes simpleFloat {
-
-        0%,
-        100% {
+    /* Gentle float animation */
+    @keyframes gentleFloat {
+        0%, 100% {
             transform: translateY(0px);
         }
-
         50% {
-            transform: translateY(-15px);
+            transform: translateY(-10px);
         }
     }
 
-    /* Hover effects for shapes */
+    /* Hover effects - subtle scale */
     .shape-element:hover .shape-circle {
-        background-color: #fc7c82;
         transform: scale(1.1);
+        opacity: 0.7;
     }
 
     .shape-element:hover .shape-square {
-        background-color: #8b7cf6;
         transform: rotate(45deg) scale(1.1);
+        opacity: 0.7;
     }
 
     .shape-element:hover .shape-triangle {
-        border-bottom-color: #22d3ee;
         transform: scale(1.1);
+        opacity: 0.7;
     }
 
-    /* Simple decorative lines with glow animation */
+    /* Minimal decorative lines */
     .banner-shapes::before,
     .banner-shapes::after {
         content: '';
         position: absolute;
-        width: 120px;
-        height: 2px;
-        background-color: #fb923c;
+        width: 100px;
+        height: 1px;
+        background-color: #000;
         top: 50%;
-        border-radius: 1px;
-        opacity: 0.6;
-        animation: lineGlow 4s ease-in-out infinite;
-        transform-origin: center;
+        opacity: 0.3;
+        animation: subtlePulse 6s ease-in-out infinite;
     }
 
     .banner-shapes::before {
-        left: -180px;
+        left: -150px;
         animation-delay: 0s;
     }
 
     .banner-shapes::after {
-        right: -180px;
-        animation-delay: 2s;
+        right: -150px;
+        animation-delay: 3s;
     }
 
-    /* Line glow animation - works on all screen sizes */
-    @keyframes lineGlow {
-
-        0%,
-        100% {
-            opacity: 0.6;
+    /* Subtle pulse animation */
+    @keyframes subtlePulse {
+        0%, 100% {
+            opacity: 0.3;
             transform: scaleX(1);
-            box-shadow: 0 0 0 rgba(251, 146, 60, 0);
         }
-
         50% {
-            opacity: 1;
-            transform: scaleX(1.2);
-            box-shadow: 0 0 10px rgba(251, 146, 60, 0.5);
+            opacity: 0.6;
+            transform: scaleX(1.1);
         }
     }
 
-    /* Orbiting elements - simplified */
-    .orbit-container {
-        position: absolute;
-        width: 280px;
-        height: 280px;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
+    /* Typography improvements */
+    .banner-title-cbd {
+        margin-bottom: 30px;
     }
 
-    .orbit-element {
-        position: absolute;
-        width: 8px;
-        height: 8px;
-        background-color: #fc7c82;
-        border-radius: 50%;
-        animation: orbit 15s linear infinite;
+    .banner-title-cbd span {
+        color: #666;
+        font-weight: 300;
     }
 
-    .orbit-element:nth-child(1) {
-        animation-delay: 0s;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
+    .text-wrapper {
+        padding-top: 20px;
+        max-width: 600px;
+        margin: 0 auto;
     }
 
-    .orbit-element:nth-child(2) {
-        animation-delay: 7.5s;
-        top: 50%;
-        right: 0;
-        transform: translateY(-50%);
-    }
-
-    @keyframes orbit {
-        0% {
-            transform: rotate(0deg) translateX(140px) rotate(0deg);
-        }
-
-        100% {
-            transform: rotate(360deg) translateX(140px) rotate(-360deg);
-        }
+    .text-wrapper p {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #666;
+        font-weight: 400;
     }
 
     /* Dark theme adjustments */
-    [data-theme="dark"] .particle {
-        background: linear-gradient(45deg, #fb923c, #a26eec);
+    [data-theme="dark"] .hero-area-3 {
+        background: #000000;
     }
 
-    [data-theme="dark"] .shape-circle {
-        background-color: #fb923c;
+    [data-theme="dark"] .banner-title-cbd {
+        color: #fff;
     }
 
-    [data-theme="dark"] .shape-square {
-        background-color: #a26eec;
+    [data-theme="dark"] .banner-title-cbd span {
+        color: #ccc;
     }
 
+    [data-theme="dark"] .text-wrapper p {
+        color: #ccc;
+    }
+
+    [data-theme="dark"] .shape-circle,
+    [data-theme="dark"] .shape-square,
     [data-theme="dark"] .shape-triangle {
-        border-bottom-color: #33f6b3;
+        background-color: #fff;
+        border-bottom-color: #fff;
     }
 
     [data-theme="dark"] .banner-shapes::before,
     [data-theme="dark"] .banner-shapes::after {
-        background-color: #a26eec;
+        background-color: #fff;
     }
 
-
-    [data-theme="dark"] .orbit-element {
-        background-color: #fc7c82;
-    }
-
-    [data-theme="dark"] .shape-element:hover .shape-circle {
-        background-color: #fc7c82;
-    }
-
-    [data-theme="dark"] .shape-element:hover .shape-square {
-        background-color: #8b7cf6;
-    }
-
+    [data-theme="dark"] .shape-element:hover .shape-circle,
+    [data-theme="dark"] .shape-element:hover .shape-square,
     [data-theme="dark"] .shape-element:hover .shape-triangle {
-        border-bottom-color: #22d3ee;
+        opacity: 0.7;
     }
 
     /* Responsive adjustments */
@@ -377,91 +237,19 @@
         }
 
         .banner-shapes {
-            gap: 40px;
-        }
-
-        .orbit-container {
-            width: 220px;
-            height: 220px;
+            gap: 60px;
         }
     }
 
     @media only screen and (max-width: 991px) {
-        .section-content-wrapper {
-            text-align: center;
-        }
-
         .banner-title-cbd {
             padding-top: 20px;
-            font-size: 85px !important;
-        }
-
-        .hero-area-3-inner {
-            /* padding-top: 160px; */
+            font-size: 70px !important;
         }
 
         .banner-shapes {
             margin-bottom: 40px;
-            gap: 30px;
-        }
-
-        .shape-circle {
-            width: 60px;
-            height: 60px;
-        }
-
-        .shape-square {
-            width: 50px;
-            height: 50px;
-        }
-
-        .shape-triangle {
-            border-left: 30px solid transparent;
-            border-right: 30px solid transparent;
-            border-bottom: 55px solid #33f6b3;
-        }
-
-        .banner-shapes::before,
-        .banner-shapes::after {
-            width: 80px;
-            /* Keep the lineGlow animation */
-            animation: lineGlow 4s ease-in-out infinite;
-        }
-
-        .banner-shapes::before {
-            left: -120px;
-        }
-
-        .banner-shapes::after {
-            right: -120px;
-        }
-
-        .orbit-container {
-            width: 180px;
-            height: 180px;
-        }
-
-        .orbit-element {
-            width: 6px;
-            height: 6px;
-        }
-    }
-
-    @media only screen and (max-width: 767px) {
-        .section-content-wrapper {
-            text-align: center;
-        }
-
-        .banner-title-cbd {
-            padding-top: 20px;
-            font-size: 80px !important;
-        }
-
-        /* .hero-area-3-inner { */
-
-        .banner-shapes {
-            margin-bottom: 30px;
-            gap: 25px;
+            gap: 50px;
         }
 
         .shape-circle {
@@ -477,48 +265,42 @@
         .shape-triangle {
             border-left: 25px solid transparent;
             border-right: 25px solid transparent;
-            border-bottom: 45px solid #33f6b3;
+            border-bottom: 40px solid #000;
         }
 
-        /* Keep decorative lines with glow animation in mobile */
+        [data-theme="dark"] .shape-triangle {
+            border-bottom-color: #fff;
+        }
+
         .banner-shapes::before,
         .banner-shapes::after {
-            width: 60px;
-            height: 1.5px;
-            /* Ensure animation continues in mobile */
-            animation: lineGlow 4s ease-in-out infinite;
-            opacity: 0.6;
+            width: 80px;
+            animation: subtlePulse 6s ease-in-out infinite;
         }
 
         .banner-shapes::before {
-            left: -90px;
-            animation-delay: 0s;
+            left: -120px;
         }
 
         .banner-shapes::after {
-            right: -90px;
-            animation-delay: 2s;
-        }
-
-        .orbit-container {
-            display: none;
-        }
-
-        .particle:nth-child(n+6) {
-            display: none;
+            right: -120px;
         }
     }
 
-    @media only screen and (max-width: 480px) {
-        /* .hero-area-3-inner { */
+    @media only screen and (max-width: 767px) {
+        .banner-title-cbd {
+            padding-top: 20px;
+            font-size: 60px !important;
+        }
 
         .banner-shapes {
-            gap: 20px;
+            margin-bottom: 30px;
+            gap: 40px;
         }
 
         .shape-circle {
-            width: 45px;
-            height: 45px;
+            width: 40px;
+            height: 40px;
         }
 
         .shape-square {
@@ -529,61 +311,115 @@
         .shape-triangle {
             border-left: 20px solid transparent;
             border-right: 20px solid transparent;
-            border-bottom: 35px solid #33f6b3;
+            border-bottom: 35px solid #000;
         }
 
-        /* Keep decorative lines with glow animation for very small screens */
+        [data-theme="dark"] .shape-triangle {
+            border-bottom-color: #fff;
+        }
+
         .banner-shapes::before,
         .banner-shapes::after {
-            width: 40px;
-            height: 1px;
-            /* Ensure animation continues on small mobile */
-            animation: lineGlow 4s ease-in-out infinite;
-            opacity: 0.6;
+            width: 60px;
+            animation: subtlePulse 6s ease-in-out infinite;
+        }
+
+        .banner-shapes::before {
+            left: -90px;
+        }
+
+        .banner-shapes::after {
+            right: -90px;
+        }
+
+        .text-wrapper p {
+            font-size: 16px;
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .banner-title-cbd {
+            font-size: 50px !important;
+        }
+
+        .banner-shapes {
+            gap: 30px;
+        }
+
+        .shape-circle {
+            width: 35px;
+            height: 35px;
+        }
+
+        .shape-square {
+            width: 30px;
+            height: 30px;
+        }
+
+        .shape-triangle {
+            border-left: 18px solid transparent;
+            border-right: 18px solid transparent;
+            border-bottom: 30px solid #000;
+        }
+
+        [data-theme="dark"] .shape-triangle {
+            border-bottom-color: #fff;
+        }
+
+        .banner-shapes::before,
+        .banner-shapes::after {
+            width: 50px;
+            animation: subtlePulse 6s ease-in-out infinite;
         }
 
         .banner-shapes::before {
             left: -70px;
-            animation-delay: 0s;
         }
 
         .banner-shapes::after {
             right: -70px;
-            animation-delay: 2s;
+        }
+
+        .text-wrapper p {
+            font-size: 15px;
         }
     }
 
+    /* Additional spacing */
     .text-wrapper {
         padding-top: 30px;
     }
 
+    /* Clean video styling */
+    .image-wrapper {
+        margin-top: 60px;
+    }
+
+    .image-wrapper video {
+        border-radius: 12px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    [data-theme="dark"] .image-wrapper video {
+        box-shadow: 0 20px 60px rgba(255, 255, 255, 0.05);
+    }
+
+    .image-wrapper:hover video {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+    }
+
+    [data-theme="dark"] .image-wrapper:hover video {
+        box-shadow: 0 30px 80px rgba(255, 255, 255, 0.08);
+    }
 </style>
 
 <section class="hero-area-3">
-    <!-- Floating particles background -->
-    <div class="floating-particles">
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-        <div class="particle"></div>
-    </div>
-
     <div class="container">
         <div class="hero-area-3-inner section-spacing">
             <div class="section-header">
-                <!-- Orbiting elements -->
-                <div class="orbit-container">
-                    <div class="orbit-element"></div>
-                    <div class="orbit-element"></div>
-                </div>
-
-                <!-- Simple geometric shapes with single colors -->
+                <!-- Simple geometric shapes with monochrome colors -->
                 <div class="banner-shapes fade-anim" data-delay="0.15">
                     <div class="shape-element">
                         <div class="shape-circle"></div>
@@ -599,24 +435,17 @@
                 <div class="section-title-wrapper">
                     <div class="title-wrapper head-title">
                         <h1 class="montserrat-alternates-semibold banner-title-cbd move-anim" data-delay="0.45">Codes By
-                            <span style="color: var(--cbd-orange);">Dawson</span>
+                            <span>Dawson</span>
                         </h1>
                         <div class="text-wrapper move-anim" data-delay="0.45">
                             <p class="montserrat-alternates-medium text">Building High-Impact Web & App Products.</p>
                         </div>
                         <div class="text-wrapper move-anim" data-delay="0.45">
-                            <p class="montserrat-alternates-medium text">Full Stack Developer | <br> Web Development | Mobile App Development</p>
+                            <p class="montserrat-alternates-medium text">Full Stack Developer | Web Development | Mobile App Development</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- <div class="section-content-wrapper">
-                <div class="section-content">
-                    <div class="text-wrapper fade-anim" data-delay="0.60">
-                        <p class="text">Full Stack Developer | <br> Web Development | Mobile App Development</p>
-                    </div>
-                </div>
-            </div> -->
         </div>
         <span class="empty-space hide-mobile" style="height: 100px"></span>
         <div class="image-wrapper parallax-view fade-anim">
