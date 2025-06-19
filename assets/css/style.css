@@ -129,6 +129,7 @@
   --white-2: #FFFFFF;
   --action: #AFF42B;
   --banner-border: rgba(14, 15, 17, 0.08);
+  --banner-grid: 195, 195, 195;
 }
 
 /*----------------------------------------*/
@@ -145,7 +146,7 @@
   --primary: #ffffff;
   --secondary: #ffffff;
   --border: #ffffff;
-  --bg: radial-gradient(circle at center, #07244b 0%, #000000 100%);
+  --bg: #2d2d2d;
   --theme: #AFF42B;
   --black: #0E0F11;
   --black-2: #525355;
@@ -153,6 +154,7 @@
   --white-2: #FFFFFF;
   --action: #AFF42B;
   --banner-border: rgba(199, 204, 213, 0.2);
+  --banner-grid: 255, 255, 255;
 }
 
 * {

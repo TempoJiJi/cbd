@@ -23,50 +23,22 @@
         display: flex;
         flex-direction: column;
         position: relative;
-        background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f0f0f0 100%);
         overflow: hidden;
         transition: all 0.3s ease;
     }
 
-    /* Animated gradient background */
-    .hero-area-3::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(45deg, 
-            rgba(251, 146, 60, 0.05) 0%, 
-            rgba(252, 124, 130, 0.05) 25%, 
-            rgba(162, 110, 236, 0.05) 50%, 
-            rgba(51, 246, 179, 0.05) 75%, 
-            rgba(255, 232, 112, 0.05) 100%);
-        background-size: 400% 400%;
-        animation: gradientShift 15s ease infinite;
-        z-index: 1;
-        pointer-events: none;
-    }
-
     @keyframes gradientShift {
-        0% { background-position: 0% 50%; }
-        50% { background-position: 100% 50%; }
-        100% { background-position: 0% 50%; }
-    }
+        0% {
+            background-position: 0% 50%;
+        }
 
-    /* Dark theme */
-    [data-theme="dark"] .hero-area-3 {
-        background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
-    }
+        50% {
+            background-position: 100% 50%;
+        }
 
-    [data-theme="dark"] .hero-area-3::before {
-        background: linear-gradient(45deg, 
-            rgba(251, 146, 60, 0.1) 0%, 
-            rgba(252, 124, 130, 0.1) 25%, 
-            rgba(162, 110, 236, 0.1) 50%, 
-            rgba(51, 246, 179, 0.1) 75%, 
-            rgba(255, 232, 112, 0.1) 100%);
-        background-size: 400% 400%;
+        100% {
+            background-position: 0% 50%;
+        }
     }
 
     .hero-area-3-inner {
@@ -102,29 +74,71 @@
         animation: floatUp 8s linear infinite;
     }
 
-    .particle:nth-child(1) { left: 10%; animation-delay: 0s; }
-    .particle:nth-child(2) { left: 20%; animation-delay: 1s; }
-    .particle:nth-child(3) { left: 30%; animation-delay: 2s; }
-    .particle:nth-child(4) { left: 40%; animation-delay: 3s; }
-    .particle:nth-child(5) { left: 50%; animation-delay: 4s; }
-    .particle:nth-child(6) { left: 60%; animation-delay: 5s; }
-    .particle:nth-child(7) { left: 70%; animation-delay: 6s; }
-    .particle:nth-child(8) { left: 80%; animation-delay: 7s; }
-    .particle:nth-child(9) { left: 90%; animation-delay: 0.5s; }
-    .particle:nth-child(10) { left: 15%; animation-delay: 1.5s; }
+    .particle:nth-child(1) {
+        left: 10%;
+        animation-delay: 0s;
+    }
+
+    .particle:nth-child(2) {
+        left: 20%;
+        animation-delay: 1s;
+    }
+
+    .particle:nth-child(3) {
+        left: 30%;
+        animation-delay: 2s;
+    }
+
+    .particle:nth-child(4) {
+        left: 40%;
+        animation-delay: 3s;
+    }
+
+    .particle:nth-child(5) {
+        left: 50%;
+        animation-delay: 4s;
+    }
+
+    .particle:nth-child(6) {
+        left: 60%;
+        animation-delay: 5s;
+    }
+
+    .particle:nth-child(7) {
+        left: 70%;
+        animation-delay: 6s;
+    }
+
+    .particle:nth-child(8) {
+        left: 80%;
+        animation-delay: 7s;
+    }
+
+    .particle:nth-child(9) {
+        left: 90%;
+        animation-delay: 0.5s;
+    }
+
+    .particle:nth-child(10) {
+        left: 15%;
+        animation-delay: 1.5s;
+    }
 
     @keyframes floatUp {
         0% {
             transform: translateY(100vh) scale(0);
             opacity: 0;
         }
+
         10% {
             opacity: 0.6;
             transform: scale(1);
         }
+
         90% {
             opacity: 0.6;
         }
+
         100% {
             transform: translateY(-100px) scale(0);
             opacity: 0;
@@ -146,9 +160,17 @@
         animation: simpleFloat 6s ease-in-out infinite;
     }
 
-    .shape-element:nth-child(1) { animation-delay: 0s; }
-    .shape-element:nth-child(2) { animation-delay: 2s; }
-    .shape-element:nth-child(3) { animation-delay: 4s; }
+    .shape-element:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .shape-element:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .shape-element:nth-child(3) {
+        animation-delay: 4s;
+    }
 
     /* Simple Circle */
     .shape-circle {
@@ -180,9 +202,12 @@
 
     /* Simple float animation */
     @keyframes simpleFloat {
-        0%, 100% {
+
+        0%,
+        100% {
             transform: translateY(0px);
         }
+
         50% {
             transform: translateY(-15px);
         }
@@ -231,11 +256,14 @@
 
     /* Line glow animation - works on all screen sizes */
     @keyframes lineGlow {
-        0%, 100% {
+
+        0%,
+        100% {
             opacity: 0.6;
             transform: scaleX(1);
             box-shadow: 0 0 0 rgba(251, 146, 60, 0);
         }
+
         50% {
             opacity: 1;
             transform: scaleX(1.2);
@@ -278,8 +306,13 @@
     }
 
     @keyframes orbit {
-        0% { transform: rotate(0deg) translateX(140px) rotate(0deg); }
-        100% { transform: rotate(360deg) translateX(140px) rotate(-360deg); }
+        0% {
+            transform: rotate(0deg) translateX(140px) rotate(0deg);
+        }
+
+        100% {
+            transform: rotate(360deg) translateX(140px) rotate(-360deg);
+        }
     }
 
     /* Dark theme adjustments */
@@ -304,19 +337,6 @@
         background-color: #a26eec;
     }
 
-    /* Dark theme line glow animation */
-    [data-theme="dark"] @keyframes lineGlow {
-        0%, 100% {
-            opacity: 0.6;
-            transform: scaleX(1);
-            box-shadow: 0 0 0 rgba(162, 110, 236, 0);
-        }
-        50% {
-            opacity: 1;
-            transform: scaleX(1.2);
-            box-shadow: 0 0 10px rgba(162, 110, 236, 0.5);
-        }
-    }
 
     [data-theme="dark"] .orbit-element {
         background-color: #fc7c82;
@@ -377,7 +397,7 @@
         }
 
         .hero-area-3-inner {
-            padding-top: 160px;
+            /* padding-top: 160px; */
         }
 
         .banner-shapes {
@@ -437,9 +457,7 @@
             font-size: 80px !important;
         }
 
-        .hero-area-3-inner {
-            padding-top: 180px;
-        }
+        /* .hero-area-3-inner { */
 
         .banner-shapes {
             margin-bottom: 30px;
@@ -492,9 +510,7 @@
     }
 
     @media only screen and (max-width: 480px) {
-        .hero-area-3-inner {
-            padding-top: 200px;
-        }
+        /* .hero-area-3-inner { */
 
         .banner-shapes {
             gap: 20px;
@@ -536,6 +552,11 @@
             animation-delay: 2s;
         }
     }
+
+    .text-wrapper {
+        padding-top: 30px;
+    }
+
 </style>
 
 <section class="hero-area-3">
@@ -581,22 +602,25 @@
                             <span style="color: var(--cbd-orange);">Dawson</span>
                         </h1>
                         <div class="text-wrapper move-anim" data-delay="0.45">
-                            <p class="text">Building High-Impact Web & App Products.</p>
+                            <p class="montserrat-alternates-medium text">Building High-Impact Web & App Products.</p>
+                        </div>
+                        <div class="text-wrapper move-anim" data-delay="0.45">
+                            <p class="montserrat-alternates-medium text">Full Stack Developer | <br> Web Development | Mobile App Development</p>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="section-content-wrapper">
+            <!-- <div class="section-content-wrapper">
                 <div class="section-content">
                     <div class="text-wrapper fade-anim" data-delay="0.60">
                         <p class="text">Full Stack Developer | <br> Web Development | Mobile App Development</p>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
         <span class="empty-space hide-mobile" style="height: 100px"></span>
         <div class="image-wrapper parallax-view fade-anim">
-            <video loop muted autoplay playsinline data-speed="0.5">
+            <video class="w-100" loop muted autoplay playsinline data-speed="0.5">
                 <source src="assets/imgs/cbd/banner.mp4" type="video/mp4">
             </video>
         </div>
