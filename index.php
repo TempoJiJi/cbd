@@ -37,8 +37,7 @@
 
 <body data-theme="light" class="body-wrapper body-creative-agency">
 
-  <?php // include 'background.php'; 
-  ?>
+  <?php include 'background.php'; ?>
 
 
   <!-- Preloader -->
@@ -83,7 +82,7 @@
             <a class='t-btn t-btn-circle' href='/contact'>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
-            <a class='t-btn t-btn-primary' href='/contact'>Let’s Connect</a>
+            <a class='t-btn t-btn-primary' href='/contact'>Let's Connect</a>
             <a class='t-btn t-btn-circle' href='/contact'>
               <i class="fa-solid fa-arrow-right"></i>
             </a>
