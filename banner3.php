@@ -17,11 +17,30 @@
         letter-spacing: -0.01em;
     }
 
-    /* Hero area full height */
+    /* Hero area full height with grid background */
     .hero-area-3 {
         min-height: 100vh;
         display: flex;
         flex-direction: column;
+        position: relative;
+        background-color: #f5f5f5;
+        overflow: hidden;
+    }
+
+    /* Grid background */
+    .hero-area-3::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: 
+            linear-gradient(rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+        background-size: 40px 40px;
+        z-index: 1;
+        pointer-events: none;
     }
 
     .hero-area-3-inner {
@@ -31,6 +50,9 @@
         justify-content: center;
         align-items: center;
         text-align: center;
+        position: relative;
+        z-index: 2;
+        padding-top: 120px; /* Add top padding for mobile */
     }
 
     /* Simple geometric shapes */
@@ -66,6 +88,7 @@
         border-radius: 50%;
         background: linear-gradient(135deg, var(--cbd-orange) 0%, var(--cbd-pink) 100%);
         opacity: 0.8;
+        box-shadow: 0 10px 30px rgba(251, 146, 60, 0.2);
     }
 
     .shape-square {
@@ -74,6 +97,7 @@
         background: linear-gradient(135deg, var(--cbd-purple) 0%, var(--cbd-cyan) 100%);
         transform: rotate(45deg);
         opacity: 0.7;
+        box-shadow: 0 10px 30px rgba(162, 110, 236, 0.2);
     }
 
     .shape-triangle {
@@ -83,6 +107,7 @@
         border-right: 35px solid transparent;
         border-bottom: 60px solid var(--cbd-yellow);
         opacity: 0.6;
+        filter: drop-shadow(0 10px 20px rgba(255, 232, 112, 0.2));
     }
 
     /* Floating animation */
@@ -104,6 +129,7 @@
         height: 2px;
         background: linear-gradient(90deg, transparent, var(--cbd-orange), transparent);
         top: 50%;
+        opacity: 0.5;
     }
 
     .banner-shapes::before {
@@ -112,6 +138,46 @@
 
     .banner-shapes::after {
         right: -150px;
+    }
+
+    /* Grid dots accent */
+    .grid-accent {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: var(--cbd-orange);
+        border-radius: 50%;
+        opacity: 0.3;
+        z-index: 1;
+    }
+
+    .grid-accent:nth-child(1) {
+        top: 20%;
+        left: 15%;
+        animation: pulse 3s ease-in-out infinite;
+    }
+
+    .grid-accent:nth-child(2) {
+        top: 30%;
+        right: 20%;
+        animation: pulse 3s ease-in-out infinite 1s;
+    }
+
+    .grid-accent:nth-child(3) {
+        bottom: 25%;
+        left: 25%;
+        animation: pulse 3s ease-in-out infinite 2s;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.8;
+            transform: scale(1.5);
+        }
     }
 
     @media only screen and (max-width: 1919px) {
@@ -130,6 +196,10 @@
         .banner-title-cbd {
             font-size: 80px !important;
         }
+
+        .hero-area-3-inner {
+            padding-top: 140px; /* Increase padding for tablet */
+        }
     }
 
     @media only screen and (max-width: 991px) {
@@ -140,6 +210,14 @@
         .banner-title-cbd {
             padding-top: 20px;
             font-size: 85px !important;
+        }
+
+        .hero-area-3-inner {
+            padding-top: 160px; /* More padding for mobile landscape */
+        }
+
+        .hero-area-3::before {
+            background-size: 30px 30px; /* Smaller grid for mobile */
         }
 
         .banner-shapes {
@@ -187,6 +265,14 @@
             font-size: 80px !important;
         }
 
+        .hero-area-3-inner {
+            padding-top: 180px; /* Maximum padding for mobile portrait */
+        }
+
+        .hero-area-3::before {
+            background-size: 25px 25px; /* Even smaller grid for small mobile */
+        }
+
         .banner-shapes {
             margin-bottom: 30px;
             gap: 15px;
@@ -212,10 +298,25 @@
         .banner-shapes::after {
             display: none;
         }
+
+        .grid-accent {
+            display: none; /* Hide grid accents on small mobile */
+        }
+    }
+
+    @media only screen and (max-width: 480px) {
+        .hero-area-3-inner {
+            padding-top: 200px; /* Extra padding for very small screens */
+        }
     }
 </style>
 
 <section class="hero-area-3">
+    <!-- Grid accent dots -->
+    <div class="grid-accent"></div>
+    <div class="grid-accent"></div>
+    <div class="grid-accent"></div>
+
     <div class="container">
         <div class="hero-area-3-inner section-spacing">
             <div class="section-header">
